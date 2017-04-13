@@ -1,0 +1,4 @@
+# 生成RSA加密的SSH公钥和私钥
+```bash
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+```
