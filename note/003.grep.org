@@ -1,4 +1,5 @@
-# grep 当前目录下的所有文件
-```bash
+* grep 当前目录下的所有文件
+
+#+BEGIN_SRC sh
 grep -R 'findme' .
-```
+#+END_SRC
