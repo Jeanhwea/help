@@ -9,7 +9,7 @@ pip freeze > requirements.txt
 ```
 
 # 安装导出版本文件中的所有包
-```bash\
+```bash
 pip install -r requirements.txt
 ```
 
