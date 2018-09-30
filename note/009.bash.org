@@ -1,6 +1,8 @@
-# bash 脚本中的带颜色的输出
+* bash 脚本中的带颜色的输出
 bash 中的带颜色的字体可以预定义，如下定义了几种颜色的粗体。
-```bash
+
+
+#+BEGIN_SRC bash
 # bash color - bold
 local BBLACK="\033[01;30m"
 local BRED="\033[01;31m"
@@ -10,9 +12,12 @@ local BBLUE="\033[01;34m"
 local BPURPLE="\033[01;35m"
 local BCYAN="\033[01;36m"
 local BWHITE="\033[01;37m"
-```
+#+END_SRC
+
+
 另外也可以定义普通带颜色的字体。
-```bash
+#+BEGIN_SRC bash
+
 # bash color - normal
 local BLACK="\033[00;30m"
 local RED="\033[00;31m"
@@ -22,10 +27,16 @@ local BLUE="\033[00;34m"
 local PURPLE="\033[00;35m"
 local CYAN="\033[00;36m"
 local WHITE="\033[00;37m"
-```
+
+#+END_SRC
+
+
 使用时需要打开echo的-e开关，在变色过后最好立马恢复默认字体颜色。
-```bash
+
+#+BEGIN_SRC bash
+
 # bash color default
 local DEFAULT="\033[00m"
 echo -e "$BBLACK I have blue color $DEFAULT"
 ```
+#+END_SRC

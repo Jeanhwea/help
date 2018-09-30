@@ -1,7 +1,9 @@
-# yapf是一个Python代码的格式化工具
+* yapf是一个Python代码的格式化工具
 
 下面是我的配置 ~/.config/yapf/style
-```
+
+#+BEGIN_SRC conf
+
 [style]
 BASED_ON_STYLE = pep8
 
@@ -29,4 +31,5 @@ SPLIT_ARGUMENTS_WHEN_COMMA_TERMINATED = true
 SPLIT_BEFORE_DICT_SET_GENERATOR = true
 
 SPLIT_PENALTY_IMPORT_NAMES = 1
-```
+
+#+END_SRC

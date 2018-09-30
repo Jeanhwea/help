@@ -1,15 +1,21 @@
-# 更新所有包到最新版本
-```bash
+* 更新所有包到最新版本
+
+#+BEGIN_SRC shell
 pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U
-```
+#+END_SRC
 
-# 导出所有包的版本信息
-```bash
+
+* 导出所有包的版本信息
+
+#+BEGIN_SRC shell
 pip freeze > requirements.txt
-```
+#+END_SRC
 
-# 安装导出版本文件中的所有包
-```bash
+
+* 安装导出版本文件中的所有包
+#+BEGIN_SRC 
 pip install -r requirements.txt
-```
+#+END_SRC
+
+
 

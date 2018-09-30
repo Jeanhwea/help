@@ -1,5 +1,5 @@
 * 创建一个启动的maven项目
 
-```sh
-mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=my-app -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
-```
+#+BEGIN_SRC shell
+mvn archetype:generate -DgroupId=cn.edu.buaa.app -DartifactId=mapp -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+#+END_SRC
