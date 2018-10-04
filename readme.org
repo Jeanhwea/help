@@ -1,0 +1,6 @@
+#+TITLE: 殊蕤的工作笔记
+#+AUTHOR: Jinghui Hu
+#+EMAIL: hujinghui@buaa.edu.cn
+#+DATE: 2018-10-05
+
+整理一下工作笔记，之前是使用markdown写的，后来使用了org-mode，全部改成org文件。
