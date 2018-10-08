@@ -1,0 +1,78 @@
+#+TITLE: 安装ROR开发环境
+#+AUTHOR: Jinghui Hu
+#+EMAIL: hujinghui@buaa.edu.cn
+#+DATE: 2018-10-08
+
+
+* Step1: 安装准备工具
+  直接apt-get安装就行了
+  #+BEGIN_SRC sh
+  sudo apt-get install git vim curl
+  #+END_SRC
+
+
+* Step2: 安装RVM
+  参考[[https://rvm.io][RVM]]官网的教程。先安装RVM的gpg秘钥
+  #+BEGIN_SRC sh
+  gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
+  #+END_SRC
+
+  然后通过curl来安装稳定版的RVM。
+  #+BEGIN_SRC sh
+  \curl -sSL https://get.rvm.io | bash -s stable
+  #+END_SRC
+
+
+* Step3: 使用RVM配置ruby和gem
+  先安装RVM在Ubuntu环境下的准备环境，并使用RVM安装最新版本的ruby。
+  #+BEGIN_SRC sh
+  rvm requirements
+  rvm install ruby
+  #+END_SRC
+
+  将默认版本（最新稳定版本）的ruby应用在当前系统中
+  #+BEGIN_SRC sh
+  rvm use ruby --default
+  #+END_SRC
+
+  设置ruby的gem环境
+  #+BEGIN_SRC sh
+  rvm rubygems current
+  #+END_SRC
+
+
+* Step4: 配置RubyGems的镜像
+  国内的gem镜像通常是被墙了，所以可以使用[[http://gems.ruby-china.org/][Ruby China]]的Gem镜像来改善国内的gem下载
+  速度。
+
+  更新gem系统
+  #+BEGIN_SRC sh
+  gem update --system # 这里请翻墙一下  
+  #+END_SRC
+
+  替换gem镜像源
+  #+BEGIN_SRC sh
+  gem sources --add https://gems.ruby-china.org/ --remove https://rubygems.org/
+  #+END_SRC
+
+
+* Step5: 使用Gem安装rails
+  直接安装rails就可以了 
+  #+BEGIN_SRC sh
+  gem install rails
+  #+END_SRC
+
+
+
+* Step6: 建立rails工程
+  例如建立一个博客工程blog
+  #+BEGIN_SRC sh
+  rails new blog
+  #+END_SRC
+
+  启动rails服务器
+  #+BEGIN_SRC sh
+  cd blog && rails server
+  #+END_SRC
+
+打开浏览器访问想要的网址即可，结束。

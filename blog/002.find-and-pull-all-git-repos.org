@@ -1,0 +1,13 @@
+#+TITLE: 查找并批量拉取git远程仓库数据
+#+AUTHOR: Jinghui Hu
+#+EMAIL: hujinghui@buaa.edu.cn
+#+DATE: 2018-10-08
+
+分享一个批量更新一个文件夹下代码仓库的命令
+
+#+BEGIN_SRC sh
+for dotgit in `find $(pwd) -type d -name '.git'`
+  do cd $dotgit/.. && pwd && git pull 
+done
+#+END_SRC
+
