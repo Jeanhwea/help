@@ -29,12 +29,23 @@
   令。
 
 
-* Cheatsheet
+* 工作流
 
-  批量更新当前文件夹下代码仓库
-  #+BEGIN_SRC sh
-  for dotgit in `find $(pwd) -type d -name '.git'`
-    do cd $dot
-  done
-  #+END_SRC
-  
+** 批量更新当前文件夹下代码仓库
+   #+BEGIN_SRC sh
+     for dotgit in `find $(pwd) -type d -name '.git'`
+       do cd $dot
+     done
+   #+END_SRC
+
+** 添加GitHub远端
+   #+BEGIN_SRC sh
+     git remote add origin git@github.com:Username/Repo.git
+     git push -u origin master
+   #+END_SRC
+
+* 有用的链接
+- [[https://rogerdudler.github.io/git-guide/index.zh.html][Git 简明指南]]
+- [[https://www.atlassian.com/git][Atlassian Git Tutorial]]
+- [[https://help.github.com/][Github Help Page]]
+- [[https://git-scm.com/doc][Pro Git]]
