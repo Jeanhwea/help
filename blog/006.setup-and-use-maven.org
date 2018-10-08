@@ -1,8 +1,9 @@
-#+TITLE: 配置maven工具
+#+TITLE: 配置和使用maven工具
 #+AUTHOR: Jinghui Hu
 #+EMAIL: hujinghui@buaa.edu.cn
 #+DATE: 2018-10-08
 
+* 配置Maven
 [[http://maven.apache.org/][Maven]]是一个非常优秀的Java项目中代码包管理工具。它默认将公共仓库放在
 *~/.m2/repository* 目录下面。有时候下载Maven是需要配置默认下载镜像到阿里云，这时
 候需要编辑 *~/.m2/settings.xml* 文件。
@@ -282,4 +283,17 @@ under the License.
       <name>Nexus aliyun</name>
       <url>https://maven.aliyun.com/nexus/content/groups/public</url>
     </mirror>
+#+END_SRC
+
+
+* 使用Maven
+Maven官方给出了一个[[http://maven.apache.org/guides/getting-started/maven-in-five-minutes.html][五分钟教程]]，里面有详细的介绍。
+
+其中我觉得一个比较重要的命令就是新建一个maven项目
+#+BEGIN_SRC sh
+mvn archetype:generate \
+  -DgroupId=cn.edu.buaa.app \
+  -DartifactId=mapp \
+  -DarchetypeArtifactId=maven-archetype-quickstart \
+  -DinteractiveMode=false
 #+END_SRC
