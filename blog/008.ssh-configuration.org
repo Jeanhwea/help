@@ -1,0 +1,22 @@
+#+TITLE: 生成RSA加密的SSH公钥和私钥
+#+AUTHOR: Jinghui Hu
+#+EMAIL: hujinghui@buaa.edu.cn
+#+DATE: 2018-10-08
+
+
+ssh公钥认证是ssh认证的方式之一。通过公钥认证可实现ssh免密码登陆，git的ssh方式也
+是通过公钥进行认证的。在用户目录的home目录下，有一个.ssh的目录，和当前用户ssh配
+置认证相关的文件，几乎都在这个目录下。
+
+ssh-keygen可用来生成ssh公钥认证所需的公钥和私钥文件。
+#+BEGIN_SRC sh
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+#+END_SRC
+
+使用 ssh-kengen 会在 *~/.ssh/* 目录下生成两个文件，不指定文件名和密钥类型的时候，
+默认生成的两个文件是：
+
+- id_rsa
+- id_rsa.pub
+
+第一个是私钥文件，第二个是公钥文件。
