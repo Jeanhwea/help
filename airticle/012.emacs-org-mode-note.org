@@ -1,0 +1,19 @@
+#+TITLE: Emacs org-mode 的相关笔记
+#+AUTHOR: Jinghui Hu
+#+EMAIL: hujinghui@buaa.edu.cn
+#+DATE: 2018-10-08
+
+* 管理代码
+- "<s [Tab]": 插入 "#+BEGIN_SRC #+END_SRC" 代码块的方法： 
+- "C-c '": 重新开个buffer来编辑代码
+- "C-c C-c": 执行代码块
+
+在使用执行代码是需要配置相应的代码解释器，具体如下：
+
+#+BEGIN_SRC elisp
+org-babel-do-load-languages
+  'org-babel-load-languages
+  '((js . t)
+     (python . t))
+#+END_SRC
+
