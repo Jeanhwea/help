@@ -1,0 +1,18 @@
+#+TITLE: 配置pip的相关环境变量
+#+AUTHOR: Jinghui Hu
+#+EMAIL: hujinghui@buaa.edu.cn
+#+DATE: 2018-10-08
+
+
+pip是Python的包管理工具，在国内可以替换下载源来加快下载速度。配置项的内容如下：
+
+#+BEGIN_SRC conf
+[global]
+index-url = https://pypi.tuna.tsinghua.edu.cn/simple
+
+[list]
+format = columns
+#+END_SRC
+
+值得注意的是，pip工具在Windows和Unix环境下的配置文件位置是不一样的。其中Windows
+的配置文件是 *~/pip/pip.ini* ，Unix的配置文件是 *~/.pip/pip.conf* 。
