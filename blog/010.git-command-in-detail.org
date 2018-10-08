@@ -1,0 +1,33 @@
+#+TITLE: Git命令详解
+#+AUTHOR: Jinghui Hu
+#+EMAIL: hujinghui@buaa.edu.cn
+#+DATE: 2018-10-08
+
+* 底层(plumbing)命令
+
+  早期的 Git（主要是 1.5 之前的版本）的用户界面要比现在复杂的多，因为它更侧重于
+  作为一个文件系统，而不是一个打磨过的版本控制系统。 不时会有一些陈词滥调抱怨早
+  期那个晦涩复杂的 Git 用户界面；不过最近几年来，它已经被改进到不输于任何其他版
+  本控制系统地清晰易用了。
+
+  #+BEGIN_SRC shell
+  git hash-object -w --stdin
+  git cat-file -p <sha>
+  git update-index --add --cacheinfo 100644 <sha-blob> filename.txt
+  git write-tree
+  git commit-tree <sha-tree> -m 'message'
+  git update-ref refs/heads/master <sha-commit>
+  #+END_SRC
+
+
+* 高层(porcelain)命令
+  
+  由于 Git 最初是一套面向版本控制系统的工具集，而不是一个完整的、用户友好的版本
+  控制系统，所以它还包含了一部分用于完成底层工作的命令。 这些命令被设计成能以
+  UNIX 命令行的风格连接在一起，抑或藉由脚本调用，来完成工作。 这部分命令一般被称
+  作“底层（plumbing）”命令，而那些更友好的命令则被称作“高层（porcelain）”命
+  令。
+
+
+* TODO Cheatsheet
+  

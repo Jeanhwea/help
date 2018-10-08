@@ -3,7 +3,7 @@
 #+EMAIL: hujinghui@buaa.edu.cn
 #+DATE: 2018-10-08
 
-
+* 基本配置
 pip是Python的包管理工具，在国内可以替换下载源来加快下载速度。配置项的内容如下：
 
 #+BEGIN_SRC conf
@@ -16,3 +16,23 @@ format = columns
 
 值得注意的是，pip工具在Windows和Unix环境下的配置文件位置是不一样的。其中Windows
 的配置文件是 *~/pip/pip.ini* ，Unix的配置文件是 *~/.pip/pip.conf* 。
+
+* 常用命令
+** 更新所有包到最新版本
+
+#+BEGIN_SRC shell
+pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U
+#+END_SRC
+
+
+** 导出所有包的版本信息
+
+#+BEGIN_SRC shell
+pip freeze > requirements.txt
+#+END_SRC
+
+
+** 安装导出版本文件中的所有包
+#+BEGIN_SRC 
+pip install -r requirements.txt
+#+END_SRC

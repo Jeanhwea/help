@@ -1,5 +1,0 @@
-* grep 当前目录下的所有文件
-
-#+BEGIN_SRC shell
-grep -R 'findme' .
-#+END_SRC

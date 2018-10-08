@@ -1,5 +1,0 @@
-*  mac chrome 允许跨越请求设置
-
-#+BEGIN_SRC shell
-open -a "Google Chrome" --args --disable-web-security --user-data-dir=/Users/hujinghui/.config/chrome
-#+END_SRC

@@ -1,8 +1,0 @@
-#+BEGIN_SRC shell
-git hash-object -w --stdin
-git cat-file -p <sha>
-git update-index --add --cacheinfo 100644 <sha-blob> filename.txt
-git write-tree
-git commit-tree <sha-tree> -m 'message'
-git update-ref refs/heads/master <sha-commit>
-#+END_SRC
