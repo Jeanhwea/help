@@ -1,3 +1,13 @@
+#+TITLE: 配置maven工具
+#+AUTHOR: Jinghui Hu
+#+EMAIL: hujinghui@buaa.edu.cn
+#+DATE: 2018-10-08
+
+[[http://maven.apache.org/][Maven]]是一个非常优秀的Java项目中代码包管理工具。它默认将公共仓库放在
+*~/.m2/repository* 目录下面。有时候下载Maven是需要配置默认下载镜像到阿里云，这时
+候需要编辑 *~/.m2/settings.xml* 文件。
+
+#+BEGIN_SRC xml
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!--
@@ -261,3 +271,15 @@ under the License.
   </activeProfiles>
   -->
 </settings>
+#+END_SRC
+
+其中下面这一段可以设置镜像站点
+
+#+BEGIN_SRC xml
+    <mirror>
+      <id>nexus-aliyun</id>
+      <mirrorOf>*</mirrorOf>
+      <name>Nexus aliyun</name>
+      <url>https://maven.aliyun.com/nexus/content/groups/public</url>
+    </mirror>
+#+END_SRC
