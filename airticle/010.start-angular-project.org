@@ -1,0 +1,34 @@
+#+TITLE: 编写Angular项目
+#+AUTHOR: Jinghui Hu
+#+EMAIL: hujinghui@buaa.edu.cn
+#+DATE: 2018-10-08
+
+* 配置环境
+
+[[https://angular.io/][Angular]] 是一个Google推出的新一代 Web 前端框架，其优点就不需要我详细叙述了，指的
+一提的是，在 Angular 官网上有启动 Angular 项目的教程 [[https://angular.io/guide/quickstart][Angular Quick Start]]。
+Angular 的提供中文阅读支撑，详见 [[https://www.angular.cn/][Angular中文版]]。
+
+#+BEGIN_SRC sh
+yarn global add @angular/cli
+#+END_SRC
+
+
+* 创建新项目
+
+打开终端窗口。运行下列命令来生成一个新项目以及默认的应用代码：
+
+#+BEGIN_SRC sh
+ng new my-app
+#+END_SRC
+
+
+* 启动项目
+
+安装依赖包和启动项目。命令如下：
+
+#+BEGIN_SRC sh
+yarn install
+yarn start
+#+END_SRC
+
