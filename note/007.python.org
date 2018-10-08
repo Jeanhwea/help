@@ -1,6 +1,0 @@
-* 在当前目录启动HTTP服务器
-
-#+BEGIN_SRC shell
-python -m SimpleHTTPServer 8414 
-#+END_SRC
-
