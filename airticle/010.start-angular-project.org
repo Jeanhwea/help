@@ -13,7 +13,6 @@ Angular 的提供中文阅读支撑，详见 [[https://www.angular.cn/][Angular�
 yarn global add @angular/cli
 #+END_SRC
 
-
 * 创建新项目
 
 打开终端窗口。运行下列命令来生成一个新项目以及默认的应用代码：
@@ -21,7 +20,6 @@ yarn global add @angular/cli
 #+BEGIN_SRC sh
 ng new my-app
 #+END_SRC
-
 
 * 启动项目
 
@@ -32,3 +30,7 @@ yarn install
 yarn start
 #+END_SRC
 
+* 有用的链接
+  1. [[https://www.angular.cn/][Angular中文网]]
+  2. [[https://angular.io/][Official Angular English Site]]
+  3. [[https://angular.io/guide/quickstart][Angular Quick Start]]: nghero教程，代码参考 [[https://github.com/jeanhwea/ngheroes/tree/master/][nghero github repo]]
