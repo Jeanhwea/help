@@ -4,6 +4,9 @@
 #+DATE: 2018-10-08
 
 * 基本编辑任务
+    org-mode 能够完美解决任务管理的各种问题，包括任务/子任务的划分，关键时间的设
+定，任务状态变化的跟踪，以及任务的检索和查询。 再配合 org-mode 的强大编辑功能，
+能够实现很多功能，比如时间管理（GTD），项目计划和管理，工作日志等。
 ** 列表
 *** 无序列表
     - "M-<return>": 新建一个无序列表想
@@ -52,13 +55,18 @@
           (python . t)))
    #+END_SRC
 * 管理事件
-    org-mode 能够完美解决任务管理的各种问题，包括任务/子任务的划分，关键时间的设
-定，任务状态变化的跟踪，以及任务的检索和查询。 再配合 org-mode 的强大编辑功能，
-能够实现很多功能，比如时间管理（GTD），项目计划和管理，工作日志等。
-
     - "C-c C-t": 变换 <un-marked> TODO DONE 状态
-    - "C-c C-s": 插入时间
-    - "C-S-<return>": 增加TODO项目
+    - "C-c C-s": 插入 schedule
+    - "C-c C-d": 插入 deadline
+    - "C-S-<return>": 增加 TODO 项目
+    - "S-<arrow>": 修改日期
+    - "C-c / t": 显示当前文件中的所有 TODO 项目
+    #+BEGIN_SRC elisp
+      ;; "C-c C-t" toggle states
+      (setq org-todo-keywords
+        '((sequence "todo" "waiting" "|" "done" "cancle")))
+    #+end_src
+    [[https://orgmode.org/guide/Multi_002dstate-workflows.html][org-todo-keywords]] 值得注意的是 "|" 用来分割“待办”状态和“完成”状态。
       
 * 有用的链接
   1. [[http://pragmaticemacs.com/org-mode-tutorials/][Pragmatice Emacs Org-mode Tutorials]]: org-mode 基础入门
