@@ -55,19 +55,33 @@
           (python . t)))
    #+END_SRC
 * 管理事件
+** "TODO" 事件
     - "C-c C-t": 变换 <un-marked> TODO DONE 状态
     - "C-c C-s": 插入 schedule
     - "C-c C-d": 插入 deadline
     - "C-S-<return>": 增加 TODO 项目
     - "S-<arrow>": 修改日期
     - "C-c / t": 显示当前文件中的所有 TODO 项目
+** 设置状态
     #+BEGIN_SRC elisp
       ;; "C-c C-t" toggle states
       (setq org-todo-keywords
-        '((sequence "todo" "waiting" "|" "done" "cancle")))
+        '((sequence "TODO" "WAITING" "|" "DONE" "CANCLE")))
     #+end_src
     [[https://orgmode.org/guide/Multi_002dstate-workflows.html][org-todo-keywords]] 值得注意的是 "|" 用来分割“待办”状态和“完成”状态。
+** 设置优先级
+   #+BEGIN_SRC elisp
+     (setq org-default-priority ?B
+       org-highest-priority ?A
+       org-lowest-priority ?C
+       org-priority-faces
+        '((?A . (:foreground "#F0DFAF" :weight bold))
+          (?B . (:foreground "LightSteelBlue"))
+          (?C . (:foreground "OliveDrab"))))
+   #+END_SRC
       
 * 有用的链接
   1. [[http://pragmaticemacs.com/org-mode-tutorials/][Pragmatice Emacs Org-mode Tutorials]]: org-mode 基础入门
   2. [[http://doc.norang.ca/org-mode.html][Organize Your Lift In Plain Text!]]: org-mode 的详细介绍
+  3. [[https://blog.aaronbieber.com/2016/01/30/dig-into-org-mode.html][Dig into Org-mode]]: 非常实用的 org-mode 教程
+  4. [[https://blog.aaronbieber.com/2016/09/24/an-agenda-for-life-with-org-mode.html][An Angenda for Life with Org-mode]]: 高效地使用 org-mode 的日程管理解决方案
