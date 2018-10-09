@@ -3,17 +3,63 @@
 #+EMAIL: hujinghui@buaa.edu.cn
 #+DATE: 2018-10-08
 
-* 管理代码
-- "<s [Tab]": 插入 "#+BEGIN_SRC #+END_SRC" 代码块的方法： 
-- "C-c '": 重新开个buffer来编辑代码
-- "C-c C-c": 执行代码块
+* 基本编辑任务
+** 列表
+*** 无序列表
+    - "M-<return>": 新建一个无序列表想
+    - "M-<return> <tab>": 新建列表项并且缩进到下一个级别
+    - "S-<left> / S-<right>": 修改列表样式
+*** 有序列表
+    1. 基本上和无序列表成本
+    2. "S-<left> / S-<right>": 可以切换有序好无序列表
+    3. "<tab>": 变换级别
+*** Checklist
+    - [ ] 这种的叫checklist
+    - [ ] "M-S-<return>": 新建checklist项
+    - [X] "C-c C-c": check/uncheck
+    - [-] "M-S-<return> <tab": 子选项
+      + [X] sub1
+      + [ ] sub2
+    - [ ] 添加进度 [34%]
+** 表格
+   - "C-c -": 添加一个横杠
+   - "M-<arrow>": 移动行和列
+   - "M-S-<arrow>": 删除/新增行和列
+| ID | x |  y | comments                   | note |
+|----+---+----+----------------------------+------|
+| A  | 2 | 23 | bla                        |      |
+| B  | 3 |  9 | abcdefghijklmnopqrstuvwxyz |      |
+| C  | 3 |  9 | abcdefghijklmnopqrstuvwxyz |      |
+** 图片和链接
+   - "C-c C-l": 插入链接
+   - "C-u C-c C-l": 插入文件链接，可以通过修改变量 *org-link-file-path-type* 来控制相对路径和绝对路径
+** 格式化文本
+    - /italicised text/
+    - *bold text*
+    - _underlines_
+    - =literal text=
+    - ~code~ (generally appears the same as literal text)
+** 代码
+   - "<s [Tab]": 插入 "#+BEGIN_SRC #+END_SRC" 代码块
+   - "C-c '": 重新开个buffer来编辑代码块
+   - "C-c C-c": 执行代码块
 
-在使用执行代码是需要配置相应的代码解释器，具体如下：
+   在使用执行代码是需要配置相应的代码解释器，具体如下：
+   #+BEGIN_SRC elisp
+     (org-babel-do-load-languages
+       'org-babel-load-languages
+       '((js . t)
+          (python . t)))
+   #+END_SRC
+* 管理事件
+    org-mode 能够完美解决任务管理的各种问题，包括任务/子任务的划分，关键时间的设
+定，任务状态变化的跟踪，以及任务的检索和查询。 再配合 org-mode 的强大编辑功能，
+能够实现很多功能，比如时间管理（GTD），项目计划和管理，工作日志等。
 
-#+BEGIN_SRC elisp
-org-babel-do-load-languages
-  'org-babel-load-languages
-  '((js . t)
-     (python . t))
-#+END_SRC
-
+    - "C-c C-t": 变换 <un-marked> TODO DONE 状态
+    - "C-c C-s": 插入时间
+    - "C-S-<return>": 增加TODO项目
+      
+* 有用的链接
+  1. [[http://pragmaticemacs.com/org-mode-tutorials/][Pragmatice Emacs Org-mode Tutorials]]: org-mode 基础入门
+  2. [[http://doc.norang.ca/org-mode.html][Organize Your Lift In Plain Text!]]: org-mode 的详细介绍
