@@ -43,9 +43,9 @@ curl https://repo.spring.io/release/org/springframework/boot/spring-boot-cli/2.0
      @RestController
      public class DemoApplication {
 
-         public static void main(String[] args) {
-             SpringApplication.run(DemoApplication.class, args);
-         }
+       public static void main(String[] args) {
+         SpringApplication.run(DemoApplication.class, args);
+       }
 
        @RequestMapping("/")
        public String index() {
