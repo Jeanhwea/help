@@ -58,9 +58,6 @@ curl https://repo.spring.io/release/org/springframework/boot/spring-boot-cli/2.0
      # +---------------+---------------------------------------------------------------------------+-------------------------------+
      #
    #+END_SRC
-
-
-
 ** 运行项目
    修改 DemoApplication 文件
    #+BEGIN_SRC java
@@ -85,6 +82,10 @@ curl https://repo.spring.io/release/org/springframework/boot/spring-boot-cli/2.0
          return "<p>Hello World!</p>";
        }
      }
+   #+END_SRC
+   使用 spring 自带的工具来运行代码
+   #+BEGIN_SRC sh
+   spring run src/main/java/com/example/springapp/DemoApplication.java 
    #+END_SRC
    使用 maven 工具启动 spring-boot 项目
    #+BEGIN_SRC sh
