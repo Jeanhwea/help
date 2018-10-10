@@ -65,7 +65,44 @@ git-rebase 是用来修改本地提交的，目的是为了让提交历史变成
   #               /
   # D---E---A'---F master
 #+END_SRC
+git-rebase 的 *--on-to* 选项也是非常重要的，可以跨多个分支来修改本地提交。
+#+BEGIN_SRC sh
+  git rebase --onto master next topic
+  # 情形一：连续线性依赖
+  # o---o---o---o---o  master
+  #          \
+  #           o---o---o---o---o  next
+  #                            \
+  #                             o---o---o  topic
+  #
+  # o---o---o---o---o  master
+  #         |       \
+  #         |        o'--o'--o'  topic
+  #          \
+  #           o---o---o---o---o  next
 
+  git rebase --onto master topicA topicB
+  # 情形二：移动分支到稳定分支 master 上
+  #
+  #                             H---I---J topicB
+  #                            /
+  #                   E---F---G  topicA
+  #                  /
+  #     A---B---C---D  master
+  #
+  #
+  #                  H'--I'--J'  topicB
+  #                 /
+  #                 | E---F---G  topicA
+  #                 |/
+  #     A---B---C---D  master
+
+  git rebase --onto topicA~5 topicA~3 topicA
+  # 情形三：剪切部分提交
+  #  E---F---G---H---I---J  topicA
+  #
+  #  E---H'---I'---J'  topicA
+#+END_SRC
 * 有用的链接
 - [[https://rogerdudler.github.io/git-guide/index.zh.html][Git 简明指南]]
 - [[https://www.atlassian.com/git][Atlassian Git Tutorial]]
