@@ -39,6 +39,32 @@
      git remote add origin git@github.com:Username/Repo.git
      git push -u origin master
    #+END_SRC
+** Git Rebase 工作流
+git-rebase 是用来修改本地提交的，目的是为了让提交历史变成线性。
+#+BEGIN_SRC sh
+  git rebase master
+  git rebase master topic
+
+  # 情况1：如果 topic 和 master 没有同样的提交
+  #
+  #      A---B---C topic
+  #     /
+  # D---E---F---G master
+  #
+  #              A'--B'--C' topic
+  #             /
+  # D---E---F---G master
+
+  # 情况2：如果 topic 和 master 有同样的提交，rebase 会合并相同的提交
+  #
+  #       A---B---C topic
+  #      /
+  # D---E---A'---F master
+  #
+  #                B'---C' topic
+  #               /
+  # D---E---A'---F master
+#+END_SRC
 
 * 有用的链接
 - [[https://rogerdudler.github.io/git-guide/index.zh.html][Git 简明指南]]
