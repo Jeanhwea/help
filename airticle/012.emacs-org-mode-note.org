@@ -66,7 +66,14 @@
     #+BEGIN_SRC elisp
       ;; "C-c C-t" toggle states
       (setq org-todo-keywords
-        '((sequence "TODO" "WAITING" "|" "DONE" "CANCLE")))
+        org-todo-keywords
+          '((sequence "TODO" "DOING" "|" "WAITING" "DONE" "CANCLE"))
+        org-todo-keyword-faces
+          '(("TODO" :foreground "red" :weight bold)
+            ("DOING" :foreground "red" :weight bold)
+            ("WAITING" :foreground "magenta")
+            ("DONE" :foreground "forest green")
+            ("CANCEL" :foreground "forest green")))
     #+end_src
     [[https://orgmode.org/guide/Multi_002dstate-workflows.html][org-todo-keywords]] 值得注意的是 "|" 用来分割“待办”状态和“完成”状态。
 ** 设置优先级
@@ -75,9 +82,9 @@
        org-highest-priority ?A
        org-lowest-priority ?C
        org-priority-faces
-        '((?A . (:foreground "#F0DFAF" :weight bold))
-          (?B . (:foreground "LightSteelBlue"))
-          (?C . (:foreground "OliveDrab"))))
+        '((?A . (:foreground "#d33682" :weight bold))
+          (?B . (:foreground "#c065db" :weight bold))
+          (?C . (:foreground "#268bd2"))))
    #+END_SRC
       
 * 有用的链接
