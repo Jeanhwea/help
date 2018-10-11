@@ -110,3 +110,8 @@ brew install springboot
    #+BEGIN_SRC sh
    java -jar target/springapp-0.0.1-SNAPSHOT.jar
    #+END_SRC
+* 参考链接
+1. [[https://docs.spring.io/spring-boot/docs/current/reference/html/cli-using-the-cli.html][Using Spring Boot CLI]]
+2. [[https://spring.io/projects/spring-boot][Spring Boot Project Homepage]]
+3. [[https://spring.io/guides/gs/rest-service/][RESTful Service]]
+4. [[https://spring.io/guides/gs/consuming-rest-angularjs/][Consuming a RESTful Web Service with AngularJS]]
