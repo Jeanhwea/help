@@ -87,9 +87,18 @@
           (?B . (:foreground "#c065db" :weight bold))
           (?C . (:foreground "#268bd2"))))
    #+END_SRC
-      
+** 设置时间戳
+   - "C-c .": 插入时间戳
+   修改事件戳的显示方式
+   #+BEGIN_SRC elisp
+     (setq-default org-display-custom-times t)
+     (setq org-time-stamp-custom-formats
+       '("<%d %b %Y %a" . "<%d %b %Y %a %H:%M>"))
+   #+END_SRC
+
 * 参考链接
   1. [[http://pragmaticemacs.com/org-mode-tutorials/][Pragmatice Emacs Org-mode Tutorials]]: org-mode 基础入门
   2. [[http://doc.norang.ca/org-mode.html][Organize Your Lift In Plain Text!]]: org-mode 的详细介绍
   3. [[https://blog.aaronbieber.com/2016/01/30/dig-into-org-mode.html][Dig into Org-mode]]: 非常实用的 org-mode 教程
   4. [[https://blog.aaronbieber.com/2016/09/24/an-agenda-for-life-with-org-mode.html][An Angenda for Life with Org-mode]]: 高效地使用 org-mode 的日程管理解决方案
+  5. [[https://orgmode.org/worg/org-faq.html#Appointments/Diary][Appointments/Diary]]: emacs org-mode 周期性时间表示方法
