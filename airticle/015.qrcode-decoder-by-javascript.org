@@ -4,6 +4,29 @@
 #+DATE: 2018-10-11
 #+TAGS: frontend javascipt npm qrcode
 
+* 安装
+使用 qrcode-parser 包来解析二维码。直接使用 yarn 安装
+#+BEGIN_SRC sh
+yarn add qrcode-parser
+#+END_SRC
+* 使用代码
+#+BEGIN_SRC js
+  import qrcodeParser from 'qrcode-parser';
+
+  var imageUrl = '';
+
+  qrcodeParser(imageUrl).then(res => {
+    document.getElementById('content').innerText = res.data
+  })
+
+  const fileElement = document.getElementById('file')
+  fileElement.addEventListener('change', () => {
+    const file = fileElement.files[0]
+    qrcodeParser(file).then(res => {
+      document.getElementById('content').innerText = res.data
+    })
+  }, false)
+#+END_SRC
 * 参考链接
 1. [[https://github.com/sinchang/qrcode-parser][qrcode-parser]]: A pure javascript QR code reading library, accept File object, image url, base64.
 
