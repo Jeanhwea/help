@@ -115,3 +115,4 @@ brew install springboot
 2. [[https://spring.io/projects/spring-boot][Spring Boot Project Homepage]]
 3. [[https://spring.io/guides/gs/rest-service/][RESTful Service]]
 4. [[https://spring.io/guides/gs/consuming-rest-angularjs/][Consuming a RESTful Web Service with AngularJS]]
+5. [[https://github.com/spring-guides/tut-rest.git][Spring Tutorial Github Repo]]
