@@ -29,4 +29,4 @@ yarn add qrcode-parser
 #+END_SRC
 * 参考链接
 1. [[https://github.com/sinchang/qrcode-parser][qrcode-parser]]: A pure javascript QR code reading library, accept File object, image url, base64.
-
+2. [[https://qrcode-parser.netlify.com/][qrcode parser live demo]]
