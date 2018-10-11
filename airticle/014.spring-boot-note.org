@@ -34,6 +34,8 @@ brew install springboot
    spring init --dependencies=web springapp
    # or
    spring init --dweb springapp
+   # set groupId and artifactId
+   spring init --artifactId=demo --groupId=com.example --dependencies=web,jpa springapp
    #+END_SRC
    列出所有的依赖
    #+BEGIN_SRC sh
