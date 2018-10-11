@@ -1,0 +1,34 @@
+#+TITLE: Emmet-mode 或者 Zen Coding
+#+AUTHOR: Jinghui Hu
+#+EMAIL: hujinghui@buaa.edu.cn
+#+DATE: 2018-10-11
+#+TAGS: emmet emmet-mode zen-coding html css
+
+* HTML 展开
+** 基本标签
+#+BEGIN_SRC text
+a                        <a href=""></a>
+a.x                      <a class="x" href=""></a>
+a#q.x                    <a id="q" class="x" href=""></a>
+a#q.x.y.z                <a id="q" class="x y z" href=""></a>
+#q                       <div id="q">
+                         </div>
+.x                       <div class="x">
+                         </div>
+#q.x                     <div id="q" class="x">
+                         </div>
+#q.x.y.z                 <div id="q" class="x y z">
+                         </div>
+#+END_SRC
+
+* CSS 展开
+** 基本用法
+#+BEGIN_SRC text
+p1-2!+m10e+bd1#2s        padding: 1px 2px !important;
+                         margin: 10em;
+                         border: 1px #222 solid;
+#+END_SRC
+
+* 参考链接
+1. [[https://docs.emmet.io/cheat-sheet/][Emmet Cheatsheet]]：emmet 展开的全部介绍
+2. [[https://github.com/smihica/emmet-mode][Emacs emmet-mode]]：可以翻阅一些常用的 emmet 展开
