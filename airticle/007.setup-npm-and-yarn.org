@@ -44,7 +44,7 @@ npm install -g package-name
 # or
 yarn global add package-name
 #+end_src
-** 项目安装包
+** 安装项目模块
 给当前项目添加一个包，并将引用信息添加的 *package.json* 文件中。
 #+begin_src sh
 npm install --save  package-name
@@ -54,6 +54,15 @@ yarn add package-name
 yarn add package-name@1.2.3 # installs a specific version of a package from the registry.
 yarn add --dev package-name
 #+end_src
+** 卸载项目模块
+卸载将当前项目中的制定模块，并且更新 *package.json* 文件中的相关信息。
+#+BEGIN_SRC sh
+npm uninstall package-name
+npm uninstall package-name --save-dev
+# or
+yarn remove package-name
+yarn remove package-name --dev
+#+END_SRC
 * 参考链接
 1. [[https://yarnpkg.com/en/][yarn]]：yarn 文档
 2. [[https://yarnpkg.com/en/docs/cli/][yarn cli]]：yarn 命令行手册
