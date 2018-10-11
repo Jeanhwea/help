@@ -1,0 +1,9 @@
+#+TITLE: 使用 JavaScript 解析二维码
+#+AUTHOR: Jinghui Hu
+#+EMAIL: hujinghui@buaa.edu.cn
+#+DATE: 2018-10-11
+#+TAGS: frontend javascipt npm qrcode
+
+* 参考链接
+1. [[https://github.com/sinchang/qrcode-parser][qrcode-parser]]: A pure javascript QR code reading library, accept File object, image url, base64.
+

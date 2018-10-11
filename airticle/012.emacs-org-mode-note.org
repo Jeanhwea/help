@@ -2,6 +2,7 @@
 #+AUTHOR: Jinghui Hu
 #+EMAIL: hujinghui@buaa.edu.cn
 #+DATE: 2018-10-08
+#+TAGS: emacs org-mode
 
 * 基本编辑任务
     org-mode 能够完美解决任务管理的各种问题，包括任务/子任务的划分，关键时间的设
@@ -87,7 +88,7 @@
           (?C . (:foreground "#268bd2"))))
    #+END_SRC
       
-* 有用的链接
+* 参考链接
   1. [[http://pragmaticemacs.com/org-mode-tutorials/][Pragmatice Emacs Org-mode Tutorials]]: org-mode 基础入门
   2. [[http://doc.norang.ca/org-mode.html][Organize Your Lift In Plain Text!]]: org-mode 的详细介绍
   3. [[https://blog.aaronbieber.com/2016/01/30/dig-into-org-mode.html][Dig into Org-mode]]: 非常实用的 org-mode 教程
