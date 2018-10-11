@@ -4,12 +4,15 @@
 #+DATE: 2018-10-11
 #+TAGS: frontend javascipt npm qrcode
 
-* 安装
+* qrcode-parser
+一个没有依赖的二维码前端解析工具。有点是比较轻量级，缺点是不会调用摄像头，需要编
+写调用摄像头的代码。
+** 安装
 使用 qrcode-parser 包来解析二维码。直接使用 yarn 安装
 #+BEGIN_SRC sh
 yarn add qrcode-parser
 #+END_SRC
-* 使用代码
+** 使用
 #+BEGIN_SRC js
   import qrcodeParser from 'qrcode-parser';
 
@@ -26,6 +29,62 @@ yarn add qrcode-parser
       document.getElementById('content').innerText = res.data
     })
   }, false)
+#+END_SRC
+** ngx-qrcode2
+一个集成到 angular 的二维码生成工具。只能生成，不能读取。
+** 安装
+#+BEGIN_SRC sh
+yarn add ngx-qrcode2
+#+END_SRC
+** 使用
+Appmodule 中导入模块
+#+BEGIN_SRC typescript
+  import { BrowserModule } from '@angular/platform-browser';
+  import { NgModule } from '@angular/core';
+  import { NgxQRCodeModule } from 'ngx-qrcode2';
+
+  import { AppComponent } from './app.component';
+
+  @NgModule({
+    declarations: [
+      AppComponent
+    ],
+    imports: [
+      BrowserModule,
+      NgxQRCodeModule
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
+  })
+  export class AppModule { }
+#+END_SRC
+app.component.html 插入的模板
+#+BEGIN_SRC html
+  <div style="text-align:center">
+    <h1>ngx-qrcode2 demo</h1>
+  </div>
+
+  <ngx-qrcode
+        [qrc-element-type]="elementType"
+        [qrc-value] = "value"
+        qrc-class = "aclass"
+        qrc-errorCorrectionLevel = "L">
+  </ngx-qrcode>
+#+END_SRC
+app.component.ts 中添加代码
+#+BEGIN_SRC typescript
+  import { Component } from '@angular/core';
+
+  @Component({
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.css']
+  })
+  export class AppComponent {
+    title = 'app';
+    elementType = 'url';
+    value = 'Techiediaries';
+  }
 #+END_SRC
 * 参考链接
 1. [[https://github.com/sinchang/qrcode-parser][qrcode-parser]]: A pure javascript QR code reading library, accept File object, image url, base64.
