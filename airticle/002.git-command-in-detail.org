@@ -154,9 +154,7 @@
 * 工作流
 ** 批量更新当前文件夹下代码仓库
    #+BEGIN_SRC sh
-     for dotgit in `find $(pwd) -type d -name '.git'`;
-       do cd $dotgit && git pull;
-     done
+     for dotgit in `find $(pwd) -type d -name '.git'`; do cd $dotgit/.. && git pull; done
    #+END_SRC
 ** 初次添加远端并且上传代码
    #+BEGIN_SRC sh
