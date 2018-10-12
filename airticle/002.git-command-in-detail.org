@@ -238,4 +238,5 @@ git-rebase 的 *--on-to* 选项也是非常重要的，可以跨多个分支来�
 2. [[https://www.atlassian.com/git][Atlassian Git Tutorial]]
 3. [[https://help.github.com/][Github Help Page]]
 4. [[https://git-scm.com/doc][Pro Git]]
-5. [[https://www.gitignore.io][gitignore]]
+5. [[https://www.gitignore.io][online gitignore pattern]]
+6. [[https://github.com/jeanhwea/dotfiles/blob/master/git/gitconfig][My .gitconfig file]]
