@@ -154,10 +154,15 @@
        do cd $dotgit && git pull;
      done
    #+END_SRC
-** 添加GitHub远端
+** 初次添加远端并且上传代码
    #+BEGIN_SRC sh
      git remote add origin git@github.com:Username/Repo.git
      git push -u origin master
+   #+END_SRC
+   #+BEGIN_SRC sh
+     git remote add origin git@gitlab.com:Jeanhwea/brain.git
+     git push -u origin --all
+     git push -u origin --tags
    #+END_SRC
 ** Git Rebase 工作流
 git-rebase 是用来修改本地提交的，目的是为了让提交历史变成线性。
