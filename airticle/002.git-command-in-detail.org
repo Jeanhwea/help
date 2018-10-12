@@ -118,12 +118,13 @@
     | git diff HEAD     | 查看工作目录和最近一次提交的差异 |
     | git diff --cached | 查看 Index 和最近一次提交的差异  |
 *** 忽略文件
-    *.gitignore* 的模式
+    *.gitignore* 的模式如下
     #+BEGIN_SRC text
     *.log
     build/
     temp-*
     #+END_SRC
+    通常，可以使用在线工具来生成所需要忽略的文件，详见 [[https://www.gitignore.io/][gitignore.io]] 。
     | 命令                                              | 含义               |
     |---------------------------------------------------+--------------------|
     | git ls-files --other --ignored --exclued-standard | 查看使用忽略的文件 |
@@ -233,7 +234,8 @@ git-rebase 的 *--on-to* 选项也是非常重要的，可以跨多个分支来�
 #+END_SRC
 
 * 参考链接
-- [[https://rogerdudler.github.io/git-guide/index.zh.html][Git 简明指南]]
-- [[https://www.atlassian.com/git][Atlassian Git Tutorial]]
-- [[https://help.github.com/][Github Help Page]]
-- [[https://git-scm.com/doc][Pro Git]]
+1. [[https://rogerdudler.github.io/git-guide/index.zh.html][Git 简明指南]]
+2. [[https://www.atlassian.com/git][Atlassian Git Tutorial]]
+3. [[https://help.github.com/][Github Help Page]]
+4. [[https://git-scm.com/doc][Pro Git]]
+5. [[https://www.gitignore.io][gitignore]]
