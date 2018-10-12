@@ -2,6 +2,7 @@
 #+AUTHOR: Jinghui Hu
 #+EMAIL: hujinghui@buaa.edu.cn
 #+DATE: 2018-10-08
+#+TAGS: frontend angular javascript
 
 * 配置环境
 [[https://angular.io/][Angular]] 是一个Google推出的新一代 Web 前端框架，其优点就不需要我详细叙述了，指的
@@ -36,7 +37,7 @@ yarn global add @angular/cli
     #+END_SRC
     CLI 创建了一个新的文件夹 src/app/my-component-name/，并生成了
     MyComponentName 的三个文件。
-* 有用的链接
+* 参考链接
   1. [[https://www.angular.cn/][Angular中文网]]
   2. [[https://angular.io/][Official Angular English Site]]
   3. [[https://angular.io/guide/quickstart][Angular Quick Start]]: nghero教程，代码参考 [[https://github.com/jeanhwea/ngheroes/tree/master/][nghero github repo]]
