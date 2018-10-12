@@ -3,8 +3,25 @@
 #+EMAIL: hujinghui@buaa.edu.cn
 #+DATE: 2018-10-08
 
-* 底层(plumbing)命令
+* 高层(porcelain)命令
+  由于 Git 最初是一套面向版本控制系统的工具集，而不是一个完整的、用户友好的版本
+  控制系统，所以它还包含了一部分用于完成底层工作的命令。 这些命令被设计成能以
+  UNIX 命令行的风格连接在一起，抑或藉由脚本调用，来完成工作。 这部分命令一般被称
+  作“底层（plumbing）”命令，而那些更友好的命令则被称作“高层（porcelain）”命
+  令。
+** 基础指令
+   | 命令                          | 含义                                                                           |
+   |-------------------------------+--------------------------------------------------------------------------------|
+   | ~git init~                    | 初始化代码仓库，如果没有参数的话直接初始化当前目录                             |
+   | ~git clone <repo>~            | 将 <repo> 的代码仓库克隆的本地                                                 |
+   | ~git config user.name <name>~ | 定义配置项，这里定义的是用户姓名，通常需要添加 *--global* 选项来设置全局配置项 |
+   | ~git add <directory>~         | 将 <directory> 目录添加到 INDEX 里面                                           |
+   | ~git commit -m "<message>"~   | 将 INDEX 中保存的快照提交到代码仓库，并设置提交信息为 <message>                |
+   | git status                    | 显示当前目录状态                                                               |
 
+
+
+* 底层(plumbing)命令
   早期的 Git（主要是 1.5 之前的版本）的用户界面要比现在复杂的多，因为它更侧重于
   作为一个文件系统，而不是一个打磨过的版本控制系统。 不时会有一些陈词滥调抱怨早
   期那个晦涩复杂的 Git 用户界面；不过最近几年来，它已经被改进到不输于任何其他版
@@ -18,14 +35,6 @@
   git commit-tree <sha-tree> -m 'message'
   git update-ref refs/heads/master <sha-commit>
   #+END_SRC
-
-* 高层(porcelain)命令
-  
-  由于 Git 最初是一套面向版本控制系统的工具集，而不是一个完整的、用户友好的版本
-  控制系统，所以它还包含了一部分用于完成底层工作的命令。 这些命令被设计成能以
-  UNIX 命令行的风格连接在一起，抑或藉由脚本调用，来完成工作。 这部分命令一般被称
-  作“底层（plumbing）”命令，而那些更友好的命令则被称作“高层（porcelain）”命
-  令。
 
 * 工作流
 ** 批量更新当前文件夹下代码仓库
@@ -103,7 +112,8 @@ git-rebase 的 *--on-to* 选项也是非常重要的，可以跨多个分支来�
   #
   #  E---H'---I'---J'  topicA
 #+END_SRC
-* 有用的链接
+
+* 参考链接
 - [[https://rogerdudler.github.io/git-guide/index.zh.html][Git 简明指南]]
 - [[https://www.atlassian.com/git][Atlassian Git Tutorial]]
 - [[https://help.github.com/][Github Help Page]]
