@@ -86,7 +86,7 @@ yarn add qrcode-parser
     })
   }, false)
 #+END_SRC
-** ngx-qrcode2
+* ngx-qrcode2
 一个集成到 angular 的二维码生成工具。只能生成，不能读取。
 ** 安装
 #+BEGIN_SRC sh
