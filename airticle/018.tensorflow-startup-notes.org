@@ -1,0 +1,33 @@
+#+TITLE: TensorFlow 开始的笔记
+#+AUTHOR: Jinghui Hu
+#+EMAIL: hujinghui@buaa.edu.cn
+#+DATE: 2018-10-12
+#+TAGS: python tensorflow machine-learning
+
+* pandas
+** 安装
+安装详细教程见 [[http://pandas.pydata.org/pandas-docs/stable/install.html][here]]。使用 pip 安装命令如下：
+#+BEGIN_SRC sh
+  pip install pandas
+#+END_SRC
+** 快速上手
+** 导入
+#+BEGIN_SRC python :session pandas-sess
+  import pandas as pd
+  import numpy as np
+  import matplotlib.pyplot as plt
+#+END_SRC
+
+#+RESULTS:
+
+** 创建对象
+#+BEGIN_SRC python :session pandas-sess :exports results
+  res = pd.Series([1,3,5,np.nan,6,8])
+  return res
+#+END_SRC
+
+#+RESULTS:
+
+* 参考链接
+1. [[http://pandas.pydata.org/pandas-docs/stable/10min.html][10 Minutes to pandas]]
+
