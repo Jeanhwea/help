@@ -7,4 +7,4 @@
 在Firefox浏览器的地址栏中输入about:config，配置 *layout.css.devPixelsPerPx* 参数
 的数字。例如：我想将浏览器的缩放成原来的150%，只需要修改值为1.5即可。
 
-[[../resource/image/2018/10/firefox-zoom-pixel.jpg][firefox-zoom-pixel]]
+[[../resource/image/2018/10/firefox-zoom-pixel.png][firefox-zoom-pixel]]
