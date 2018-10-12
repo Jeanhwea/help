@@ -2,6 +2,7 @@
 #+AUTHOR: Jinghui Hu
 #+EMAIL: hujinghui@buaa.edu.cn
 #+DATE: 2018-10-10
+#+TAGS: backend spring-boot maven java
 
 * 环境配置
 [[http://spring.io/projects/spring-boot][spring-boot-cli]]（Spring Boot CLI）是一种快速开发 [[https://spring.io/projects/spring-boot][spring]] 应用的命令行界面， CLI
@@ -16,7 +17,7 @@ CLI 可以检测到代码中使用的类，知道需要给 classpath 中添加�
 
 下载二进制文件，解压到软件目录，并将 bin 目录添加到 *PATH* 环境变量中
 #+BEGIN_SRC sh
-curl https://repo.spring.io/release/org/springframework/boot/spring-boot-cli/2.0.5.RELEASE/spring-boot-cli-2.0.5.RELEASE-bin.tar.gz
+curl -O https://repo.spring.io/release/org/springframework/boot/spring-boot-cli/2.0.5.RELEASE/spring-boot-cli-2.0.5.RELEASE-bin.tar.gz
 #+END_SRC
 
 也可以直接通过网页链接下载 [[https://repo.spring.io/release/org/springframework/boot/spring-boot-cli][spring-boot-cli-download]]。macOS 可以还可以通过
