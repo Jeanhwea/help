@@ -119,3 +119,4 @@ brew install springboot
 3. [[https://spring.io/guides/gs/rest-service/][RESTful Service]]
 4. [[https://spring.io/guides/gs/consuming-rest-angularjs/][Consuming a RESTful Web Service with AngularJS]]
 5. [[https://github.com/spring-guides/tut-rest.git][Spring Tutorial Github Repo]]
+6. [[https://www.imooc.com/learn/1058][Spring Boot 2.0深度实践之系列总览]]： 视频介绍
