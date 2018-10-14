@@ -65,5 +65,6 @@ yarn remove package-name --dev
 #+END_SRC
 * 参考链接
 1. [[https://yarnpkg.com/en/][yarn]]：yarn 文档
-2. [[https://yarnpkg.com/en/docs/cli/][yarn cli]]：yarn 命令行手册
-3. [[https://docs.npmjs.com/][npm]]：npm 文档，包括 npm 的介绍和命令说明
+2. [[https://yarnpkg.com/zh-Hans/][yarn zh]]: yarn 中文文档
+3. [[https://yarnpkg.com/en/docs/cli/][yarn cli]]：yarn 命令行手册
+4. [[https://docs.npmjs.com/][npm]]：npm 文档，包括 npm 的介绍和命令说明
