@@ -1,0 +1,32 @@
+#+TITLE: 文件夹结构
+#+AUTHOR: Jinghui Hu
+#+EMAIL: hujinghui@buaa.edu.cn
+#+DATE: 2018-10-15
+#+TAGS: standard personal organization
+
+* 代码管理
+  - Codes: 代码根目录，通常放在 HOME 下
+    - common
+      - dotfiles
+      - jesenia
+      - orgfiles
+      - script
+    - learn
+      - algorithm
+      - backend
+      - editor
+      - frontend
+    - work
+      - avic
+      - buaa
+      - tencent
+
+* 文档管理
+  - Document: 文档根目录，通常放在 HOME 下
+    - archive
+      - mendeley
+    - common
+      - dropbox
+    - work
+      - avic
+      - tencent
