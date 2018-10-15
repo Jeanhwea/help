@@ -2,6 +2,7 @@
 #+AUTHOR: Jinghui Hu
 #+EMAIL: hujinghui@buaa.edu.cn
 #+DATE: 2018-10-08
+#+TAGS: git cli version-control
 
 * 高层(porcelain)命令
   由于 Git 最初是一套面向版本控制系统的工具集，而不是一个完整的、用户友好的版本
@@ -98,7 +99,7 @@
     | git push <remote> --force              | 强制推送的远端仓库                                                                    |
     | git push <remote> --all                | 将本地的全部分支推动的远端仓库                                                        |
     | git push <remote> --tags               | 将本地的全部标签推送的远端仓库， *--all* 选项不会自动推送标签，并且和 *--tags* 不兼容 |
-    | git remote set-url <branch> <upstream> |                                                                                       |
+    | git remote set-url <remote> <upstream> | 将 <remote> 的上行流修改成 <upstream>                                                 |
 ** 查看追踪
 *** 查看历史
     | 命令                         | 含义                                                       |
@@ -230,7 +231,27 @@ git-rebase 的 *--on-to* 选项也是非常重要的，可以跨多个分支来�
   #
   #  E---H'---I'---J'  topicA
 #+END_SRC
-
+** Git Open， 在浏览器中打开 git 代码仓链接
+   [[https://github.com/paulirish/git-open][git-open]] 是一个可以在浏览器中打开当前 git 代码仓库中的文件，网址的工具。目前
+   支持 GitHub, GitLab, Bitbucket这些网站。
+*** 安装
+    直接通过 yarn 安装即可。
+    #+BEGIN_SRC sh
+      yarn global add git-open
+    #+END_SRC
+*** 使用方法
+    打开当前项目的网站
+    #+BEGIN_SRC sh
+      git open
+    #+END_SRC
+    打开特定 <remote> 的网址
+    #+BEGIN_SRC sh
+      git open <remote>
+    #+END_SRC
+    打开特定 <remote> 的分支 <branch> 的网址
+    #+BEGIN_SRC sh
+      git open <remote> <branch>
+    #+END_SRC
 * 参考链接
 1. [[https://rogerdudler.github.io/git-guide/index.zh.html][Git 简明指南]]
 2. [[https://www.atlassian.com/git][Atlassian Git Tutorial]]
