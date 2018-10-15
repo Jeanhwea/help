@@ -6,18 +6,23 @@
 
 * 代码管理
   - Codes: 代码根目录，通常放在 HOME 下
-    - common
+    - archive: 代码存档，别人给的文件
+    - common: 通用文件，存放常用的配置代码
       - dotfiles
       - jesenia
       - orgfiles
-      - script
-    - learn
+      - scripts
+    - learn: 学习相关代码，涉及语言框架的学习
       - algorithm
       - backend
       - editor
       - frontend
-    - public
-    - work
+    - public: 公共代码仓库
+      - ssh
+      - scratch
+      - tmp
+    - tool: 项目开发中使用到的通用工具
+    - work: 工作相关的文件，以学校、部门或者公司的简称命名
       - avic
       - buaa
       - tencent
