@@ -63,6 +63,15 @@ npm uninstall package-name --save-dev
 yarn remove package-name
 yarn remove package-name --dev
 #+END_SRC
+** 升级项目模块
+基于 *package.json* 和 *yarn.lock* 中的信息来升级一个特点项目模块。
+#+BEGIN_SRC sh
+npm update package-name
+npm upgrade package-name # upgrade is an alias of update
+# or
+yarn upgrade package-name
+yarn upgrade --latest package-name
+#+END_SRC
 * 参考链接
 1. [[https://yarnpkg.com/en/][yarn]]：yarn 文档
 2. [[https://yarnpkg.com/zh-Hans/][yarn zh]]: yarn 中文文档
