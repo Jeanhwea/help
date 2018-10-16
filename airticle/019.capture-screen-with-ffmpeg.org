@@ -1,0 +1,24 @@
+#+TITLE: 使用 ffmpeg 录屏
+#+AUTHOR: Jinghui Hu
+#+EMAIL: hujinghui@buaa.edu.cn
+#+DATE: 2018-10-16
+#+TAGS: ffmpeg screen-capture screenshot video
+
+* Windows
+使用 Windows 自带的 GDI screengrabber 录屏非常方便。
+** 列出使用的设备信息
+#+begin_src sh
+  ffmpeg -list_devices true -f dshow -i dummy
+#+end_src
+** 录取整个屏幕
+#+BEGIN_SRC sh
+  ffmpeg -f gdigrab -framerate 30 -i desktop output.mkv
+#+END_SRC
+** 录取部分屏幕
+#+BEGIN_SRC sh
+  ffmpeg -f gdigrab -framerate 30 -offset_x 10 -offset_y 20 -video_size 1280x720 -show_region 1 -i desktop output.mkv
+#+END_SRC
+
+* 参考链接
+1. [[https://trac.ffmpeg.org/wiki/Capture/Desktop][Capture Desktop]]
+2. [[https://www.ffmpeg.org/][ffmpeg homepage]]
