@@ -1,0 +1,21 @@
+#+TITLE: 使用 JavaScript 导出 Excel 文件
+#+AUTHOR: Jinghui Hu
+#+EMAIL: hujinghui@buaa.edu.cn
+#+DATE: 2018-10-16
+#+TAGS: frontend javascript excel
+
+* SheetJS
+** 安装
+   SheetJS 可以读写 Excel 文件，它的社区版本是开源免费使用的，安装方法如下：
+   #+BEGIN_SRC sh
+     yarn add xlsx
+   #+END_SRC
+
+** 使用
+   官网上的使用方法见 [[https://github.com/SheetJS/js-xlsx/tree/078e5b7ebac1d8138b118292668a4dddaf0a9455/demos/angular2][sheetjs angular2]] 。
+
+* 参考链接
+1. [[https://github.com/SheetJS/js-xlsx][SheetJS]]: SheetJS Community Edition -- Spreadsheet Parser and Writer
+2. [[https://yarnpkg.com/en/package/xlsx][yarn package site: xlsx]]
+
+
