@@ -41,3 +41,5 @@ yarn global add @angular/cli
   1. [[https://www.angular.cn/][Angular中文网]]
   2. [[https://angular.io/][Official Angular English Site]]
   3. [[https://angular.io/guide/quickstart][Angular Quick Start]]: nghero教程，代码参考 [[https://github.com/jeanhwea/ngheroes/tree/master/][nghero github repo]]
+  4. [[https://angular.io/api][Angular API List]]
+  5. [[https://angular.io/guide/cheatsheet][Angular Cheetsheet]]
