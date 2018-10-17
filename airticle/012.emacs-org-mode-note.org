@@ -56,23 +56,23 @@
           (python . t)))
    #+END_SRC
 
-   #+BEGIN_SRC python :session :results file
+   #+BEGIN_SRC python :results file
      import matplotlib
      import matplotlib.pyplot as plt
 
      matplotlib.use('Agg')
 
-     filename = 'myfig.pdf'
+     filename = 'myfig.png'
      fig = plt.figure(figsize=(3,2))
      plt.plot([1,3,2])
      fig.tight_layout()
      plt.savefig(filename)
 
-     filename # return this to org-mode
+     return filename # return this to org-mode
    #+END_SRC
 
    #+RESULTS:
-   [[file:myfig.pdf]]
+   [[file:myfig.png]]
 
 * 管理事件
 ** "TODO" 事件
