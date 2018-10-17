@@ -10,33 +10,38 @@
 Angular 的提供中文阅读支撑，详见 [[https://www.angular.cn/][Angular中文版]]。
 #+BEGIN_SRC sh
 # 使用 npm 安装
-npm install -g @angular/cli
+  npm install -g @angular/cli
 # 或者使用 yarn 安装
-yarn global add @angular/cli
+  yarn global add @angular/cli
 #+END_SRC
 * Angular 命令行
 [[https://cli.angular.io/][Angular CLI]] 是高效管理 Angular 项目的一个命令行工具。
 ** 创建新项目 ng new
    打开终端窗口。运行下列命令来生成一个新项目以及默认的应用代码。
    #+BEGIN_SRC sh
-   ng new my-project-name
+     ng new my-project-name
    #+END_SRC
    如果想要生成使用 sass 开发的项目需要加入选项。
    #+BEGIN_SRC sh
-   ng new my-project-name --style=scss
+     ng new my-project-name --style=scss
    #+END_SRC
 ** 启动项目 ng serve
    安装依赖包和启动项目。命令如下：
    #+BEGIN_SRC sh
-   ng serve
+     ng serve
    #+END_SRC
 ** 生成代码模板 ng generate
 *** 生成组件
     #+BEGIN_SRC sh
-    ng generate component my-component-name
+      ng generate component my-component-name
     #+END_SRC
     CLI 创建了一个新的文件夹 src/app/my-component-name/，并生成了
-    MyComponentName 的三个文件。
+    MyComponentName 的相关文件。
+*** 生成服务
+    #+BEGIN_SRC sh
+	  ng generate service my-service-name
+    #+END_SRC
+    CLI 创建 my-service-name.service.ts 文件，并生成了 MyServiceNameService 服务。
 * 参考链接
   1. [[https://www.angular.cn/][Angular中文网]]
   2. [[https://angular.io/][Official Angular English Site]]
