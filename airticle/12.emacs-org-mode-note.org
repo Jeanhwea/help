@@ -94,7 +94,7 @@
             ("WAITING" :foreground "magenta")
             ("DONE" :foreground "forest green")
             ("CANCEL" :foreground "forest green")))
-    #+end_src
+    #+END_SRC
     [[https://orgmode.org/guide/Multi_002dstate-workflows.html][org-todo-keywords]] 值得注意的是 "|" 用来分割“待办”状态和“完成”状态。
 ** 设置优先级
    #+BEGIN_SRC elisp

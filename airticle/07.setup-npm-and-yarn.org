@@ -32,28 +32,28 @@ yarn config set registry https://registry.npm.taobao.org
 ** 下载项目包
 根据 *package.json* 文件中的引用记录将镜像源中的包下载到本地 *node_modules* 文件
 夹中。
-#+begin_src sh
+#+BEGIN_SRC sh
 npm install
 # or
 yarn install
-#+end_src
+#+END_SRC
 ** 全局安装包
 将一些命令行工具安装到全局包仓库中
-#+begin_src sh
+#+BEGIN_SRC sh
 npm install -g package-name
 # or
 yarn global add package-name
-#+end_src
+#+END_SRC
 ** 安装项目模块
 给当前项目添加一个包，并将引用信息添加的 *package.json* 文件中。
-#+begin_src sh
+#+BEGIN_SRC sh
 npm install --save  package-name
 npm install --save-dev package-name
 # or
 yarn add package-name
 yarn add package-name@1.2.3 # installs a specific version of a package from the registry.
 yarn add --dev package-name
-#+end_src
+#+END_SRC
 ** 卸载项目模块
 卸载将当前项目中的制定模块，并且更新 *package.json* 文件中的相关信息。
 #+BEGIN_SRC sh
