@@ -2,6 +2,7 @@
 #+AUTHOR: Jinghui Hu
 #+EMAIL: hujinghui@buaa.edu.cn
 #+DATE: 2018-10-08
+#+TAGS: maven java mvn config
 
 * 配置Maven
 [[http://maven.apache.org/][Maven]]是一个非常优秀的Java项目中代码包管理工具。它默认将公共仓库放在
@@ -284,7 +285,6 @@ under the License.
       <url>https://maven.aliyun.com/nexus/content/groups/public</url>
     </mirror>
 #+END_SRC
-
 
 * 使用Maven
 Maven官方给出了一个[[http://maven.apache.org/guides/getting-started/maven-in-five-minutes.html][五分钟教程]]，里面有详细的介绍。

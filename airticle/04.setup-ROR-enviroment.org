@@ -2,14 +2,13 @@
 #+AUTHOR: Jinghui Hu
 #+EMAIL: hujinghui@buaa.edu.cn
 #+DATE: 2018-10-08
-
+#+TAGS: ruby ror gem rails
 
 * Step1: 安装准备工具
   直接apt-get安装就行了
   #+BEGIN_SRC sh
   sudo apt-get install git vim curl
   #+END_SRC
-
 
 * Step2: 安装RVM
   参考[[https://rvm.io][RVM]]官网的教程。先安装RVM的gpg秘钥
@@ -21,7 +20,6 @@
   #+BEGIN_SRC sh
   \curl -sSL https://get.rvm.io | bash -s stable
   #+END_SRC
-
 
 * Step3: 使用RVM配置ruby和gem
   先安装RVM在Ubuntu环境下的准备环境，并使用RVM安装最新版本的ruby。
@@ -40,7 +38,6 @@
   rvm rubygems current
   #+END_SRC
 
-
 * Step4: 配置RubyGems的镜像
   国内的gem镜像通常是被墙了，所以可以使用[[http://gems.ruby-china.org/][Ruby China]]的Gem镜像来改善国内的gem下载
   速度。
@@ -55,13 +52,11 @@
   gem sources --add https://gems.ruby-china.org/ --remove https://rubygems.org/
   #+END_SRC
 
-
 * Step5: 使用Gem安装rails
   直接安装rails就可以了 
   #+BEGIN_SRC sh
   gem install rails
   #+END_SRC
-
 
 
 * Step6: 建立rails工程

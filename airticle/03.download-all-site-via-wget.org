@@ -2,6 +2,7 @@
 #+AUTHOR: Jinghui Hu
 #+EMAIL: hujinghui@buaa.edu.cn
 #+DATE: 2018-10-08
+#+TAGS: workflows download cli wget
 
 分享一个使用wget离线下载整个站点的命令
 

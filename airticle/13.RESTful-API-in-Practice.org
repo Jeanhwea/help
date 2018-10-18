@@ -2,6 +2,7 @@
 #+AUTHOR: Jinghui Hu
 #+EMAIL: hujinghui@buaa.edu.cn
 #+DATE: 2018-10-10
+#+TAGS: API RESTful web
 
 RESTful (REpresentational State Transfer) 是目前最流行的 API 设计规范，用于 Web
 数据接口的设计。
