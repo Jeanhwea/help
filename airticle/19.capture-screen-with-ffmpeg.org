@@ -73,3 +73,4 @@ ffmpeg version 4.0.2 Copyright (c) 2000-2018 the FFmpeg developers
 * 参考链接
 1. [[https://trac.ffmpeg.org/wiki/Capture/Desktop][Capture Desktop]]
 2. [[https://www.ffmpeg.org/][ffmpeg homepage]]
+3. [[https://github.com/jeanhwea/emacs.d/blob/master/lisp/init-ffmpeg.el][init-ffmpeg.el]]
