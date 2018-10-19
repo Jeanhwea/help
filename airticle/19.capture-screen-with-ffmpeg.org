@@ -10,6 +10,25 @@
 #+BEGIN_SRC sh
   ffmpeg -list_devices true -f dshow -i dummy
 #+END_SRC
+在我的 Windows 7 下面信息如下：
+#+BEGIN_SRC text
+ffmpeg version 3.4 Copyright (c) 2000-2017 the FFmpeg developers
+  built with gcc 7.2.0 (GCC)
+  configuration: --enable-gpl --enable-version3 --enable-sdl2 --enable-bzlib --enable-fontconfig --enable-gnutls --enable-iconv --enable-libass --enable-libbluray --enable-libfreetype --enable-libmp3lame --enable-libopenjpeg --enable-libopus --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libtheora --enable-libtwolame --enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libzimg --enable-lzma --enable-zlib --enable-gmp --enable-libvidstab --enable-libvorbis --enable-cuda --enable-cuvid --enable-d3d11va --enable-nvenc --enable-dxva2 --enable-avisynth --enable-libmfx
+  libavutil      55. 78.100 / 55. 78.100
+  libavcodec     57.107.100 / 57.107.100
+  libavformat    57. 83.100 / 57. 83.100
+  libavdevice    57. 10.100 / 57. 10.100
+  libavfilter     6.107.100 /  6.107.100
+  libswscale      4.  8.100 /  4.  8.100
+  libswresample   2.  9.100 /  2.  9.100
+  libpostproc    54.  7.100 / 54.  7.100
+[dshow @ 0000000000567740] DirectShow video devices (some may be both video and audio devices)
+[dshow @ 0000000000567740] Could not enumerate video devices (or none found).
+[dshow @ 0000000000567740] DirectShow audio devices
+[dshow @ 0000000000567740] Could not enumerate audio only devices (or none found).
+dummy: Immediate exit requested
+#+END_SRC
 ** 录取整个屏幕
 #+BEGIN_SRC sh
   ffmpeg -f gdigrab -framerate 30 -i desktop output.mkv
@@ -24,7 +43,7 @@ mac 下使用 avfoundation 设备可以快速地录屏
 #+BEGIN_SRC sh
   ffmpeg -f avfoundation -list_devices true -i ""
 #+END_SRC
-在文档 macbook 上的输出设备如下：
+在我的 macbook 上的输出设备如下：
 #+BEGIN_SRC text
 ffmpeg version 4.0.2 Copyright (c) 2000-2018 the FFmpeg developers
   built with Apple LLVM version 9.1.0 (clang-902.0.39.2)
