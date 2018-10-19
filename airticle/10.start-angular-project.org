@@ -9,9 +9,9 @@
 一提的是，在 Angular 官网上有启动 Angular 项目的教程 [[https://angular.io/guide/quickstart][Angular Quick Start]]。
 Angular 的提供中文阅读支撑，详见 [[https://www.angular.cn/][Angular中文版]]。
 #+BEGIN_SRC sh
-# 使用 npm 安装
+  # 使用 npm 安装
   npm install -g @angular/cli
-# 或者使用 yarn 安装
+  # 或者使用 yarn 安装
   yarn global add @angular/cli
 #+END_SRC
 * Angular 命令行
@@ -39,9 +39,17 @@ Angular 的提供中文阅读支撑，详见 [[https://www.angular.cn/][Angular�
     MyComponentName 的相关文件。
 *** 生成服务
     #+BEGIN_SRC sh
-	  ng generate service my-service-name
+      ng generate service my-service-name
     #+END_SRC
     CLI 创建 my-service-name.service.ts 文件，并生成了 MyServiceNameService 服务。
+*** 生成路由
+    Angular 的最佳实践之一就是在一个独立的顶级模块中加载和配置路由器，它专注于路
+    由功能，然后由根模块 AppModule 导入它。
+    #+BEGIN_SRC sh
+      ng generate module app-routing --flat --module=app
+    #+END_SRC
+    ~--flat~ 把这个文件放进了 src/app 中，而不是单独的目录中。
+    ~--module=app~ 告诉 CLI 把它注册到 AppModule 的 imports 数组中。
 * 参考链接
   1. [[https://www.angular.cn/][Angular中文网]]
   2. [[https://angular.io/][Official Angular English Site]]
