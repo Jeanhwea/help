@@ -1,0 +1,9 @@
+#+TITLE: 模块
+#+AUTHOR: Jinghui Hu
+#+EMAIL: hujinghui@buaa.edu.cn
+#+DATE: 2018-10-23
+#+TAGS: python programming module
+
+#+BEGIN_SRC python :preamble "# -*- coding: utf-8 -*-" :session default
+
+#+END_SRC

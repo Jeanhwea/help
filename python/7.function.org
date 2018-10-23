@@ -1,0 +1,54 @@
+#+TITLE: 函数
+#+AUTHOR: Jinghui Hu
+#+EMAIL: hujinghui@buaa.edu.cn
+#+DATE: 2018-10-23
+#+TAGS: python programming function
+
+#+BEGIN_SRC python :preamble "# -*- coding: utf-8 -*-" :session default
+  def myfunc(arg):
+      print arg
+
+  # parameter with single star
+  def print_param(*params):
+      print params
+
+  print_param('aa') #>>> ('aa',)
+  print_param('aa', 'bb') #>>> ('aa', 'bb')
+
+
+  # parameter with double star
+  def print_param2(**params):
+      print params
+  print_param2(x=1, y=2) #>>> {'y': 2, 'x': 1}
+
+
+  def print_param3(x, y, *args, **kargs):
+      print x, y
+      print args
+      print kargs
+
+  print_param3(1, 2, 3, 4, 5, p='3', k='d')
+  '''
+  #>>> print_param3(1, 2, 3, 4, 5, p='3', k='d')
+  1 2
+  (3, 4, 5)
+  {'p': '3', 'k': 'd'}
+  '''
+
+  numseq = map(str, range(10))
+  numseq #>>> ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+  filnum = filter(lambda x: x > 5, range(10))
+  filnum #>>> [6, 7, 8, 9]
+  ans = reduce(lambda x, y: x+y, range(100))
+  print ans #>>> 4950
+
+  g_x = 0
+  def change_x():
+      global g_x
+      g_x += 1
+
+  g_x #>>> 0
+  change_x()
+  g_x #>>> 1
+
+#+END_SRC

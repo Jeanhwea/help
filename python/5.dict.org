@@ -1,0 +1,83 @@
+#+TITLE: 字典
+#+AUTHOR: Jinghui Hu
+#+EMAIL: hujinghui@buaa.edu.cn
+#+DATE: 2018-10-23
+#+TAGS: python programming dictionary
+
+#+BEGIN_SRC python :preamble "# -*- coding: utf-8 -*-" :session default
+  print '#>>> '
+  items = [('name', 'Jeanhwea'), ('age', '24')]
+  d = dict(items) #>>> {'age': '24', 'name': 'Jeanhwea'}
+  d['name'] #>>> Jeanhwea
+  d['gender'] = 'man'
+  d #>>> {'gender': 'man', 'age': '24', 'name': 'Jeanhwea'}
+  len(d) #>>> 3
+  del d['age'] 
+  d #>>> {'gender': 'man', 'name': 'Jeanhwea'}
+  'name' in d #>>> True
+
+  xdic = {}
+  xdic['key'] = 'value'
+  ydic = xdic
+  ydic #>>> {'key': 'value'}
+  xdic.clear() # clear xdic
+  ydic #>>> {}
+
+  xdic['key'] = 'value'
+  ydic #>>> {'key': 'value'}
+  xdic = {} # bind a empty dict to x
+  ydic #>>> {'key': 'value'}
+
+
+  x = { 'name': 'Jeanhwea', 'friends': ['Jack', 'Alice'] }
+  # shallow copy
+  y = x.copy()
+  y['name'] = 'Wang'
+  y['friends'].remove('Jack')
+  x #>>> {'friends': ['Alice'], 'name': 'Jeanhwea'}
+  y #>>> {'friends': ['Alice'], 'name': 'Wang'}
+
+  x = { 'name': 'Jeanhwea', 'friends': ['Jack', 'Alice'] }
+  # deep copy
+  from copy import deepcopy
+  y = deepcopy(x)
+  y['name'] = 'Wang'
+  y['friends'].remove('Jack')
+  x #>>> {'friends': ['Jack', 'Alice'], 'name': 'Jeanhwea'}
+  y #>>> {'friends': ['Alice'], 'name': 'Wang'}
+
+
+  keys = ['a', 'b', 'c']
+  {}.fromkeys(keys) #>>> {'a': None, 'c': None, 'b': None}
+  {}.fromkeys(keys, '(none)') #>>> {'a': '(none)', 'c': '(none)', 'b': '(none)'}
+
+
+  xdic = {'a': 'aa', 'b': 'bb'}
+  # xdic['c'] will cause a error
+  '''
+  Traceback (most recent call last):
+    File "05-dict.py", line 51, in <module>
+      xdic['c']
+  KeyError: 'c'
+  '''
+  xdic.get('c') #>>> None
+  xdic = {'a': 'aa', 'b': 'bb'}
+  xdic.has_key('a') #>>> True
+  xdic.has_key('c') #>>> False
+
+  xdic['c'] = 'cc'
+  xdic.items() #>>> [('a', 'aa'), ('c', 'cc'), ('b', 'bb')]
+  for k, v in xdic.iteritems():
+      pass
+  for v in xdic.itervalues():
+      pass
+  for k in xdic.iterkeys():
+      pass
+
+  dic = {'title': 'aaaa', 'url': 'http://jeanhwea.github.io', 'content': 'nothing'}
+  x = {'title': 'bbbb', 'url': 'http://www.github.com/jeanhwea'}
+  dic #>>> {'url': 'http://jeanhwea.github.io', 'content': 'nothing', 'title': 'aaaa'}
+  dic.update(x)
+  dic #>>> {'url': 'http://www.github.com/jeanhwea', 'content': 'nothing', 'title': 'bbbb'}
+
+#+END_SRC

@@ -1,0 +1,92 @@
+#+TITLE: 类
+#+AUTHOR: Jinghui Hu
+#+EMAIL: hujinghui@buaa.edu.cn
+#+DATE: 2018-10-23
+#+TAGS: python programming class
+
+#+BEGIN_SRC python :preamble "# -*- coding: utf-8 -*-" :session default
+  # --------------------------------------------------------------------
+  class Vector:
+      # constructor
+      def __init__(self, a, b):
+          self.a = a
+          self.b = b
+
+      # destructor
+      def __del__(self):
+          pass
+
+      # displayer of this class
+      def __str__(self):
+          return 'Vector (%d, %d)' % (self.a, self.b)
+
+      # override operator '+'
+      def __add__(self,other):
+          return Vector(self.a + other.a, self.b + other.b)
+
+  v1 = Vector(2,10)
+  v2 = Vector(5,-2)
+  v1 + v2 #>>> Vector (7, 8)
+
+
+  # --------------------------------------------------------------------
+  __metaclass__ = type
+  class Parent:
+      name = 'parent'
+      def myMethod(self):
+          print self.name
+
+  class Child(Parent):
+      name = 'child'
+      def myMethod(self):
+          # call super method
+          super(Child, self).myMethod()
+
+  c = Child()
+  c.myMethod() #>>> child
+
+
+  # --------------------------------------------------------------------
+  class Visibility:
+      # private method start with __
+      def __inaccessible(self):
+          print 'you can not see me'
+
+      # public method
+      def accessible(self):
+          print 'this secret message is:',
+          self.__inaccessible()
+
+
+  secr = Visibility()
+  # secr.__inaccessible()
+  '''
+  Traceback (most recent call last):
+    File "08-class.py", line 13, in <module>
+      secr.__inaccessible()
+  AttributeError: Visibility instance has no attribute '__inaccessible'
+  '''
+  secr.accessible() #>>> this secret message is: you can not see me
+
+
+  # --------------------------------------------------------------------
+  __metaclass__ = type
+  class Rect:
+      def __init__(self, width=0, height=0):
+          self.w = width
+          self.h = height
+
+      def getSize(self):
+          return self.w, self.h
+
+      def setSize(self, size):
+          self.w, self.h = size
+
+      size = property(getSize, setSize)
+
+  r = Rect(2, 5)
+  r.size #>>> (2, 5)
+  r.size = 4, 4
+  r.size #>>> (4, 4)
+
+#+END_SRC

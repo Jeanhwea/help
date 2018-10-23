@@ -1,0 +1,40 @@
+#+TITLE: 控制流
+#+AUTHOR: Jinghui Hu
+#+EMAIL: hujinghui@buaa.edu.cn
+#+DATE: 2018-10-23
+#+TAGS: python programming ctrlflow
+
+#+BEGIN_SRC python :preamble "# -*- coding: utf-8 -*-" :session default
+  # if statement
+  num = 0
+  if num > 0:
+      print 'num is positive'
+  elif num < 0:
+      print 'num is negative'
+  else:
+      assert num == 0, 'num is zero'
+
+  # while statement
+  x = 1
+  while x <= 100:
+      x += 1
+
+  # for loop
+  words = ['this', 'is', 'an', 'ex', 'parrot']
+  for w in words:
+      pass
+
+  names = ['anne', 'beth', 'google']
+  ages = [12, 33, 81]
+  zip(names, ages) #>>> [('anne', 12), ('beth', 33), ('google', 81)]
+  for name, age in zip(names, ages):
+      pass
+
+  nums = range(10)
+  expr = '+'.join([str(n) for n in nums])
+  expr #>>> 0+1+2+3+4+5+6+7+8+9
+  eval(expr) #>>> 45
+  cmd = "print 'hello world'"
+  exec(cmd)
+
+#+END_SRC

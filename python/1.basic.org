@@ -1,0 +1,8 @@
+#+TITLE: 基本技巧
+#+AUTHOR: Jinghui Hu
+#+EMAIL: hujinghui@buaa.edu.cn
+#+DATE: 2018-10-23
+#+TAGS: python programming
+
+* 参考链接
+1. [[https://docs.python-guide.org][The Hitchhiker’s Guide to Python!]]

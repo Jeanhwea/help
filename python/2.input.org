@@ -1,0 +1,22 @@
+#+TITLE: Python 读取用户输入
+#+AUTHOR: Jinghui Hu
+#+EMAIL: hujinghui@buaa.edu.cn
+#+DATE: 2018-10-23
+#+TAGS: python programming input
+
+
+#+BEGIN_SRC python :preamble "# -*- coding: utf-8 -*-" :session default
+  import os, sys
+
+  if __name__ == '__main__' :
+    # read raw string
+    name = raw_input('name = ')
+    print('your name is ' + name)
+
+    # read a expression, for example, integer
+    age = input('age = ')
+    print(age+1)
+#+END_SRC
+
+#+RESULTS:
+

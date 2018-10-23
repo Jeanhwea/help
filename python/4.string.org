@@ -1,0 +1,48 @@
+#+TITLE: 字符串
+#+AUTHOR: Jinghui Hu
+#+EMAIL: hujinghui@buaa.edu.cn
+#+DATE: 2018-10-23
+#+TAGS: python programming string
+
+
+#+BEGIN_SRC python :preamble "# -*- coding: utf-8 -*-" :session default
+  url = 'http://jeanhwea.github.io'
+  url[-2:] #>>> io
+
+  fmt = 'first: %s, second: %s'
+  val = ('hello', 'Jeanhwea')
+  strfmt = fmt % val
+  strfmt #>>> first: hello, second: Jeanhwea
+
+  from string import Template
+  s = Template('$friut is $color') # using $$ to diplay $
+  d = {'friut': 'apple', 'color': 'red'}
+  s.substitute(friut='banana', color='yellow') #>>> banana is yellow
+  s.substitute(d) #>>> apple is red
+
+  url = 'http://jeanhwea.github.io'
+  url.find('jeanhwea') #>>> 7
+  url.find('nothing') #>>> -1
+  start = 10
+  url.find('e', start) #>>> 13
+
+  dirs = 'home' , 'hujh', 'Projects' # tuple
+  '/'.join(dirs) #>>> home/hujh/Projects
+  seq = [1, 3, 4]
+  '+'.join([str(n) for n in seq]) #>>> 1+3+4
+
+  nums = '1+3+2+3+2'.split('+')
+  nums #>>> ['1', '3', '2', '3', '2']
+
+  foo = '   internal whitespace is kept    '
+  foo.strip() #>>> internal whitespace is kept
+
+  sentence = 'My name is Jack'
+  sentence.lower() #>>> my name is jack
+  sentence #>>> My name is Jack
+  title = sentence.replace('name', 'first name') #>>> My first name is Jack
+  title.capitalize() #>>> My first name is jack
+  from string import capwords
+  capwords(title) #>>> My First Name Is Jack
+
+#+END_SRC
