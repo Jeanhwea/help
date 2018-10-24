@@ -132,3 +132,4 @@
   4. [[https://blog.aaronbieber.com/2016/09/24/an-agenda-for-life-with-org-mode.html][An Angenda for Life with Org-mode]]: 高效地使用 org-mode 的日程管理解决方案
   5. [[https://orgmode.org/worg/org-faq.html#Appointments/Diary][Appointments/Diary]]: emacs org-mode 周期性时间表示方法
   6. [[https://orgmode.org/worg/org-contrib/babel/languages/ob-doc-python.html][Python Source Code Blocks in Org Mode]]
+  7. [[https://orgmode.org/manual/results.html][orgmode codeblock for results]]
