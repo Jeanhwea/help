@@ -4,51 +4,70 @@
 #+DATE: 2018-10-23
 #+TAGS: python programming function
 
-#+BEGIN_SRC python :preamble "# -*- coding: utf-8 -*-" :session default
+** 函数定义与传参
+#+BEGIN_SRC python :preamble "# -*- coding: utf-8 -*-" :exports both :session default :results output pp
   def myfunc(arg):
-      print arg
+      print(arg)
 
   # parameter with single star
   def print_param(*params):
-      print params
+      print(params)
 
   print_param('aa') #>>> ('aa',)
   print_param('aa', 'bb') #>>> ('aa', 'bb')
 
-
   # parameter with double star
   def print_param2(**params):
-      print params
+      print(params)
   print_param2(x=1, y=2) #>>> {'y': 2, 'x': 1}
 
-
   def print_param3(x, y, *args, **kargs):
-      print x, y
-      print args
-      print kargs
-
+      print(x, y)
+      print(args)
+      print(kargs)
   print_param3(1, 2, 3, 4, 5, p='3', k='d')
-  '''
-  #>>> print_param3(1, 2, 3, 4, 5, p='3', k='d')
-  1 2
-  (3, 4, 5)
-  {'p': '3', 'k': 'd'}
-  '''
+#+END_SRC
 
+#+RESULTS:
+: ('aa',)
+: ('aa', 'bb')
+: {'x': 1, 'y': 2}
+: 1 2
+: (3, 4, 5)
+: {'p': '3', 'k': 'd'}
+
+** 匿名函数
+1. ~filter(func,iter)~ 只能处理一个参数 iter ，仅仅将满足 func 方法的数值过滤出来。
+2. ~map(func,iter1,iter2,..)~ 可以处理多个 iter，实现通过 func 方法对 iter1,
+   iter2,... 进行处理。
+3. ~reduce(func,iter,init)~ 仅能处理一个 iter, init 为初始化值，执行顺序为：先将
+   每个 iter 内部第一个值和 init 进行 func 处理，处理的结果再与 iter 第二个值进
+   行 func 处理，直到结束。
+#+BEGIN_SRC python :preamble "# -*- coding: utf-8 -*-" :exports both :session default :results output pp
   numseq = map(str, range(10))
-  numseq #>>> ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+  print(list(numseq))
   filnum = filter(lambda x: x > 5, range(10))
-  filnum #>>> [6, 7, 8, 9]
-  ans = reduce(lambda x, y: x+y, range(100))
-  print ans #>>> 4950
+  print(list(filnum))
+  from functools import reduce
+  ans = reduce(lambda x, y: x+y, range(100), 0)
+  print(ans)
+#+END_SRC
 
+#+RESULTS:
+: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+: [6, 7, 8, 9]
+: 4950
+
+** 全局变量
+Python 定义的变量默认都是局部变量，如果需要定义全局变量需要使用 ~global~ 关键字
+修饰。
+#+BEGIN_SRC python :preamble "# -*- coding: utf-8 -*-" :exports both :session default :results output pp
   g_x = 0
   def change_x():
       global g_x
       g_x += 1
 
-  g_x #>>> 0
+  print(g_x)
   change_x()
-  g_x #>>> 1
-
+  print(g_x)
 #+END_SRC
