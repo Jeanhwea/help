@@ -4,48 +4,74 @@
 #+DATE: 2018-10-23
 #+TAGS: python programming dictionary
 
-#+BEGIN_SRC python :preamble "# -*- coding: utf-8 -*-" :session default
-  print '#>>> '
+** 基本操作
+字典的添加、删除、修改
+#+BEGIN_SRC python :preamble "# -*- coding: utf-8 -*-" :exports both :session default :results output pp
   items = [('name', 'Jeanhwea'), ('age', '24')]
-  d = dict(items) #>>> {'age': '24', 'name': 'Jeanhwea'}
-  d['name'] #>>> Jeanhwea
+  d = dict(items)
+  print(d['name'])
   d['gender'] = 'man'
-  d #>>> {'gender': 'man', 'age': '24', 'name': 'Jeanhwea'}
+  print(d)
   len(d) #>>> 3
   del d['age'] 
-  d #>>> {'gender': 'man', 'name': 'Jeanhwea'}
-  'name' in d #>>> True
+  print(d)
+  print('name' in d)
+#+END_SRC
 
+#+RESULTS:
+: Jeanhwea
+: {'name': 'Jeanhwea', 'age': '24', 'gender': 'man'}
+: {'name': 'Jeanhwea', 'gender': 'man'}
+: True
+
+关于字典引用的相关操作
+#+BEGIN_SRC python :preamble "# -*- coding: utf-8 -*-" :exports both :session default :results output pp
   xdic = {}
   xdic['key'] = 'value'
   ydic = xdic
-  ydic #>>> {'key': 'value'}
+  print(ydic)
   xdic.clear() # clear xdic
-  ydic #>>> {}
+  print(ydic)
 
   xdic['key'] = 'value'
-  ydic #>>> {'key': 'value'}
+  print(ydic)
   xdic = {} # bind a empty dict to x
-  ydic #>>> {'key': 'value'}
+  print(ydic)
+#+END_SRC
 
+#+RESULTS:
+: {'key': 'value'}
+: {}
+: {'key': 'value'}
+: {'key': 'value'}
 
-  x = { 'name': 'Jeanhwea', 'friends': ['Jack', 'Alice'] }
+** 浅拷贝和深拷贝
+字典也有浅拷贝和深拷贝的区别，具体见下面代码。
+#+BEGIN_SRC python :preamble "# -*- coding: utf-8 -*-" :exports both :session default :results output pp
   # shallow copy
+  x = { 'name': 'Jeanhwea', 'friends': ['Jack', 'Alice'] }
   y = x.copy()
   y['name'] = 'Wang'
   y['friends'].remove('Jack')
-  x #>>> {'friends': ['Alice'], 'name': 'Jeanhwea'}
-  y #>>> {'friends': ['Alice'], 'name': 'Wang'}
+  print(x, y)
 
-  x = { 'name': 'Jeanhwea', 'friends': ['Jack', 'Alice'] }
   # deep copy
+  x = { 'name': 'Jeanhwea', 'friends': ['Jack', 'Alice'] }
   from copy import deepcopy
   y = deepcopy(x)
   y['name'] = 'Wang'
   y['friends'].remove('Jack')
-  x #>>> {'friends': ['Jack', 'Alice'], 'name': 'Jeanhwea'}
-  y #>>> {'friends': ['Alice'], 'name': 'Wang'}
+  print(x, y)
+#+END_SRC
 
+#+RESULTS:
+: {'name': 'Jeanhwea', 'friends': ['Alice']} {'name': 'Wang', 'friends': ['Alice']}
+: {'name': 'Jeanhwea', 'friends': ['Jack', 'Alice']} {'name': 'Wang', 'friends': ['Alice']}
+
+** 常见操作
+~fromkeys~ 通过列表生成字典。查字典时， ~get~ 方法不会引起异常，直接索引会引起异
+常。
+#+BEGIN_SRC python :preamble "# -*- coding: utf-8 -*-" :exports both :session default :results output pp
 
   keys = ['a', 'b', 'c']
   {}.fromkeys(keys) #>>> {'a': None, 'c': None, 'b': None}
@@ -62,6 +88,11 @@
   '''
   xdic.get('c') #>>> None
   xdic = {'a': 'aa', 'b': 'bb'}
+#+END_SRC
+
+~has_key~ 在 Python3.x 中已经弃用，建议用 ~in~ 关键字判断是否在字典中。字典还有
+一些迭代器，具体见下面代码。
+#+BEGIN_SRC python :preamble "# -*- coding: utf-8 -*-" :exports both :session default :results output pp
   xdic.has_key('a') #>>> True
   xdic.has_key('c') #>>> False
 
@@ -73,11 +104,17 @@
       pass
   for k in xdic.iterkeys():
       pass
+#+END_SRC
 
+~update~ 方法通过一个字典的内容来替换另外一个字典。
+#+BEGIN_SRC python :preamble "# -*- coding: utf-8 -*-" :exports both :session default :results output pp
   dic = {'title': 'aaaa', 'url': 'http://jeanhwea.github.io', 'content': 'nothing'}
   x = {'title': 'bbbb', 'url': 'http://www.github.com/jeanhwea'}
-  dic #>>> {'url': 'http://jeanhwea.github.io', 'content': 'nothing', 'title': 'aaaa'}
+  print(dic)
   dic.update(x)
-  dic #>>> {'url': 'http://www.github.com/jeanhwea', 'content': 'nothing', 'title': 'bbbb'}
-
+  print(dic)
 #+END_SRC
+
+#+RESULTS:
+: {'title': 'aaaa', 'url': 'http://jeanhwea.github.io', 'content': 'nothing'}
+: {'title': 'bbbb', 'url': 'http://www.github.com/jeanhwea', 'content': 'nothing'}
