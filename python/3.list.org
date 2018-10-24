@@ -15,7 +15,6 @@
 #+RESULTS:
 | 2 | 4 | 6 |
 
-
 #+BEGIN_SRC python :preamble "# -*- coding: utf-8 -*-" :session default
   x = [1, 2, 3]
   y = x
