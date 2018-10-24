@@ -33,6 +33,21 @@ Python 支持字符串模板的操作，但是并没有 Ruby 那么好用，一�
 : banana is yellow
 : apple is red
 
+另外一直比较常用的模板字符串形式如下，操作清晰易懂
+#+BEGIN_SRC python :preamble "# -*- coding: utf-8 -*-" :exports both :session default :results output pp
+foo = 'foo'
+bar = 'bar'
+
+foobar = '%s%s' % (foo, bar)
+foobar = '{0}{1}'.format(foo, bar)
+foobar = '{foo}{bar}'.format(foo=foo, bar=bar)
+
+print(foobar)
+#+END_SRC
+
+#+RESULTS:
+: foobar
+
 ** 成员函数
 ~find~ 查找字符串的内容
 #+BEGIN_SRC python :preamble "# -*- coding: utf-8 -*-" :exports both :session default :results output pp
