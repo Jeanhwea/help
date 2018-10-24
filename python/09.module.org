@@ -1,0 +1,25 @@
+#+TITLE: 模块
+#+AUTHOR: Jinghui Hu
+#+EMAIL: hujinghui@buaa.edu.cn
+#+DATE: 2018-10-23
+#+TAGS: python programming module
+
+** 定义模块
+#+BEGIN_SRC python :preamble "# -*- coding: utf-8 -*-" :exports both :session default :results output pp
+  # Fibonacci numbers module
+  def fib(n):    # write Fibonacci series up to n
+      a, b = 0, 1
+      while a < n:
+          print(a, end=' ')
+          a, b = b, a+b
+      print()
+
+  def fib2(n):   # return Fibonacci series up to n
+      result = []
+
+      a, b = 0, 1
+      while a < n:
+          result.append(a)
+          a, b = b, a+b
+      return result
+#+END_SRC
