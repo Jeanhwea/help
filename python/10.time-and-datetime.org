@@ -4,7 +4,7 @@
 #+DATE: 2018-10-24
 #+TAGS: python programming time datetime
 
-** 基本处理
+** 基本操作
 ~time~ 模块提供和时间相关的处理函数。 ~datetime~ 提供和日期相关的处理函数
 #+BEGIN_SRC python :preamble "# -*- coding: utf-8 -*-" :exports both :session default :results output pp
   import time
@@ -40,7 +40,7 @@ time 模块中的所有时间通过 ~time.struct_time~ 数据结构存储。
 : time.struct_time(tm_year=2018, tm_mon=10, tm_mday=24, tm_hour=14, tm_min=47, tm_sec=1, tm_wday=2, tm_yday=297, tm_isdst=0)
 : time.struct_time(tm_year=2018, tm_mon=10, tm_mday=24, tm_hour=6, tm_min=47, tm_sec=1, tm_wday=2, tm_yday=297, tm_isdst=0)
 
-时间戳和 ~struct_time~ 转换
+*** 时间戳和 ~struct_time~ 转换
 #+BEGIN_SRC python :preamble "# -*- coding: utf-8 -*-" :exports both :session default :results output pp
   t = time.time()
   print(time.localtime(t)) # timestamp -> struct_time
@@ -52,7 +52,7 @@ time 模块中的所有时间通过 ~time.struct_time~ 数据结构存储。
 : time.struct_time(tm_year=2018, tm_mon=10, tm_mday=24, tm_hour=14, tm_min=47, tm_sec=55, tm_wday=2, tm_yday=297, tm_isdst=0)
 : 1540363675.0
 
-格式化处理时间, 字符串和 ~struct_time~ 之间转换
+*** 格式化处理时间, 字符串和 ~struct_time~ 之间转换
 #+BEGIN_SRC python :preamble "# -*- coding: utf-8 -*-" :exports both :session default :results output pp
   fmt = '%Y-%m-%d %H:%M:%S'
   print(time.strftime(fmt, time.localtime()))
@@ -64,6 +64,20 @@ time 模块中的所有时间通过 ~time.struct_time~ 数据结构存储。
 : 2018-10-24 14:52:05
 : 2018-10-24 06:52:05
 : time.struct_time(tm_year=2018, tm_mon=10, tm_mday=24, tm_hour=14, tm_min=51, tm_sec=3, tm_wday=2, tm_yday=297, tm_isdst=-1)
+
+*** 时间戳和字符串之间转换
+需要借助 Python 的 time 模块中的 ~struct_time~ 作为中间数据结构来进行转换
+#+BEGIN_SRC python :preamble "# -*- coding: utf-8 -*-" :exports both :session default :results output pp
+  fmt = '%Y-%m-%d %H:%M:%S'
+  ts = time.time()
+  print(time.strftime(fmt, time.localtime(ts)))
+  print(time.mktime(time.strptime('2018-10-24 15:03:46', fmt)))
+#+END_SRC
+
+#+RESULTS:
+: 2018-10-24 15:05:49
+: 1540364626.0
+
 
 ** 线程休眠
 ~sleep~ 可以是线程休眠相应的秒数。
