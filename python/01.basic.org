@@ -6,3 +6,4 @@
 
 * 参考链接
 1. [[https://docs.python-guide.org][The Hitchhiker’s Guide to Python!]]
+2. [[https://github.com/Jeanhwea/python-project-template][Python Project Template]]
