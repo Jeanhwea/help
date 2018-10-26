@@ -150,7 +150,7 @@
    : -------------------------------------------------------------------------------- 
    :  [ True  True False False]
 
-   矩阵的内积和外积
+   矩阵的乘法和矩阵里面每个元素相乘
    #+BEGIN_SRC python :preamble "# -*- coding: utf-8 -*-" :exports both :session default :results output pp
      A = np.array([[1,1],
                    [0,1]] )
@@ -304,20 +304,41 @@
      np.linalg.eig(j)
    #+END_SRC
 ** 直方图
-   #+BEGIN_SRC python :preamble "# -*- coding: utf-8 -*-" :exports both :session default :results file
+   #+BEGIN_SRC python :preamble "# -*- coding: utf-8 -*-" :exports both :results file
      import numpy as np
      import matplotlib.pyplot as plt
+     filename = '../resource/image/2018/10/numpy1.png'
+
      # Build a vector of 10000 normal deviates with variance 0.5^2 and mean 2
      mu, sigma = 2, 0.5
      v = np.random.normal(mu,sigma,10000)
      # Plot a normalized histogram with 50 bins
      plt.hist(v, bins=50, density=1)       # matplotlib version (plot)
-     plt.show()
+     plt.savefig(filename)
+     return filename
+   #+END_SRC
+
+   #+RESULTS:
+   [[file:../resource/image/2018/10/numpy1.png]]
+
+   #+BEGIN_SRC python :preamble "# -*- coding: utf-8 -*-" :exports both :results file
+     import numpy as np
+     import matplotlib.pyplot as plt
+     filename = '../resource/image/2018/10/numpy2.png'
+
+     # Build a vector of 10000 normal deviates with variance 0.5^2 and mean 2
+     mu, sigma = 2, 0.5
+     v = np.random.normal(mu,sigma,10000)
      # Compute the histogram with numpy and then plot it
      (n, bins) = np.histogram(v, bins=50, density=True)  # NumPy version (no plot)
      plt.plot(.5*(bins[1:]+bins[:-1]), n)
-     plt.show()
+     plt.savefig(filename)
+     return filename
    #+END_SRC
+
+   #+RESULTS:
+   [[file:../resource/image/2018/10/numpy2.png]]
+
 * 小技巧: 自动 reshape
   #+BEGIN_SRC python :preamble "# -*- coding: utf-8 -*-" :exports both :session default :results output pp
     a = np.arange(30)
