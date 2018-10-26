@@ -1,0 +1,49 @@
+#+TITLE: matplotlib: 绘图包
+#+AUTHOR: Jinghui Hu
+#+EMAIL: hujinghui@buaa.edu.cn
+#+DATE: 2018-10-26
+#+TAGS: python matplotlib plot
+
+
+* matplotlib
+  matplotlib 提供了绘制图表的基础功能，可以绘画多种科学计算的展示图片，和 MATLAB
+  绘制出来的图片体验很像。
+
+** 基本术语
+   matplotlib 的基本术语可以参考官网中展示的图。
+
+   [[file:../resource/image/2018/10/matplotlib-anatomy.png][matplotlib-anatomy]]
+
+   基本画图如下：
+   #+BEGIN_SRC python :preamble "# -*- coding: utf-8 -*-" :exports both :results file
+     import matplotlib.pyplot as plt
+     import numpy as np
+
+     filename = "../resource/image/2018/10/matplotlib1.png"
+
+     x = np.linspace(0, 2, 100)
+
+     plt.plot(x, x, label='linear')
+     plt.plot(x, x**2, label='quadratic')
+     plt.plot(x, x**3, label='cubic')
+
+     plt.xlabel('x label')
+     plt.ylabel('y label')
+
+     plt.title("Simple Plot")
+
+     plt.legend()
+     plt.savefig(filename)
+     return filename
+   #+END_SRC
+
+   #+RESULTS:
+   [[file:../resource/image/2018/10/matplotlib1.png]]
+
+
+
+* 参考链接
+  1. [[https://matplotlib.org/][matplotlib homepage]]
+  2. [[https://matplotlib.org/tutorials/index.html][matplotlib tutorial]]
+  3. [[https://matplotlib.org/gallery/index.html][gallery]]
+  4. [[https://matplotlib.org/tutorials/introductory/usage.html][user guide]]
