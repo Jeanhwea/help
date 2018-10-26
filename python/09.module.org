@@ -43,7 +43,7 @@
 环境变量 ~PYTHONPATH~ 记录了系统中所有模块的路径。 Windows 操作系统可以通过下面
 示意图中的步骤进行设置。
 
-[[../resource/image/2018/10/windows-envs.png][windows-envs]]
+[[file:../resource/image/2018/10/windows-envs.png]]
 
 Unix 系列的系统直接在 shell 的配置文件中添加即可
 #+BEGIN_SRC sh
