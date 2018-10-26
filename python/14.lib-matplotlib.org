@@ -12,7 +12,7 @@
 ** 基本术语
    matplotlib 的基本术语可以参考官网中展示的图。
 
-   [[file:../resource/image/2018/10/matplotlib-anatomy.png][matplotlib-anatomy]]
+   [[file:../resource/image/2018/10/matplotlib-anatomy.png]]
 
    基本画图如下：
    #+BEGIN_SRC python :preamble "# -*- coding: utf-8 -*-" :exports both :results file
