@@ -29,8 +29,9 @@
     '/usr/local/lib/python2.7/site-packages']
    #+end_example
 
-
 * 参考链接
 1. [[https://docs.python-guide.org][The Hitchhiker’s Guide to Python!]]
-2. [[https://github.com/Jeanhwea/python-project-template][Python Project Template]]
-3. [[../airticle/05.setup-pip-envs.org][pip command]]
+2. [[https://www.fullstackpython.com/][Full Stack Python]]
+3. [[https://docs.python.org/3/][Python3 Documentation]]
+4. [[https://github.com/Jeanhwea/python-project-template][Python Project Template]]
+5. [[../airticle/05.setup-pip-envs.org][pip command]]
