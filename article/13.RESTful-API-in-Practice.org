@@ -123,7 +123,7 @@ RESTful (REpresentational State Transfer) 是目前最流行的 API 设计规范
 
    #+BEGIN_EXAMPLE
    HTTP/1.1 303 See Other
-   Location: /api/airticles/12345
+   Location: /api/articles/12345
    #+END_EXAMPLE
 
 ** 2.4 4xx 状态码

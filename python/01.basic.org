@@ -34,4 +34,4 @@
 2. [[https://www.fullstackpython.com/][Full Stack Python]]
 3. [[https://docs.python.org/3/][Python3 Documentation]]
 4. [[https://github.com/Jeanhwea/python-project-template][Python Project Template]]
-5. [[../airticle/05.setup-pip-envs.org][pip command]]
+5. [[../article/05.setup-pip-envs.org][pip command]]
