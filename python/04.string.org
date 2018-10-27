@@ -4,7 +4,8 @@
 #+DATE: 2018-10-23
 #+TAGS: python programming string
 
-** 基本操作
+* 基本操作
+
 字符串有类似于列表的索引操作，也可以使用 ~%~ 和元组的组合方式来输出格式化字符串。
 
 #+BEGIN_SRC python :preamble "# -*- coding: utf-8 -*-" :exports both :session default :results output pp
@@ -19,8 +20,10 @@
 : io
 : first: hello, second: Jeanhwea
 
-** 模板字符串
+* 模板字符串
+
 Python 支持字符串模板的操作，但是并没有 Ruby 那么好用，一般的操作方式如下：
+
 #+BEGIN_SRC python :preamble "# -*- coding: utf-8 -*-" :exports both :session default :results output pp
   from string import Template
   s = Template('$friut is $color') # using $$ to diplay $
@@ -33,7 +36,8 @@ Python 支持字符串模板的操作，但是并没有 Ruby 那么好用，一�
 : banana is yellow
 : apple is red
 
-另外一直比较常用的模板字符串形式如下，操作清晰易懂
+另外一直比较常用的模板字符串形式如下，操作清晰易懂，建议使用这种方式来操作字符串。
+
 #+BEGIN_SRC python :preamble "# -*- coding: utf-8 -*-" :exports both :session default :results output pp
 foo = 'foo'
 bar = 'bar'
@@ -48,8 +52,10 @@ print(foobar)
 #+RESULTS:
 : foobar
 
-** 成员函数
+* 成员函数
+
 字符串索引方式。
+
 #+BEGIN_SRC python :preamble "# -*- coding: utf-8 -*-" :exports both :session default :results output pp
   #  +---+---+---+---+---+---+
   #  | P | y | t | h | o | n |
@@ -66,6 +72,7 @@ print(foobar)
 : n o
 
 ~find~ 查找字符串的内容
+
 #+BEGIN_SRC python :preamble "# -*- coding: utf-8 -*-" :exports both :session default :results output pp
   url = 'http://jeanhwea.github.io'
   print(url.find('jeanhwea'))
@@ -80,6 +87,7 @@ print(foobar)
 : 13
 
 ~join~ 连接字符串
+
 #+BEGIN_SRC python :preamble "# -*- coding: utf-8 -*-" :exports both :session default :results output pp
   dirs = 'home' , 'hujh', 'Projects' # tuple
   print('/'.join(dirs))
@@ -92,6 +100,7 @@ print(foobar)
 : 1+3+4
 
 ~split~ 分割字符串
+
 #+BEGIN_SRC python :preamble "# -*- coding: utf-8 -*-" :exports both :session default :results output pp
   nums = '1+3+2+3+2'.split('+')
   print(nums)
@@ -102,6 +111,7 @@ print(foobar)
 
 ~strip~ 可以移除字符串前后的空白字符，另外有 ~lstrip~ 和 ~rstrip~ 。其它一些转化
 大小写的函数见代码演示。
+
 #+BEGIN_SRC python :preamble "# -*- coding: utf-8 -*-" :exports both :session default :results output pp
   foo = '   internal whitespace is kept    '
   print(foo.strip())

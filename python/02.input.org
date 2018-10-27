@@ -4,12 +4,14 @@
 #+DATE: 2018-10-23
 #+TAGS: python programming input
 
-** raw_input & input
-   Python3.x 里面已经把 ~raw_input()~ 给去掉了。事实上是这样的：在 Python3.x 内，
+* raw_input & input
+
+Python3.x 里面已经把 ~raw_input()~ 给去掉了。事实上是这样的：在 Python3.x 内，
 将~raw_input()~ 重命名为 ~input()~ ，这样一来，无须导入也能从标准输入获得数据了。
 如果您需要保留版本 Python2.x 的 ~input()~ 功能，可以使用 ~eval(input())~ ，效果
 基本相同。Python2.x 中， ~raw_input()~ 会从标准输入 ~sys.stdin~ 读取一个输入并返
 回一个字符串，且尾部的换行符从末尾移除。其中关于读取用户输入的样例如下：
+
 #+BEGIN_SRC python :preamble "# -*- coding: utf-8 -*-" :session default
   import os, sys
 

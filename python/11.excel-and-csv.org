@@ -5,11 +5,14 @@
 #+TAGS: python programming excel csv
 
 * Excel
+
 Python 不是自带操作 Excel 的包，需要安装第三方包来完成相应的操作。常见的可以操作
 Excel 文件的包有：pandas, openpyxl, xlrd, xlutils 和 pyexcel。
 
 ** pandas
+
 读取 Excel 中的数据
+
 #+BEGIN_SRC python :preamble "# -*- coding: utf-8 -*-" :exports both :session default :results output pp
   import pandas as pd
   xl = pd.ExcelFile('example.xlsx')
@@ -27,6 +30,7 @@ Excel 文件的包有：pandas, openpyxl, xlrd, xlutils 和 pyexcel。
 : 4  8
 
 将数据写入 Excel 文件
+
 #+BEGIN_SRC python :preamble "# -*- coding: utf-8 -*-" :exports both :session default :results output pp
   import numpy as np
   import pandas as pd
@@ -46,8 +50,10 @@ Excel 文件的包有：pandas, openpyxl, xlrd, xlutils 和 pyexcel。
 : dtype: int64
 
 ** xlrd
+
 xlrd 可以操作 Excel，如果想要轻量级操作可以使用这个包，并且 pandas 读取 Excel 底
 层也是调用 xlrd 的。 xlrd 的缺点是 *只能读取，不能写入* 。
+
 #+BEGIN_SRC python :preamble "# -*- coding: utf-8 -*-" :exports both :session default :results output pp
 import xlrd
 workbook = xlrd.open_workbook('example.xlsx')
@@ -76,7 +82,9 @@ print(sheet.row_values(4))
 : [3.0, 6.0]
 
 ** xlwt
+
 xlwt 可以写入 Excel 文件，具体使用方式见代码
+
 #+BEGIN_SRC python :preamble "# -*- coding: utf-8 -*-" :exports both :session default :results output pp
   import xlwt
 
@@ -97,37 +105,47 @@ xlwt 可以写入 Excel 文件，具体使用方式见代码
   book.save("test.xls")
 #+END_SRC
 
-#+RESULTS:
-
 * csv
+
 Python 自带读写 csv 文件的模块，可以直接导入 csv 模块。
+
 #+BEGIN_SRC python :preamble "# -*- coding: utf-8 -*-" :exports both :session default :results output pp
   import csv
 #+END_SRC
+
 ** 读取 csv 文件
+
 使用函数方式读取 csv 文件
+
 #+BEGIN_SRC python :preamble "# -*- coding: utf-8 -*-" :exports both :session default :results output pp
   with open('eggs.csv', 'rb') as csvfile:
     spamreader = csv.reader(csvfile, delimiter=' ', quotechar='|')
     for row in spamreader:
       print ', '.join(row)
 #+END_SRC
+
 使用类方式读取 csv 文件
+
 #+BEGIN_SRC python :preamble "# -*- coding: utf-8 -*-" :exports both :session default :results output pp
   with open('names.csv') as csvfile:
     reader = csv.DictReader(csvfile)
     for row in reader:
       print(row['first_name'], row['last_name'])
 #+END_SRC
+
 ** 写入 csv 文件
+
 使用函数方式写入 csv 文件
+
 #+BEGIN_SRC python :preamble "# -*- coding: utf-8 -*-" :exports both :session default :results output pp
   with open('eggs.csv', 'wb') as csvfile:
     spamwriter = csv.writer(csvfile, delimiter=' ', quotechar='|', quoting=csv.QUOTE_MINIMAL)
     spamwriter.writerow(['Spam'] * 5 + ['Baked Beans'])
     spamwriter.writerow(['Spam', 'Lovely Spam', 'Wonderful Spam'])
 #+END_SRC
+
 使用类方式写入 csv 文件
+
 #+BEGIN_SRC python :preamble "# -*- coding: utf-8 -*-" :exports both :session default :results output pp
   with open('names.csv', 'w') as csvfile:
       fieldnames = ['first_name', 'last_name']
@@ -137,7 +155,9 @@ Python 自带读写 csv 文件的模块，可以直接导入 csv 模块。
       writer.writerow({'first_name': 'Lovely', 'last_name': 'Spam'})
       writer.writerow({'first_name': 'Wonderful', 'last_name': 'Spam'})
 #+END_SRC
+
 ** 使用 csv 读写文件的例子
+
 #+BEGIN_SRC python :preamble "# -*- coding: utf-8 -*-" :exports both :session default :results output pp
   import csv, codecs, cStringIO
 
@@ -200,7 +220,9 @@ Python 自带读写 csv 文件的模块，可以直接导入 csv 模块。
       for row in rows:
         self.writerow(row)
 #+END_SRC
+
 * 参考链接
+
 1. [[https://xlrd.readthedocs.io/en/latest/][xlrd]]
 2. [[https://xlwt.readthedocs.io/en/latest/][xlwt]]
 3. [[https://pyexcel.readthedocs.io/en/latest/][pyexcel]]

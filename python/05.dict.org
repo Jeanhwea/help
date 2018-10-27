@@ -4,8 +4,10 @@
 #+DATE: 2018-10-23
 #+TAGS: python programming dictionary
 
-** 基本操作
+* 基本操作
+
 字典的添加、删除、修改
+
 #+BEGIN_SRC python :preamble "# -*- coding: utf-8 -*-" :exports both :session default :results output pp
   items = [('name', 'Jeanhwea'), ('age', '24')]
   d = dict(items)
@@ -25,6 +27,7 @@
 : True
 
 关于字典引用的相关操作
+
 #+BEGIN_SRC python :preamble "# -*- coding: utf-8 -*-" :exports both :session default :results output pp
   xdic = {}
   xdic['key'] = 'value'
@@ -45,8 +48,10 @@
 : {'key': 'value'}
 : {'key': 'value'}
 
-** 浅拷贝和深拷贝
+* 浅拷贝和深拷贝
+
 字典也有浅拷贝和深拷贝的区别，具体见下面代码。
+
 #+BEGIN_SRC python :preamble "# -*- coding: utf-8 -*-" :exports both :session default :results output pp
   # shallow copy
   x = { 'name': 'Jeanhwea', 'friends': ['Jack', 'Alice'] }
@@ -68,11 +73,12 @@
 : {'name': 'Jeanhwea', 'friends': ['Alice']} {'name': 'Wang', 'friends': ['Alice']}
 : {'name': 'Jeanhwea', 'friends': ['Jack', 'Alice']} {'name': 'Wang', 'friends': ['Alice']}
 
-** 常见操作
+* 常见操作
+
 ~fromkeys~ 通过列表生成字典。查字典时， ~get~ 方法不会引起异常，直接索引会引起异
 常。
-#+BEGIN_SRC python :preamble "# -*- coding: utf-8 -*-" :exports both :session default :results output pp
 
+#+BEGIN_SRC python :preamble "# -*- coding: utf-8 -*-" :exports both :session default :results output pp
   keys = ['a', 'b', 'c']
   {}.fromkeys(keys) #>>> {'a': None, 'c': None, 'b': None}
   {}.fromkeys(keys, '(none)') #>>> {'a': '(none)', 'c': '(none)', 'b': '(none)'}
@@ -92,6 +98,7 @@
 
 ~has_key~ 在 Python3.x 中已经弃用，建议用 ~in~ 关键字判断是否在字典中。字典还有
 一些迭代器，具体见下面代码。
+
 #+BEGIN_SRC python :preamble "# -*- coding: utf-8 -*-" :exports both :session default :results output pp
   xdic.has_key('a') #>>> True
   xdic.has_key('c') #>>> False
@@ -107,6 +114,7 @@
 #+END_SRC
 
 ~update~ 方法通过一个字典的内容来替换另外一个字典。
+
 #+BEGIN_SRC python :preamble "# -*- coding: utf-8 -*-" :exports both :session default :results output pp
   dic = {'title': 'aaaa', 'url': 'http://jeanhwea.github.io', 'content': 'nothing'}
   x = {'title': 'bbbb', 'url': 'http://www.github.com/jeanhwea'}
