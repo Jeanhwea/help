@@ -4,7 +4,9 @@
 #+DATE: 2018-10-10
 #+TAGS: backend spring-boot maven java
 
+
 * 环境配置
+
 [[http://spring.io/projects/spring-boot][spring-boot-cli]]（Spring Boot CLI）是一种快速开发 [[https://spring.io/projects/spring-boot][spring]] 应用的命令行界面， CLI
 利用了 Spring Boot 的起步依赖和自动配置，可以让人们专注于代码本身，而不用完成繁
 琐的配置。实际上 Spring Boot 的本质就是用来简化繁琐的 Spring 配置，不过 CLI 的使
@@ -16,107 +18,131 @@ CLI 可以检测到代码中使用的类，知道需要给 classpath 中添加�
 “HelloWorld” 是非常快速的。
 
 下载二进制文件，解压到软件目录，并将 bin 目录添加到 *PATH* 环境变量中
+
 #+BEGIN_SRC sh
-curl -O https://repo.spring.io/release/org/springframework/boot/spring-boot-cli/2.0.5.RELEASE/spring-boot-cli-2.0.5.RELEASE-bin.tar.gz
+  curl -O https://repo.spring.io/release/org/springframework/boot/spring-boot-cli/2.0.5.RELEASE/spring-boot-cli-2.0.5.RELEASE-bin.tar.gz
 #+END_SRC
 
 也可以直接通过网页链接下载 [[https://repo.spring.io/release/org/springframework/boot/spring-boot-cli][spring-boot-cli-download]]。macOS 可以还可以通过
 Homebrow 来安装。
+
 #+BEGIN_SRC sh
-brew tap pivotal/tap
-brew install springboot
+  brew tap pivotal/tap
+  brew install springboot
 #+END_SRC
 
+
 * Spring Boot CLI
+
 ** 新建项目 spring init
-   Spring Boot 提供了一个基于 web 的新建项目工具 [[http://start.spring.io/][start-spring-io]] 。当然，也可以
-   通过命令行工具来创建。
-   #+BEGIN_SRC sh
-   spring init --dependencies=web springapp
-   # or
-   spring init --dweb springapp
-   # set groupId and artifactId
-   spring init --artifactId=demo --groupId=com.example --dependencies=web,jpa springapp
-   #+END_SRC
-   列出所有的依赖
-   #+BEGIN_SRC sh
-     spring init --list
-     # OUTPUT:
-     #   .   ____          _            __ _ _
-     #  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
-     # ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
-     #  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
-     #   '  |____| .__|_| |_|_| |_\__, | / / / /
-     #  =========|_|==============|___/=/_/_/_/
-     # :: Service capabilities ::  https://start.spring.io
-     #
-     # Supported dependencies
-     # +---------------+---------------------------------------------------------------------------+-------------------------------+
-     # | Id            | Description                                                               | Required version              |
-     # |---------------+---------------------------------------------------------------------------+-------------------------------|
-     # | activemq      | Java Message Service API via Apache ActiveMQ                              | >=1.4.0.RC1                   |
-     # | actuator      | Production ready features to help you monitor and manage your application |                               |
-     # | actuator-docs | API documentation for the Actuator endpoints                              | >=1.3.0.RELEASE and <2.0.0.M1 |
-     # ...
-     # | vaadin        | Vaadin java web application framework                                     | >=1.2.0.RELEASE and <2.1.0.M1 |
-     # | validation    | JSR-303 validation infrastructure (already included with web)             | >=1.3.0.RELEASE               |
-     # | web           | Full-stack web development with Tomcat and Spring MVC                     |                               |
-     # | web-services  | Contract-first SOAP service development with Spring Web Services          |                               |
-     # | web-services  | Contract-first SOAP service development with Spring Web Services          |                               |
-     # | webflux       | Reactive web development with Netty and Spring WebFlux                    | >=2.0.0.M1                    |
-     # | websocket     | Websocket development with SockJS and STOMP                               |                               |
-     # +---------------+---------------------------------------------------------------------------+-------------------------------+
-     #
-   #+END_SRC
+
+Spring Boot 提供了一个基于 web 的新建项目工具 [[http://start.spring.io/][start-spring-io]] 。当然，也可以通过
+命令行工具来创建。
+
+#+BEGIN_SRC sh
+  spring init --dependencies=web springapp
+  # or
+  spring init --dweb springapp
+  # set groupId and artifactId
+  spring init --artifactId=demo --groupId=com.example --dependencies=web,jpa springapp
+#+END_SRC
+
+列出所有的依赖
+
+#+BEGIN_SRC sh
+  spring init --list
+  # OUTPUT:
+  #   .   ____          _            __ _ _
+  #  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+  # ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+  #  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  #   '  |____| .__|_| |_|_| |_\__, | / / / /
+  #  =========|_|==============|___/=/_/_/_/
+  # :: Service capabilities ::  https://start.spring.io
+  #
+  # Supported dependencies
+  # +---------------+---------------------------------------------------------------------------+-------------------------------+
+  # | Id            | Description                                                               | Required version              |
+  # |---------------+---------------------------------------------------------------------------+-------------------------------|
+  # | activemq      | Java Message Service API via Apache ActiveMQ                              | >=1.4.0.RC1                   |
+  # | actuator      | Production ready features to help you monitor and manage your application |                               |
+  # | actuator-docs | API documentation for the Actuator endpoints                              | >=1.3.0.RELEASE and <2.0.0.M1 |
+  # ...
+  # | vaadin        | Vaadin java web application framework                                     | >=1.2.0.RELEASE and <2.1.0.M1 |
+  # | validation    | JSR-303 validation infrastructure (already included with web)             | >=1.3.0.RELEASE               |
+  # | web           | Full-stack web development with Tomcat and Spring MVC                     |                               |
+  # | web-services  | Contract-first SOAP service development with Spring Web Services          |                               |
+  # | web-services  | Contract-first SOAP service development with Spring Web Services          |                               |
+  # | webflux       | Reactive web development with Netty and Spring WebFlux                    | >=2.0.0.M1                    |
+  # | websocket     | Websocket development with SockJS and STOMP                               |                               |
+  # +---------------+---------------------------------------------------------------------------+-------------------------------+
+  #
+#+END_SRC
+
 ** 运行项目
-   修改 DemoApplication 文件
-   #+BEGIN_SRC java
-     // src/main/java/com/example/springapp/DemoApplication.java
-     package com.example.springapp;
 
-     import org.springframework.boot.SpringApplication;
-     import org.springframework.boot.autoconfigure.SpringBootApplication;
-     import org.springframework.web.bind.annotation.RestController;
-     import org.springframework.web.bind.annotation.RequestMapping;
+修改 DemoApplication 文件
 
-     @SpringBootApplication
-     @RestController
-     public class DemoApplication {
+#+BEGIN_SRC java
+  // src/main/java/com/example/springapp/DemoApplication.java
+  package com.example.springapp;
 
-       public static void main(String[] args) {
-         SpringApplication.run(DemoApplication.class, args);
-       }
+  import org.springframework.boot.SpringApplication;
+  import org.springframework.boot.autoconfigure.SpringBootApplication;
+  import org.springframework.web.bind.annotation.RestController;
+  import org.springframework.web.bind.annotation.RequestMapping;
 
-       @RequestMapping("/")
-       public String index() {
-         return "<p>Hello World!</p>";
-       }
-     }
-   #+END_SRC
-   使用 spring 自带的工具来运行代码
-   #+BEGIN_SRC sh
-   spring run src/main/java/com/example/springapp/DemoApplication.java 
-   #+END_SRC
-   使用 maven 工具启动 spring-boot 项目
-   #+BEGIN_SRC sh
-   mvn spring-boot:run
-   # debug 模式运行
-   mvn spring-boot:run --debug
-   #+END_SRC
-   在浏览器中打开链接应该可以访问到相应的页面。
+  @SpringBootApplication
+  @RestController
+  public class DemoApplication {
+
+    public static void main(String[] args) {
+      SpringApplication.run(DemoApplication.class, args);
+    }
+
+    @RequestMapping("/")
+    public String index() {
+      return "<p>Hello World!</p>";
+    }
+  }
+#+END_SRC
+
+使用 spring 自带的工具来运行代码
+
+#+BEGIN_SRC sh
+  spring run src/main/java/com/example/springapp/DemoApplication.java 
+#+END_SRC
+
+使用 maven 工具启动 spring-boot 项目
+
+#+BEGIN_SRC sh
+  mvn spring-boot:run
+  # debug 模式运行
+  mvn spring-boot:run --debug
+#+END_SRC
+
+在浏览器中打开链接应该可以访问到相应的页面。
+
 ** 打包项目
-   这里可以使用 maven 默认的打包命令来生成 jar 包。
-   #+BEGIN_SRC sh
-   mvn package
-   #+END_SRC
-   运行生成的 jar 文件
-   #+BEGIN_SRC sh
-   java -jar target/springapp-0.0.1-SNAPSHOT.jar
-   #+END_SRC
+
+这里可以使用 maven 默认的打包命令来生成 jar 包。
+
+#+BEGIN_SRC sh
+  mvn package
+#+END_SRC
+
+运行生成的 jar 文件
+
+#+BEGIN_SRC sh
+  java -jar target/springapp-0.0.1-SNAPSHOT.jar
+#+END_SRC
+
+
 * 参考链接
+
 1. [[https://docs.spring.io/spring-boot/docs/current/reference/html/cli-using-the-cli.html][Using Spring Boot CLI]]
 2. [[https://spring.io/projects/spring-boot][Spring Boot Project Homepage]]
 3. [[https://spring.io/guides/gs/rest-service/][RESTful Service]]
 4. [[https://spring.io/guides/gs/consuming-rest-angularjs/][Consuming a RESTful Web Service with AngularJS]]
 5. [[https://github.com/spring-guides/tut-rest.git][Spring Tutorial Github Repo]]
-6. [[https://www.imooc.com/learn/1058][Spring Boot 2.0深度实践之系列总览]]： 视频介绍
+6. [[https://www.imooc.com/learn/1058][Spring Boot 2.0深度实践之系列总览]]

@@ -181,6 +181,7 @@ git 代码管理的主要包括以下三个状态，即：工作目录（working
 | git config --system core.editor <editor>    | 配置编辑器                 |
 | git config --global --editor                | 使用编辑器打开默认配置文件 |
 
+
 * 底层(plumbing)命令
 
 早期的 Git（主要是 1.5 之前的版本）的用户界面要比现在复杂的多，因为它更侧重于作
@@ -196,6 +197,7 @@ git 代码管理的主要包括以下三个状态，即：工作目录（working
   git commit-tree <sha-tree> -m 'message'
   git update-ref refs/heads/master <sha-commit>
 #+END_SRC
+
 
 * 工作流
 
@@ -322,6 +324,7 @@ GitHub, GitLab, Bitbucket这些网站。
 #+BEGIN_SRC sh
   git open <remote> <branch>
 #+END_SRC
+
 
 * 参考链接
 

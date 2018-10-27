@@ -36,6 +36,7 @@
   paste /tmp/a /tmp/b | xargs -n 2 mv
 #+END_SRC
 
+
 * 使用emacs的dired进行重命名
 
 emacs 的 dired-mode 可以直接浏览文件，使用 wired-dired-mode 可以绑定当前目录的文

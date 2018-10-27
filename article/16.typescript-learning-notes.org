@@ -4,6 +4,8 @@
 #+DATE: 2018-10-11
 #+TAGS: typescript javascript note programing-language
 
+
 * 参考链接
+
 1. [[https://www.tslang.cn/docs/handbook/typescript-in-5-minutes.html][5分钟上手TypeScript]]，typescript中文官网
 2. [[http://www.typescriptlang.org/docs/home.html][Typescript Documentation]]

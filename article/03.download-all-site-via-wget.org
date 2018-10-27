@@ -4,9 +4,10 @@
 #+DATE: 2018-10-08
 #+TAGS: workflows download cli wget
 
+
 分享一个使用wget离线下载整个站点的命令
 
 #+BEGIN_SRC sh
-wget --mirror --convert-links --adjust-extension --page-requisites --no-parent http://example.org
+  wget --mirror --convert-links --adjust-extension --page-requisites --no-parent http://example.org
 #+END_SRC
 
