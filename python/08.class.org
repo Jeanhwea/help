@@ -4,6 +4,7 @@
 #+DATE: 2018-10-23
 #+TAGS: python programming class
 
+
 * 定义类
 
 #+BEGIN_SRC python :preamble "# -*- coding: utf-8 -*-" :exports both :session default :results output pp
@@ -33,6 +34,7 @@
 #+RESULTS:
 : Vector (7, 8)
 
+
 * 类继承
 
 #+BEGIN_SRC python :preamble "# -*- coding: utf-8 -*-" :exports both :session default :results output pp
@@ -58,6 +60,7 @@
 
 #+RESULTS:
 : child
+
 
 * 访问控制
 
@@ -91,6 +94,7 @@
 :     print 'you can not see me'
 :                              ^
 : SyntaxError: Missing parentheses in call to 'print'. Did you mean print('you can not see me')?
+
 
 * 定义类型类
 

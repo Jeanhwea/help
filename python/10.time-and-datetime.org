@@ -4,6 +4,7 @@
 #+DATE: 2018-10-24
 #+TAGS: python programming time datetime
 
+
 * 基本操作
 
 ~time~ 模块提供和时间相关的处理函数。 ~datetime~ 提供和日期相关的处理函数
@@ -28,6 +29,7 @@
 : 31536000.0
 : 365 days, 0:00:00
 : 2019-10-24 14:34:49.897552
+
 
 * time 模块
 
@@ -129,6 +131,7 @@ time 模块中的所有时间通过 ~time.struct_time~ 数据结构存储。
 | %z        | 	Time zone offset indicating a positive or negative time difference from UTC/GMT of the form +HHMM or -HHMM, where H represents decimal hour digits and M represents decimal minute digits [-23:59, +23:59]. |
 | %Z        | 	Time zone name (no characters if no time zone exists).                                                                                                                                                      |
 | %%        | 	A literal '%' character.                                                                                                                                                                                    |
+
 
 * 参考链接
 

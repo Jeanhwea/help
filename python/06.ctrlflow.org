@@ -4,6 +4,7 @@
 #+DATE: 2018-10-23
 #+TAGS: python programming ctrlflow
 
+
 * if 条件语句
 
 #+BEGIN_SRC python :preamble "# -*- coding: utf-8 -*-" :exports both :session default :results output pp
@@ -16,6 +17,7 @@
       assert num == 0, 'num is zero'
 #+END_SRC
 
+
 * while 循环语句
 
 #+BEGIN_SRC python :preamble "# -*- coding: utf-8 -*-" :exports both :session default :results output pp
@@ -23,6 +25,7 @@
   while x <= 100:
       x += 1
 #+END_SRC
+
 
 * for 循环语句
 
@@ -38,6 +41,7 @@
   for name, age in zip(names, ages):
       pass
 #+END_SRC
+
 
 * 字符串求值 eval & exec
 

@@ -4,6 +4,7 @@
 #+DATE: 2018-10-23
 #+TAGS: python programming string
 
+
 * 基本操作
 
 字符串有类似于列表的索引操作，也可以使用 ~%~ 和元组的组合方式来输出格式化字符串。
@@ -19,6 +20,7 @@
 #+RESULTS:
 : io
 : first: hello, second: Jeanhwea
+
 
 * 模板字符串
 
@@ -51,6 +53,7 @@ print(foobar)
 
 #+RESULTS:
 : foobar
+
 
 * 成员函数
 

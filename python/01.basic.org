@@ -4,6 +4,7 @@
 #+DATE: 2018-10-23
 #+TAGS: python programming
 
+
 * 环境变量
 
 1. PYTHONDONTWRITEBYTECODE: 阻止 Python 解释器生成二进制字节码文件，如 ~__pycache__~, ~*.pyc~, ~*.pyo~ 等
@@ -29,6 +30,7 @@
     '/usr/local/Cellar/python@2/2.7.15_1/Frameworks/Python.framework/Versions/2.7/lib/python2.7/lib-dynload',
     '/usr/local/lib/python2.7/site-packages']
    #+end_example
+
 
 * 参考链接
 

@@ -4,6 +4,7 @@
 #+DATE: 2018-10-24
 #+TAGS: python programming excel csv
 
+
 * Excel
 
 Python 不是自带操作 Excel 的包，需要安装第三方包来完成相应的操作。常见的可以操作
@@ -104,6 +105,7 @@ xlwt 可以写入 Excel 文件，具体使用方式见代码
       row.write(index, value)
   book.save("test.xls")
 #+END_SRC
+
 
 * csv
 
@@ -220,6 +222,7 @@ Python 自带读写 csv 文件的模块，可以直接导入 csv 模块。
       for row in rows:
         self.writerow(row)
 #+END_SRC
+
 
 * 参考链接
 

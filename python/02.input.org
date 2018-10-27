@@ -4,6 +4,7 @@
 #+DATE: 2018-10-23
 #+TAGS: python programming input
 
+
 * raw_input & input
 
 Python3.x 里面已经把 ~raw_input()~ 给去掉了。事实上是这样的：在 Python3.x 内，

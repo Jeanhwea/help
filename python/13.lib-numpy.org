@@ -4,6 +4,7 @@
 #+DATE: 2018-10-26
 #+TAGS: python numpy tensorflow machine-learning data-processing
 
+
 * numpy
 
 numpy 是 Python 科学计算的基础包，主要有以下一些功能：
@@ -367,6 +368,7 @@ numpy 重载了 Python 的数学操作符，基本操作如下
 #+RESULTS:
 [[file:../resource/image/2018/10/numpy2.png]]
 
+
 * 小技巧: 自动 reshape
 
 #+BEGIN_SRC python :preamble "# -*- coding: utf-8 -*-" :exports both :session default :results output pp
@@ -375,6 +377,7 @@ numpy 重载了 Python 的数学操作符，基本操作如下
   print(a.shape)
   print(a)
 #+END_SRC
+
 
 * 参考链接
 

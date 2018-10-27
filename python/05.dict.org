@@ -4,6 +4,7 @@
 #+DATE: 2018-10-23
 #+TAGS: python programming dictionary
 
+
 * 基本操作
 
 字典的添加、删除、修改
@@ -48,6 +49,7 @@
 : {'key': 'value'}
 : {'key': 'value'}
 
+
 * 浅拷贝和深拷贝
 
 字典也有浅拷贝和深拷贝的区别，具体见下面代码。
@@ -72,6 +74,7 @@
 #+RESULTS:
 : {'name': 'Jeanhwea', 'friends': ['Alice']} {'name': 'Wang', 'friends': ['Alice']}
 : {'name': 'Jeanhwea', 'friends': ['Jack', 'Alice']} {'name': 'Wang', 'friends': ['Alice']}
+
 
 * 常见操作
 
