@@ -33,5 +33,6 @@
 1. [[https://docs.python-guide.org][The Hitchhiker’s Guide to Python!]]
 2. [[https://www.fullstackpython.com/][Full Stack Python]]
 3. [[https://docs.python.org/3/][Python3 Documentation]]
-4. [[https://github.com/Jeanhwea/python-project-template][Python Project Template]]
-5. [[../article/05.setup-pip-envs.org][pip command]]
+4. [[https://docs.python.org/3/tutorial/index.html][Python3 Tutorial]]
+5. [[https://github.com/Jeanhwea/python-project-template][Python Project Template]]
+6. [[../article/05.setup-pip-envs.org][pip command]]

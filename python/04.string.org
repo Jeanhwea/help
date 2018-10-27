@@ -49,6 +49,22 @@ print(foobar)
 : foobar
 
 ** 成员函数
+字符串索引方式。
+#+BEGIN_SRC python :preamble "# -*- coding: utf-8 -*-" :exports both :session default :results output pp
+  #  +---+---+---+---+---+---+
+  #  | P | y | t | h | o | n |
+  #  +---+---+---+---+---+---+
+  #  0   1   2   3   4   5   6
+  # -6  -5  -4  -3  -2  -1
+  python = 'Python'
+  print(python[0], python[1])
+  print(python[-1], python[-2])
+#+END_SRC
+
+#+RESULTS:
+: P y
+: n o
+
 ~find~ 查找字符串的内容
 #+BEGIN_SRC python :preamble "# -*- coding: utf-8 -*-" :exports both :session default :results output pp
   url = 'http://jeanhwea.github.io'
