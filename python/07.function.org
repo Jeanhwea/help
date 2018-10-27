@@ -4,22 +4,42 @@
 #+DATE: 2018-10-23
 #+TAGS: python programming function
 
-** 函数定义与传参
-#+BEGIN_SRC python :preamble "# -*- coding: utf-8 -*-" :exports both :session default :results output pp
-  def myfunc(arg):
-      print(arg)
+** 函数定义
+   函数通过 def 关键字来定义，定义的例子如下：
+   #+BEGIN_SRC python :preamble "# -*- coding: utf-8 -*-" :exports both :session default :results output pp
+     def myfunc(arg):
+       print(arg)
 
+     def fib_lessthan(n):
+       ans = []
+       a, b = 0, 1
+       while a < n:
+         ans.append(a)
+         a, b = b, a+b
+       return ans
+
+     print(fib_lessthan(10))
+   #+END_SRC
+
+   #+RESULTS:
+   : [0, 1, 1, 2, 3, 5, 8]
+
+** 函数传参
+*** 默认参数
+    在函数最后使用 ~=~ 可以给参数添加默认的值。
+
+#+BEGIN_SRC python :preamble "# -*- coding: utf-8 -*-" :exports both :session default :results output pp
   # parameter with single star
   def print_param(*params):
       print(params)
 
-  print_param('aa') #>>> ('aa',)
-  print_param('aa', 'bb') #>>> ('aa', 'bb')
+  print_param('aa')
+  print_param('aa', 'bb')
 
   # parameter with double star
   def print_param2(**params):
       print(params)
-  print_param2(x=1, y=2) #>>> {'y': 2, 'x': 1}
+  print_param2(x=1, y=2)
 
   def print_param3(x, y, *args, **kargs):
       print(x, y)
