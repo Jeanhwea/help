@@ -12,7 +12,7 @@
 
 #+BEGIN_SRC sh
   find . -type f -name "*.ts" -exec cat {} + \
-    | tr -c '[:alnum:]' '[\n*]' | sort | uniq -c | sort -nr | head -10
+    | tr -c '[:alnum:]' '[\n*]' | sed '/^$/d' |sort | uniq -c | sort -nr | head -10
 #+END_SRC
 
 该命令行的典型使用场景是统计 Angular 代码中词汇的频率，见下图：
@@ -47,3 +47,4 @@
 * 参考链接
 
 1. [[https://unix.stackexchange.com/questions/41479/find-n-most-frequent-words-in-a-file][find n most frequent words in a file]]
+2. [[https://github.com/jeanhwea/scripts/blob/master/bin/countwords][countwords]]
