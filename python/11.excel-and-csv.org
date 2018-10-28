@@ -150,12 +150,12 @@ Python 自带读写 csv 文件的模块，可以直接导入 csv 模块。
 
 #+BEGIN_SRC python :preamble "# -*- coding: utf-8 -*-" :exports both :session default :results output pp
   with open('names.csv', 'w') as csvfile:
-      fieldnames = ['first_name', 'last_name']
-      writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
-      writer.writeheader()
-      writer.writerow({'first_name': 'Baked', 'last_name': 'Beans'})
-      writer.writerow({'first_name': 'Lovely', 'last_name': 'Spam'})
-      writer.writerow({'first_name': 'Wonderful', 'last_name': 'Spam'})
+    fieldnames = ['first_name', 'last_name']
+    writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+    writer.writeheader()
+    writer.writerow({'first_name': 'Baked', 'last_name': 'Beans'})
+    writer.writerow({'first_name': 'Lovely', 'last_name': 'Spam'})
+    writer.writerow({'first_name': 'Wonderful', 'last_name': 'Spam'})
 #+END_SRC
 
 ** 使用 csv 读写文件的例子

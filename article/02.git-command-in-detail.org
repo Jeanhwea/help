@@ -189,7 +189,7 @@ git 代码管理的主要包括以下三个状态，即：工作目录（working
 个晦涩复杂的 Git 用户界面；不过最近几年来，它已经被改进到不输于任何其他版本控制
 系统地清晰易用了。
 
-#+BEGIN_SRC shell
+#+BEGIN_SRC sh
   git hash-object -w --stdin
   git cat-file -p <sha>
   git update-index --add --cacheinfo 100644 <sha-blob> filename.txt
