@@ -23,6 +23,7 @@ Windows 的配置文件是 *~/pip/pip.ini* ，Unix 的配置文件是 *~/.pip/pi
 也可以用如下的命令直接设置
 
 #+BEGIN_SRC sh
+  pip install pip -U
   pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
 #+END_SRC
 
