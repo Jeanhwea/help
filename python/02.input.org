@@ -26,6 +26,7 @@ Python3.x 里面已经把 ~raw_input()~ 给去掉了。事实上是这样的：�
     print(age+1)
 #+END_SRC
 
+
 * 命令行输入
 
 ** sys.argv
@@ -57,6 +58,7 @@ Python3.x 里面已经把 ~raw_input()~ 给去掉了。事实上是这样的：�
       yourfunc(args.paraA, args.paraB)
 #+END_SRC
 
-** 参考链接
+
+* 参考链接
 
 1. [[https://docs.python.org/3/library/argparse.html][argparse doc]]
