@@ -51,8 +51,10 @@ Python3.x 里面已经把 ~raw_input()~ 给去掉了。事实上是这样的：�
 
   if __name__ == '__main__':
       parser = argparse.ArgumentParser(description="short decription for this command.")
+      parser.add_argument("-v", "--verbose", action="store_true", help="boolean for verbose")
       parser.add_argument("-a", "--paraA", type=float)
       parser.add_argument("-b", "--paraB", type=float)
+      parser.add_argument("folders", nargs='+', help="list of folders")
       args = parser.parse_args()
 
       yourfunc(args.paraA, args.paraB)
