@@ -25,3 +25,38 @@ Python3.x 里面已经把 ~raw_input()~ 给去掉了。事实上是这样的：�
     age = input('age = ')
     print(age+1)
 #+END_SRC
+
+* 命令行输入
+
+** sys.argv
+
+~sys.argv~ 其实是一个列表，在可以直接读取，用法如下：
+
+#+BEGIN_SRC python :preamble "# -*- coding: utf-8 -*-" :exports both :session default :results output pp
+  import sys
+  if __name__ == '__main__':
+    print(sys.argv)
+#+END_SRC
+
+#+RESULTS:
+: ['']
+
+** argparse
+
+~argparse~ 是 Python 的标准库，可以用来解析命令行参数，非常好用。
+
+#+BEGIN_SRC python :preamble "# -*- coding: utf-8 -*-" :exports both :session default :results output pp
+  import argparse
+
+  if __name__ == '__main__':
+      parser = argparse.ArgumentParser(description="short decription for this command.")
+      parser.add_argument("-a", "--paraA", type=float)
+      parser.add_argument("-b", "--paraB", type=float)
+      args = parser.parse_args()
+
+      yourfunc(args.paraA, args.paraB)
+#+END_SRC
+
+** 参考链接
+
+1. [[https://docs.python.org/3/library/argparse.html][argparse doc]]
