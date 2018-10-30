@@ -1,0 +1,76 @@
+#+TITLE: 日志
+#+AUTHOR: Jinghui Hu
+#+EMAIL: hujinghui@buaa.edu.cn
+#+DATE: 2018-10-30
+#+TAGS: python programming logging logger
+
+
+* logging
+
+日志
+
+** 日志配置文件 logging.conf
+
+#+BEGIN_SRC conf
+[loggers]
+keys=root,sample
+
+[handlers]
+keys=console,debug,info,error
+
+[formatters]
+keys=simple,detail
+
+[logger_root]
+level=DEBUG
+handlers=debug,error
+
+[logger_sample]
+level=DEBUG
+handlers=console,info
+qualname=sample
+
+[handler_console]
+class=StreamHandler
+level=DEBUG
+formatter=simple
+args=(sys.stdout,)
+
+[handler_debug]
+class=logging.handlers.TimedRotatingFileHandler
+level=DEBUG
+formatter=simple
+backupCount=10
+encoding=utf8
+args=("log/debug.log",)
+
+[handler_info]
+class=logging.handlers.TimedRotatingFileHandler
+level=INFO
+formatter=simple
+backupCount=10
+encoding=utf8
+args=("log/info.log",)
+
+[handler_error]
+class=logging.handlers.TimedRotatingFileHandler
+level=WARNING
+formatter=detail
+backupCount=10
+encoding=utf8
+args=("log/error.log",)
+
+# formatter, see https://docs.python.org/3/library/logging.html#logrecord-attributes
+[formatter_simple]
+format=[%(asctime)s][%(levelname)-8s] <%(name)s>: %(message)s
+datefmt=
+
+[formatter_detail]
+format=[%(asctime)s][%(levelname)-8s][%(filename)s:%(lineno)d:%(funcName)s()] <%(name)s>: %(message)s
+datefmt=
+#+END_SRC
+
+
+* 参考链接
+
+1. [[https://github.com/Jeanhwea/python-project-template][Python Project Template]]
