@@ -136,4 +136,4 @@ datefmt=
 * 参考链接
 
 1. [[https://github.com/Jeanhwea/python-project-template][Python Project Template]]
-2. [[# formatter, see https://docs.python.org/3/library/logging.html#logrecord-attributes%0A][logging formatter]]
+2. [[https://docs.python.org/3/library/logging.html#logrecord-attributes%0A][logging formatter]]
