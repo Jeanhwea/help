@@ -1,7 +1,7 @@
 #+TITLE: 批量规范化重命名大量的文件
 #+AUTHOR: Jinghui Hu
 #+EMAIL: hujinghui@buaa.edu.cn
-#+DATE: 2018-10-05
+#+DATE: <2018-10-05 Fri>
 #+TAGS: workflows rename vim emacs dired
 
 

@@ -1,7 +1,7 @@
 #+TITLE: 学习 Typescript 的笔记
 #+AUTHOR: Jinghui Hu
 #+EMAIL: hujinghui@buaa.edu.cn
-#+DATE: 2018-10-11
+#+DATE: <2018-10-11 Thu>
 #+TAGS: typescript javascript note programing-language
 
 

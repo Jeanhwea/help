@@ -1,7 +1,7 @@
 #+TITLE: Firefox 的默认缩放大小
 #+AUTHOR: Jinghui Hu
 #+EMAIL: hujinghui@buaa.edu.cn
-#+DATE: 2018-10-08
+#+DATE: <2018-10-08 Mon>
 #+TAGS: firefox browser font
 
 在Firefox浏览器的地址栏中输入about:config，配置 *layout.css.devPixelsPerPx* 参数

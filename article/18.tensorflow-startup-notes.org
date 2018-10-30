@@ -1,7 +1,7 @@
 #+TITLE: TensorFlow 安装笔记
 #+AUTHOR: Jinghui Hu
 #+EMAIL: hujinghui@buaa.edu.cn
-#+DATE: 2018-10-12
+#+DATE: <2018-10-12 Fri>
 #+TAGS: python tensorflow machine-learning
 
 

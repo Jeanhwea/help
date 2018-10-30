@@ -1,7 +1,7 @@
 #+TITLE: 使用命令行统计项目中词汇的频率
 #+AUTHOR: Jinghui Hu
 #+EMAIL: hujinghui@buaa.edu.cn
-#+DATE: 2018-10-27
+#+DATE: <2018-10-27 Sat>
 #+TAGS: word count cli
 
 

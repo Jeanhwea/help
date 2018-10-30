@@ -1,7 +1,7 @@
 #+TITLE: 安装ROR开发环境
 #+AUTHOR: Jinghui Hu
 #+EMAIL: hujinghui@buaa.edu.cn
-#+DATE: 2018-10-08
+#+DATE: <2018-10-09 Tue>
 #+TAGS: ruby ror gem rails
 
 

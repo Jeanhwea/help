@@ -1,7 +1,7 @@
 #+TITLE: 使用 JavaScript 导出 Excel 文件
 #+AUTHOR: Jinghui Hu
 #+EMAIL: hujinghui@buaa.edu.cn
-#+DATE: 2018-10-16
+#+DATE: <2018-10-16 Tue>
 #+TAGS: frontend javascript excel
 
 

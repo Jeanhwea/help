@@ -1,7 +1,7 @@
 #+TITLE: 生成RSA加密的SSH公钥和私钥
 #+AUTHOR: Jinghui Hu
 #+EMAIL: hujinghui@buaa.edu.cn
-#+DATE: 2018-10-08
+#+DATE: <2018-10-08 Mon>
 #+TAGS: ssh git rsa
 
 

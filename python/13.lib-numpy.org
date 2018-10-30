@@ -1,7 +1,7 @@
 #+TITLE: numpy: 数据处理包
 #+AUTHOR: Jinghui Hu
 #+EMAIL: hujinghui@buaa.edu.cn
-#+DATE: 2018-10-26
+#+DATE: <2018-10-26 Fri>
 #+TAGS: python numpy tensorflow machine-learning data-processing
 
 

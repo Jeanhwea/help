@@ -1,7 +1,7 @@
 #+TITLE: 日志
 #+AUTHOR: Jinghui Hu
 #+EMAIL: hujinghui@buaa.edu.cn
-#+DATE: 2018-10-30
+#+DATE: <2018-10-30 Tue>
 #+TAGS: python programming logging logger
 
 
