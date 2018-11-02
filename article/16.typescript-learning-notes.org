@@ -86,6 +86,56 @@ var 声明可以在包含它的函数，模块，命名空间或全局作用域�
   let x = 20; // 错误，不能在1个作用域里多次声明`x`
 #+END_SRC
 
+** 函数传参
+
+TypeScript 里的每个函数参数都是必须的。 这不是指不能传递 null 或 undefined 作为
+参数，而是说编译器检查用户是否为每个参数都传入了值。 编译器还会假设只有这些参数
+会被传递进函数。简短地说，传递给一个函数的参数个数必须与函数期望的参数个数一致。
+
+*** 可选参数和默认参数
+
+JavaScript 里，每个参数都是可选的，可传可不传。 没传参的时候，它的值就是
+undefined 。在 TypeScript 里我们可以在参数名旁使用 ? 实现可选参数的功能。 比如，
+我们想让 lastName 是可选的：
+
+#+BEGIN_SRC javascript
+  // 可选参数
+  function buildName(firstName: string, lastName?: string) {
+    if (lastName)
+      return firstName + " " + lastName;
+    else
+      return firstName;
+  }
+
+  let result1 = buildName("Bob");  // works correctly now
+  let result2 = buildName("Bob", "Adams", "Sr.");  // error, too many parameters
+  let result3 = buildName("Bob", "Adams");  // ah, just right
+
+  // 默认参数
+  function buildName(firstName: string, lastName = "Smith") {
+    return firstName + " " + lastName;
+  }
+
+  let result1 = buildName("Bob");                  // works correctly now, returns "Bob Smith"
+  let result2 = buildName("Bob", undefined);       // still works, also returns "Bob Smith"
+  let result3 = buildName("Bob", "Adams", "Sr.");  // error, too many parameters
+  let result4 = buildName("Bob", "Adams");         // ah, just right
+#+END_SRC
+
+*** 边长参数
+
+在 TypeScript 里，你可以把所有参数收集到一个变量里， 剩余参数会被当做个数不限的
+可选参数。 可以一个都没有，同样也可以有任意个。 编译器创建参数数组，名字是你在省
+略号 *...* 后面给定的名字，你可以在函数体内使用这个数组。
+
+#+BEGIN_SRC javascript
+  function buildName(firstName: string, ...restOfName: string[]) {
+    return firstName + " " + restOfName.join(" ");
+  }
+
+  let employeeName = buildName("Joseph", "Samuel", "Lucas", "MacKinzie");
+#+END_SRC
+
 
 * 参考链接
 
