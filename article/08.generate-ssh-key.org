@@ -11,9 +11,9 @@ ssh公钥认证是ssh认证的方式之一。通过公钥认证可实现ssh免�
 
 ssh-keygen可用来生成ssh公钥认证所需的公钥和私钥文件。
 
-#+begin_src sh
-  ssh-keygen -t rsa -b 4096 -c "your_email@example.com"
-#+end_src
+#+BEGIN_SRC sh
+  ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+#+END_SRC
 
 使用 ssh-kengen 会在 *~/.ssh/* 目录下生成两个文件，不指定文件名和密钥类型的时候，
 默认生成的两个文件是：
