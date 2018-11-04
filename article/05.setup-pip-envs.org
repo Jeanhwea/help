@@ -1,7 +1,7 @@
 #+TITLE: 配置pip的相关环境变量
 #+AUTHOR: Jinghui Hu
 #+EMAIL: hujinghui@buaa.edu.cn
-#+DATE: 2018-10-08
+#+DATE: <2018-10-08 Mon>
 #+TAGS: python pip package
 
 
