@@ -1,7 +1,32 @@
 #+TITLE: 殊蕤的工作笔记
 #+AUTHOR: Jinghui Hu
 #+EMAIL: hujinghui@buaa.edu.cn
-#+DATE: 2018-10-05
+#+DATE: <2018-10-05 Fri>
+
 
 我是一个程序员。
 
+* 文章目录
+1. [[article/01.rename-many-files.org][批量规范化重命名大量的文件 <2018-11-02 Fri>]]
+2. [[article/02.git-command-in-detail.org][Git命令详解 <2018-11-04 Sun>]]
+3. [[article/03.download-all-site-via-wget.org][离线下载整个站点 <2018-11-02 Fri>]]
+4. [[article/04.setup-ROR-enviroment.org][安装ROR开发环境 <2018-11-02 Fri>]]
+5. [[article/05.setup-pip-envs.org][配置pip的相关环境变量 <2018-11-02 Fri>]]
+6. [[article/06.setup-and-use-maven.org][配置和使用maven工具 <2018-11-02 Fri>]]
+7. [[article/07.setup-npm-and-yarn.org][配置 npm 和 yarn <2018-11-02 Fri>]]
+8. [[article/08.generate-ssh-key.org][生成RSA加密的SSH公钥和私钥 <2018-11-02 Fri>]]
+9. [[article/09.chrome-CORS-setting.org][chrome浏览器允许跨越请求设置 <2018-11-02 Fri>]]
+10. [[article/10.start-angular-project.org][编写Angular项目 <2018-11-02 Fri>]]
+11. [[article/11.firefox-default-zoom-pixel.org][Firefox 的默认缩放大小 <2018-11-02 Fri>]]
+12. [[article/12.emacs-org-mode-note.org][Emacs org-mode 的相关笔记 <2018-11-02 Fri>]]
+13. [[article/13.RESTful-API-in-Practice.org][RESTful API 设计实践 <2018-11-02 Fri>]]
+14. [[article/14.spring-boot-note.org][Spring boot 学习笔记 <2018-11-02 Fri>]]
+15. [[article/15.qrcode-decoder-by-javascript.org][使用 JavaScript 解析二维码 <2018-11-02 Fri>]]
+16. [[article/16.typescript-learning-notes.org][学习 Typescript 的笔记 <2018-11-02 Fri>]]
+17. [[article/17.emmet-mode-or-zen-coding.org][Emmet-mode 或者 Zen Coding <2018-11-02 Fri>]]
+18. [[article/18.tensorflow-startup-notes.org][TensorFlow 安装笔记 <2018-11-02 Fri>]]
+19. [[article/19.capture-screen-with-ffmpeg.org][使用 ffmpeg 录屏 <2018-11-02 Fri>]]
+20. [[article/20.export-excel-by-javascript.org][使用 JavaScript 导出 Excel 文件 <2018-11-02 Fri>]]
+21. [[article/21.count-words-from-cli.org][使用命令行统计项目中词汇的频率 <2018-11-02 Fri>]]
+22. [[article/22.make-gif-images-with-ffmpeg.org][使用 ffmpeg 制作 gif 动态图 <2018-11-02 Fri>]]
+23. [[article/23.curl-cheatsheet.org][CRUL 工具 <2018-11-04 Sun>]]
