@@ -333,4 +333,4 @@ GitHub, GitLab, Bitbucket这些网站。
 3. [[https://help.github.com/][Github Help Page]]
 4. [[https://git-scm.com/doc][Pro Git]]
 5. [[https://www.gitignore.io][online gitignore pattern]]
-6. [[https://github.com/jeanhwea/dotfiles/blob/master/git/gitconfig][My .gitconfig file]]
+6. [[https://github.com/jeanhwea/dotfiles/blob/master/.gitconfig][My .gitconfig file]]
