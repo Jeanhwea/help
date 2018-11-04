@@ -4,6 +4,7 @@
 #+DATE: <2018-11-03 Sat>
 #+TAGS: curl api download
 
+[[file:../resource/image/2018/11/everything-curl.png]]
 
 * 常见用法
 
