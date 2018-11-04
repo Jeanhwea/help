@@ -6,6 +6,8 @@
 
 我是一个程序员。
 
+[[file:resource/image/2018/11/keyboard.png]]
+
 * 文章目录
 
 1. [[article/01.rename-many-files.org][批量规范化重命名大量的文件]] <2018-10-05 Fri>
