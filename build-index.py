@@ -4,8 +4,7 @@ import os
 import sys
 import time
 
-here = os.getcwd()
-article = 'article'
+dir = 'article'
 
 def getinfo(dir):
   orgfiles = []
@@ -24,28 +23,30 @@ def getinfo(dir):
         orgfiles.append((filepath, title, date))
   return orgfiles
 
-def genindex(infos):
-  index = ''
-  i = 1
-  for path, title, date in infos:
-    index += '{i}. [[{path}][{title}]] {date}\n'.format(
-      i=i, path=path, title=title, date=date
-    )
-    i += 1
-  return index
 
 def writereadme(index):
+  readme = 'readme.org'
   content = ''
-  with open('readme.org', 'r') as f:
+
+  # read original header
+  with open(readme, 'r') as f:
     for line in f:
       content += line
       if line.startswith('*'):
         break
   content += '\n'
-  content += index
-  with open('readme.org', 'w') as f:
+
+  # write index
+  i = 1
+  for path, title, date in infos:
+    content += '{i}. [[{path}][{title}]] {date}\n'.format(
+      i=i, path=path, title=title, date=date
+    )
+    i += 1
+
+  # apply to file
+  with open(readme, 'w') as f:
     f.write(content)
 
-infos = getinfo(article)
-index = genindex(infos)
+infos = getinfo(dir)
 writereadme(index)
