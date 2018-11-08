@@ -6,7 +6,7 @@
 
 我是一个程序员。
 
-[[file:resource/image/2018/11/keyboard.png]]
+[[file:resource/image/2018/11/header.png]]
 
 * 文章目录
 
