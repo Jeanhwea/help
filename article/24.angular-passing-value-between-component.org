@@ -54,3 +54,73 @@ input是 parent 控制 child 的数据显示。如下一个例子中实现一个
 5. 在父组件的 onSuperClicked(event: string) 方法中就可以改变 superstring 的值
 
 [[file:../resource/image/2018/11/ng-output.png]]
+
+代码如下：
+
+#+BEGIN_SRC html
+  <!-- parent html -->
+
+  <div id="main-div">
+    <app-superbtn (superClick)="onSuperClicked($event)"></app-superbtn>
+    <p>{{ superstring }}</p>
+  </div>
+#+END_SRC
+
+#+BEGIN_SRC typescript
+  // parent typescript
+
+  import { Component } from '@angular/core';
+
+  @Component({
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.css']
+  })
+  export class AppComponent {
+    title = 'antdapp';
+
+    private superstring: string;
+
+    constructor() { }
+
+    onSuperClicked(event: string): void {
+      console.log(this.superstring);
+      this.superstring = event;
+    }
+
+  }
+#+END_SRC
+
+#+BEGIN_SRC html
+  <!-- child html -->
+
+  <div (click)="onClicked()">
+    <button>Super</button>
+  </div>
+#+END_SRC
+
+#+BEGIN_SRC typescript
+  // childe typescript
+
+  import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+
+  @Component({
+    selector: 'app-superbtn',
+    templateUrl: './superbtn.component.html',
+    styleUrls: ['./superbtn.component.css']
+  })
+  export class SuperbtnComponent implements OnInit {
+
+    @Output() superClick = new EventEmitter<string>();
+
+    constructor() { }
+
+    ngOnInit() { }
+
+    onClicked() {
+      const time = new Date().toJSON();
+      this.superClick.emit(time);
+    }
+
+  }
+#+END_SRC
