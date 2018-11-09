@@ -14,22 +14,22 @@ def getinfo(dir):
         filepath = os.path.join(root, file)
         title = ''
         date = ''
-        with open(filepath, 'r') as f:
+        with open(filepath, 'r', encoding='utf-8') as f:
           for line in f:
             if line.startswith('#+TITLE:'):
               title = line.replace('#+TITLE:', '').strip()
             if line.startswith('#+DATE:'):
               date = line.replace('#+DATE:', '').strip()
-        orgfiles.append((filepath, title, date))
+        orgfiles.append((filepath.replace('\\', '/'), title, date))
   return orgfiles
 
 
-def writereadme(index):
+def writereadme(infos):
   readme = 'readme.org'
   content = ''
 
   # read original header
-  with open(readme, 'r') as f:
+  with open(readme, 'r', encoding='utf-8') as f:
     for line in f:
       content += line
       if line.startswith('*'):
@@ -45,8 +45,8 @@ def writereadme(index):
     i += 1
 
   # apply to file
-  with open(readme, 'w') as f:
+  with open(readme, 'w', encoding='utf-8') as f:
     f.write(content)
 
 infos = getinfo(dir)
-writereadme(index)
+writereadme(infos)

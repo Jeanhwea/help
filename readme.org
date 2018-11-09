@@ -33,3 +33,4 @@
 21. [[article/21.count-words-from-cli.org][使用命令行统计项目中词汇的频率]] <2018-10-27 Sat>
 22. [[article/22.make-gif-images-with-ffmpeg.org][使用 ffmpeg 制作 gif 动态图]] <2018-10-27 Sat>
 23. [[article/23.curl-cheatsheet.org][CRUL 工具]] <2018-11-03 Sat>
+24. [[article/24.angular-passing-value-between-component.org][Angular 组件之间传值]] <2018-11-09 Fri>
