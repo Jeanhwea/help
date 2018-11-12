@@ -18,7 +18,7 @@
 6. [[article/06.setup-and-use-maven.org][配置和使用maven工具]] <2018-10-08 Mon>
 7. [[article/07.setup-npm-and-yarn.org][配置 npm 和 yarn]] <2018-10-08 Mon>
 8. [[article/08.generate-ssh-key.org][生成RSA加密的SSH公钥和私钥]] <2018-10-08 Mon>
-9. [[article/09.chrome-CORS-setting.org][chrome浏览器允许跨越请求设置]] <2018-10-08 Mon>
+9. [[article/09.chrome-options.org][chrome浏览器相关设置]] <2018-10-08 Mon>
 10. [[article/10.start-angular-project.org][编写Angular项目]] <2018-10-08 Mon>
 11. [[article/11.firefox-default-zoom-pixel.org][Firefox 的默认缩放大小]] <2018-10-08 Mon>
 12. [[article/12.emacs-org-mode-note.org][Emacs org-mode 的相关笔记]] <2018-10-08 Mon>
