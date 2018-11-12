@@ -44,8 +44,8 @@ chrome53 使用在chrome快捷方式的属性里面添加 --disable-web-security
 
 相关数据存放的路径如下：
 
-Windows: ~\AppData\Local\Google\Chrome
-MacOS: ~/.config/chrome
+- Windows: ~\AppData\Local\Google\Chrome
+- MacOS: ~/.config/chrome
 
 * 参考链接
 
