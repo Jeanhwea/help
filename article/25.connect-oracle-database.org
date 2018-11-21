@@ -48,3 +48,25 @@ Oracle 的 sqlplus 是与 oracle 数据库进行交互的客户端工具，借�
 #+BEGIN_SRC sh
   sqlplus user/\"my@password\"@hostname:port/service_id
 #+END_SRC
+
+** sqlplus 启动配置
+
+初始化 sqlplus 时，需要配置 *$ORACLE_HOME/sqlplus/admin/glogin.sql* 文件来设置一
+些启动选项。
+
+#+BEGIN_SRC sql
+  -- $ORACLE_HOME/sqlplus/admin/glogin.sql
+  -- SET UNDERLINE OFF
+  SET TAB OFF
+  SET VERIFY OFF
+  SET WRAP OFF
+  SET LINESIZE 32767
+  SET PAGESIZE 0
+  SET TRIMOUT ON
+  SET TRIMSPOOL ON
+#+END_SRC
+
+
+* 参考链接
+
+1. [[https://superuser.com/questions/272818/how-to-turn-off-word-wrap-in-less][How to turn off word-wrap in less]]
