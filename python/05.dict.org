@@ -130,6 +130,7 @@
 : {'title': 'aaaa', 'url': 'http://jeanhwea.github.io', 'content': 'nothing'}
 : {'title': 'bbbb', 'url': 'http://www.github.com/jeanhwea', 'content': 'nothing'}
 
+
 * 获取字典的值
 
 ~setdefault~ 用于设置字典的默认值，如果元素存在则返回元素的值，并将值写入字典。

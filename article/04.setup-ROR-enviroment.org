@@ -16,13 +16,13 @@
 
 * 安装 RVM
 
-参考 [[https://rvm.io][RVM]] 官网的教程。先安装 RVM 的 gpg 秘钥
+参考 [[https://rvm.io][RVM]] 官网的教程。先安装 RVM 的 gpg秘钥
 
 #+BEGIN_SRC sh
   gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
 #+END_SRC
 
-然后通过 curl 来安装稳定版的 RVM 。
+然后通过curl 来安装稳定版的 RVM。
 
 #+BEGIN_SRC sh
   \curl -sSL https://get.rvm.io | bash -s stable
@@ -59,7 +59,7 @@
 更新gem系统
 
 #+BEGIN_SRC sh
-  gem update --system # 这里请翻墙一下  
+  gem update --system # 这里请翻墙一下
 #+END_SRC
 
 替换gem镜像源
@@ -70,7 +70,7 @@
 
 * 使用 Gem 安装 rails
 
-直接安装rails就可以了 
+直接安装rails就可以了
 
 #+BEGIN_SRC sh
   gem install rails
