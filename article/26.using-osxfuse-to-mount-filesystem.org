@@ -20,6 +20,7 @@ osxfuse 是 macOS 下的一款可以提供访问非 mac 文件系统的软件，
   brew install ntfs-3g
 #+END_SRC
 
+
 * ntfs-3g 挂载盘
 
 在挂载磁盘是先查询当前有哪些可以使用的盘，命令如下：
