@@ -1,4 +1,4 @@
-#+TITLE: Git命令详解
+#+TITLE: Git 命令详解
 #+AUTHOR: Jinghui Hu
 #+EMAIL: hujinghui@buaa.edu.cn
 #+DATE: <2018-10-08 Mon>
@@ -8,11 +8,11 @@
 * 高层(porcelain)命令
 
 由于 Git 最初是一套面向版本控制系统的工具集，而不是一个完整的、用户友好的版本控
-制系统，所以它还包含了一部分用于完成底层工作的命令。 这些命令被设计成能以UNIX 命
-令行的风格连接在一起，或者由脚本调用，来完成工作。 这部分命令一般被称作 “底层
+制系统，所以它还包含了一部分用于完成底层工作的命令。 这些命令被设计成能以 UNIX
+命令行的风格连接在一起，或者由脚本调用，来完成工作。 这部分命令一般被称作 “底层
 （plumbing）”命令，而那些更友好的命令则被称作“高层（porcelain）”命令。
 
-** 工作目录、INDEX和代码仓库
+** 工作目录、INDEX 和代码仓库
 
 git 代码管理的主要包括以下三个状态，即：工作目录（working directory）、暂存区
 （Index）和当前头（HEAD）。
@@ -41,7 +41,7 @@ git 代码管理的主要包括以下三个状态，即：工作目录（working
 |---------------------+--------------------------------------------------------------------|
 | git revert <commit> | 创建一个提交，用来撤销 <commit> 里的修改，并将它运用到当前分支     |
 | git reset <file>    | 移除 <file> 中进入 Index 的修改，但是不修改工作目录                |
-| git clean -n        | 显示当前目录中哪些文件会被移除。 *-n* 是 dry-run ，移除是使用 *-f* |
+| git clean -n        | 显示当前目录中哪些文件会被移除。 *-n* 是 dry-run，移除是使用 *-f* |
 
 *** 重写历史
 
@@ -231,7 +231,7 @@ git-rebase 是用来修改本地提交的，目的是为了让提交历史变成
   git rebase master
   git rebase master topic
 
-  # 情况1：如果 topic 和 master 没有同样的提交
+  # 情况一：如果 topic 和 master 没有同样的提交
   #
   #      A---B---C topic
   #     /
@@ -241,7 +241,7 @@ git-rebase 是用来修改本地提交的，目的是为了让提交历史变成
   #             /
   # D---E---F---G master
 
-  # 情况2：如果 topic 和 master 有同样的提交，rebase 会合并相同的提交
+  # 情况二：如果 topic 和 master 有同样的提交，rebase 会合并相同的提交
   #
   #       A---B---C topic
   #      /
@@ -295,7 +295,7 @@ git-rebase 的 *--on-to* 选项也是非常重要的，可以跨多个分支来�
 ** Git Open， 在浏览器中打开 git 代码仓链接
 
 [[https://github.com/paulirish/git-open][git-open]] 是一个可以在浏览器中打开当前 git 代码仓库中的文件，网址的工具。目前支持
-GitHub, GitLab, Bitbucket这些网站。
+GitHub, GitLab, Bitbucket 这些网站。
 
 *** 安装
 
