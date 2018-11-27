@@ -69,6 +69,28 @@ Windows 10 以上的机器上，安装的方式请参考官网的文档。
   docker exec -it foo /bin/bash
 #+END_SRC
 
+
+* Docker 图像
+
+Docker 图像指的是容器在一个特点时间点的快照，它是一个只读的容器的存储，官网上说
+图像是容器的一个模板。
+
+** 生命周期
+
+- docker images: 显示所有图像
+- docker import: 通过压缩文档导入图像
+- docker build: 通过 Dockfile 创建图像
+- docker commit: 通过一个容器来提交一个图像
+- docker rmi: 移除一个图像
+- docker load: 通过压缩档案作为 STDIN 来导入图像，图像的标签也会一并导入
+- docker save: 将图像压缩成压缩档案输出到 STDOUT，图像的 layer, tags, version 一并输出
+
+** 显示状态
+
+- docker history: 显示所有历史图像
+- docker tag: 重命名图像，打标签等操作
+
+
 * 参考链接
 
 1. [[https://github.com/wsargent/docker-cheat-sheet][docker cheatsheet]]
