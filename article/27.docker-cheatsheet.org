@@ -90,6 +90,39 @@ Docker 图像指的是容器在一个特点时间点的快照，它是一个只�
 - docker history: 显示所有历史图像
 - docker tag: 重命名图像，打标签等操作
 
+* 工作流
+
+** load/save 镜像
+
+加载文件中的图像
+
+#+BEGIN_SRC sh
+  docker load < filename.tar.gz
+#+END_SRC
+
+保存图像到文件
+
+#+BEGIN_SRC sh
+  docker save imagename:tagname | gzip > filename.tar.gz
+#+END_SRC
+
+** import/export 容器
+
+从一个容器文件中导入容器
+
+#+BEGIN_SRC sh
+  cat filename.tar.gz | docker import - imagename:tagname
+#+END_SRC
+
+导出一个容器
+
+#+BEGIN_SRC sh
+  docker export containername | gzip > filename.tar.gz
+#+END_SRC
+
+值得一提的是： ~load~ 在新建图像时会带人相关的历史信息，tag 等，而 ~import~ 只会
+创建一个图像，所以 ~import~ 的镜像的大小会小一点。
+
 
 * 参考链接
 
