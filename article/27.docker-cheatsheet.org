@@ -18,6 +18,7 @@ Docker 和虚拟机有着同样的虚拟化的功能，但是 Docker 在完成�
 Docker 的最低依赖是 3.10.x 的 Linux 内核。并且 Docker 可以安装在 Linux，MacOS 和
 Windows 10 以上的机器上，安装的方式请参考官网的文档。
 
+
 * Docker 容器
 
 ** 生命周期
@@ -90,6 +91,7 @@ Docker 图像指的是容器在一个特点时间点的快照，它是一个只�
 - docker history: 显示所有历史图像
 - docker tag: 重命名图像，打标签等操作
 
+
 * 工作流
 
 ** load/save 图像
@@ -123,6 +125,7 @@ Docker 图像指的是容器在一个特点时间点的快照，它是一个只�
 值得一提的是： ~load~ 在新建图像时会带人相关的历史信息，tag 等，而 ~import~ 只会
 创建一个图像，所以 ~import~ 的图像的大小会小一点。
 
+
 * Registry 和 Repository
 
 registry 是一个宿主机器，一个 registry 包含多个 repository。repository 是存储图
@@ -134,6 +137,7 @@ registry 是一个宿主机器，一个 registry 包含多个 repository。repos
 - docker search: 搜索图像
 - docker pull: 拉取 registry 的镜像
 - docker push: 上传本地图像到 registry
+
 
 * Dockerfile
 
@@ -160,6 +164,28 @@ Dockerfile 是配置 Docker 容器的配置文件，通过 ~docker build~ 来使
 | ONBUILD     | 添加一个当容器作为别的基容器是的触发命令                      |
 | STOPSIGNAL  | 设置系统退出的信号                                            |
 | LABEL       | 添加 key/value 属性，如：images, container, daemon                  |
+
+
+* 私有仓库
+
+添加一些别名帮助查询远端的仓库内容
+
+#+BEGIN_SRC sh
+export REGISTRY='http://localhost:5000'
+
+alias ri='_f(){ curl -XGET $REGISTRY/v2/_catalog; }; _f'
+alias rt='_f(){ curl -XGET $REGISTRY/v2/$1/tags/list; }; _f'
+#+END_SRC
+
+输出结果
+
+#+BEGIN_SRC text
+$ ri
+{"repositories":["gitlab/gitlab-ce","registry","ubuntu"]}
+
+$ rt ubuntu
+{"name":"ubuntu","tags":["18.04","latest"]}
+#+END_SRC
 
 
 * 参考链接
