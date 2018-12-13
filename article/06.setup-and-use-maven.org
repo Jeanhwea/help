@@ -1,11 +1,11 @@
-#+TITLE: 配置和使用maven工具
+#+TITLE: 配置和使用 maven 工具
 #+AUTHOR: Jinghui Hu
 #+EMAIL: hujinghui@buaa.edu.cn
 #+DATE: <2018-10-08 Mon>
 #+TAGS: maven java mvn config
 
 
-* 配置Maven
+* 配置 Maven
 
 [[http://maven.apache.org/][Maven]] 是一个非常优秀的 Java 项目中代码包管理工具。它默认将公共仓库放在
 *~/.m2/repository* 目录下面。有时候下载 Maven 是需要配置默认下载镜像到阿里云，这
@@ -289,10 +289,10 @@
 #+END_SRC
 
 
-* 使用Maven
+* 使用 Maven
 
-Maven官方给出了一个[[http://maven.apache.org/guides/getting-started/maven-in-five-minutes.html][五分钟教程]]，里面有详细的介绍。其中我觉得一个比较重要的命令就
-是新建一个maven项目，这里先粘贴过来。
+Maven 官方给出了一个[[http://maven.apache.org/guides/getting-started/maven-in-five-minutes.html][五分钟教程]]，里面有详细的介绍。其中我觉得一个比较重要的命令就
+是新建一个 maven 项目，这里先粘贴过来。
 
 #+BEGIN_SRC sh
 mvn archetype:generate \
@@ -300,4 +300,15 @@ mvn archetype:generate \
   -DartifactId=mapp \
   -DarchetypeArtifactId=maven-archetype-quickstart \
   -DinteractiveMode=false
+#+END_SRC
+
+使用 Maven 将本地的 jar 包安装到本地仓库中
+
+#+BEGIN_SRC sh
+mvn install:install-file \
+  -DgroupId=com.oracle \
+  -DartifactId=ojdbc6 \
+  -Dversion=11.2.0.4 \
+  -Dpackaging=jar \
+  -Dfile=<path-to-jar>
 #+END_SRC
