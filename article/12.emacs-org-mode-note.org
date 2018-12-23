@@ -27,8 +27,8 @@ org-mode 能够完美解决任务管理的各种问题，包括任务/子任务�
 
 *** Checklist
 
-- [ ] 这种的叫checklist
-- [ ] "M-S-<return>": 新建checklist项
+- [ ] 这种的叫 checklist
+- [ ] "M-S-<return>": 新建 checklist 项
 - [X] "C-c C-c": check/uncheck
 - [-] "M-S-<return> <tab": 子选项
   + [X] sub1
@@ -65,7 +65,7 @@ org-mode 能够完美解决任务管理的各种问题，包括任务/子任务�
 ** 代码
 
 - "<s [Tab]": 插入 "#+BEGIN_SRC #+END_SRC" 代码块
-- "C-c '": 重新开个buffer来编辑代码块
+- "C-c '": 重新开个 buffer 来编辑代码块
 - "C-c C-c": 执行代码块
 
 在使用执行代码是需要配置相应的代码解释器，具体如下：
@@ -175,3 +175,4 @@ org-mode 能够完美解决任务管理的各种问题，包括任务/子任务�
 5. [[https://orgmode.org/worg/org-faq.html#Appointments/Diary][Appointments/Diary]]: emacs org-mode 周期性时间表示方法
 6. [[https://orgmode.org/worg/org-contrib/babel/languages/ob-doc-python.html][Python Source Code Blocks in Org Mode]]
 7. [[https://orgmode.org/manual/results.html][orgmode codeblock for results]]
+8. [[http://ehneilsen.net/notebook/orgExamples/org-examples.html][Emacs org-mode examples and cookbook]]: 很多开箱即用的例子
