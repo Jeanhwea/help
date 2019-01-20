@@ -12,9 +12,9 @@
 The convolution of two functions $f(x)$ and $g(x)$ is defined as following,
 
 #+BEGIN_EXPORT latex
-\[
-  (f*g)(x) = \int_{-\infty}^{\infty} f(t)g(x-t) dt
-\]
+\begin{equation}
+(f*g)(x) = \int_{-\infty}^{\infty} f(t)g(x-t) dt
+\end{equation}
 #+END_EXPORT
 
 $*$ is the common operator to represents convolution operation.
