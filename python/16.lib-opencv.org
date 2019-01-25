@@ -425,8 +425,8 @@ opencv 的彩色的图片采用 **BGR** 的排列方式，和我们通常使用 
   # mapping three points from origin picture to dest picture, using affine transform
   lenna_affine = affine(lenna, pts1, pts2)
 
-  pts3 = np.float32([[56, 65], [368, 52], [28, 387], [389, 390]])
-  pts4 = np.float32([[0, 0], [300, 0], [0, 300], [300, 300]])
+  pts3 = np.float32([[0, 0], [512, 0], [0, 512], [512, 512]])
+  pts4 = np.float32([[100, 300], [350, 300], [0, 512], [512, 512]])
   # mapping four points, using perspective transform
   lenna_perspective = perspective(lenna, pts3, pts4)
 
