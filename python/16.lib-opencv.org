@@ -29,7 +29,7 @@ Windows、Android 和 Mac OS 操作系统上。它轻量级而且高效——由
 #+BEGIN_SRC python :preamble "# -*- coding: utf-8 -*-" :exports both :session default :results output pp
 import cv2 as cv
 import numpy as np
-lenna = 'resource/image/2019/01/Lenna.png'
+lenna = 'resource/image/2019/01/lenna.png'
 #+END_SRC
 
 #+RESULTS:
@@ -73,7 +73,7 @@ opencv 的彩色的图片采用 **BGR** 的排列方式，和我们通常使用 
   import numpy as np
   import matplotlib.pyplot as plt
   filename = '../resource/image/2019/01/image094201.png'
-  img = cv.imread('../resource/image/2019/01/Lenna.png')
+  img = cv.imread('../resource/image/2019/01/lenna.png')
   img = cv.cvtColor(img, cv.COLOR_BGR2RGB)
   plt.imshow(img)
   plt.savefig(filename)
@@ -90,7 +90,7 @@ opencv 的彩色的图片采用 **BGR** 的排列方式，和我们通常使用 
   import matplotlib.pyplot as plt
   import cv2 as cv
   filename = '../resource/image/2019/01/image094813.png'
-  img = cv.imread('../resource/image/2019/01/Lenna.png')
+  img = cv.imread('../resource/image/2019/01/lenna.png')
   gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
   cv.imwrite(filename, gray)
   return filename
@@ -255,7 +255,7 @@ opencv 的彩色的图片采用 **BGR** 的排列方式，和我们通常使用 
   import matplotlib.pyplot as plt
   import cv2 as cv
   filename = '../resource/image/2019/01/image135851.png'
-  lenna = '../resource/image/2019/01/Lenna.png'
+  lenna = '../resource/image/2019/01/lenna.png'
 
   img = cv.cvtColor(cv.imread(lenna), cv.COLOR_BGR2RGB)
   subimg = img[100:400, 100:400]
@@ -283,7 +283,7 @@ opencv 的彩色的图片采用 **BGR** 的排列方式，和我们通常使用 
   import matplotlib.pyplot as plt
   import cv2 as cv
   filename = '../resource/image/2019/01/image141331.png'
-  lenna = '../resource/image/2019/01/Lenna.png'
+  lenna = '../resource/image/2019/01/lenna.png'
 
   BLUE = [255, 0, 0]
   img = cv.cvtColor(cv.imread(lenna), cv.COLOR_BGR2RGB)
@@ -327,7 +327,7 @@ opencv 的彩色的图片采用 **BGR** 的排列方式，和我们通常使用 
   import matplotlib.pyplot as plt
   import cv2 as cv
   filename = '../resource/image/2019/01/image142651.png'
-  lenna = cv.cvtColor(cv.imread('../resource/image/2019/01/Lenna.png'), cv.COLOR_BGR2RGB)
+  lenna = cv.cvtColor(cv.imread('../resource/image/2019/01/lenna.png'), cv.COLOR_BGR2RGB)
   circle = np.zeros(lenna.shape).astype('uint8')
   cx, cy = int(lenna.shape[0] / 2), int(lenna.shape[1] / 2)
   circle = cv.circle(circle, (cx, cy), 250, (255, 255, 255), -1)
@@ -354,7 +354,7 @@ opencv 的彩色的图片采用 **BGR** 的排列方式，和我们通常使用 
   import cv2 as cv
 
   filename = '../resource/image/2019/01/image150141.png'
-  lenna = cv.cvtColor(cv.imread('../resource/image/2019/01/Lenna.png'), cv.COLOR_BGR2RGB)
+  lenna = cv.cvtColor(cv.imread('../resource/image/2019/01/lenna.png'), cv.COLOR_BGR2RGB)
   roi = np.zeros(lenna.shape).astype('uint8')
   cx, cy = int(lenna.shape[0] / 2), int(lenna.shape[1] / 2)
   roi = cv.circle(roi, (cx, cy), 250, (255, 255, 255), -1)
@@ -382,7 +382,7 @@ opencv 的彩色的图片采用 **BGR** 的排列方式，和我们通常使用 
   import cv2 as cv
 
   filename = '../resource/image/2019/01/image152231.png'
-  lenna = cv.cvtColor(cv.imread('../resource/image/2019/01/Lenna.png'), cv.COLOR_BGR2RGB)
+  lenna = cv.cvtColor(cv.imread('../resource/image/2019/01/lenna.png'), cv.COLOR_BGR2RGB)
 
 
   def scale(img, scale_x, scale_y):
