@@ -15,6 +15,88 @@ Windows、Android 和 Mac OS 操作系统上。它轻量级而且高效——由
 [[file:../resource/image/2019/01/opencv-logo.png]]
 
 
+* 安装
+
+建议使用 pip 来安装
+
+#+BEGIN_SRC sh
+  pip install opencv-python
+#+END_SRC
+
+* 使用介绍
+
+** 导入 opencv
+#+BEGIN_SRC python :preamble "# -*- coding: utf-8 -*-" :exports both :session default :results output pp
+import cv2 as cv
+import numpy as np
+lenna = 'resource/image/2019/01/Lenna.png'
+#+END_SRC
+
+#+RESULTS:
+
+** 图片读写
+*** 读取图片
+
+opencv 的彩色的图片采用 **BGR** 的排列方式，和我们通常使用 **RGB** 的方式有所不同。
+
+#+BEGIN_SRC python :preamble "# -*- coding: utf-8 -*-" :exports both :session default :results output pp
+  img = cv.imread(lenna)
+  print('img type = {}'.format(type(img)))
+  print('img.shape = {}'.format(img.shape))
+  gray_image = cv.imread(lenna, cv.IMREAD_GRAYSCALE)
+  print('gray_image.shape = {}'.format(gray_image.shape))
+#+END_SRC
+
+#+RESULTS:
+: img type = <class 'numpy.ndarray'>
+: img.shape = (512, 512, 3)
+: gray_image.shape = (512, 512)
+
+*** 显示图片
+
+#+BEGIN_SRC python :preamble "# -*- coding: utf-8 -*-" :exports both :session default :results output pp
+  cv.imshow('image', img)
+  cv.waitKey(0)
+  cv.destroyAllWindows()
+#+END_SRC
+
+#+RESULTS:
+
+*** 写入图片
+
+使用 matplotlib 来存储图片
+
+#+BEGIN_SRC python :preamble "# -*- coding: utf-8 -*-" :exports both :results file
+  import cv2 as cv
+  import numpy as np
+  import matplotlib.pyplot as plt
+  filename = '../resource/image/2019/01/image094201.png'
+  img = cv.imread('../resource/image/2019/01/Lenna.png')
+  img = cv.cvtColor(img, cv.COLOR_BGR2RGB)
+  plt.imshow(img)
+  plt.savefig(filename)
+  return filename
+#+END_SRC
+
+#+RESULTS:
+[[file:../resource/image/2019/01/image094201.png]]
+
+使用 opencv 来存储图片
+
+#+BEGIN_SRC python :preamble "# -*- coding: utf-8 -*-" :exports both :results file
+  import numpy as np
+  import matplotlib.pyplot as plt
+  import cv2 as cv
+  filename = '../resource/image/2019/01/image094813.png'
+  img = cv.imread('../resource/image/2019/01/Lenna.png')
+  gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
+  cv.imwrite(filename, gray)
+  return filename
+#+END_SRC
+
+#+RESULTS:
+[[file:../resource/image/2019/01/image094813.png]]
+
 * 参考链接
 
 1. [[https://docs.opencv.org/4.0.0/pages.html][OpenCV Documetation]]
