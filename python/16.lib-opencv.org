@@ -532,6 +532,28 @@ opencv 的彩色的图片采用 **BGR** 的排列方式，和我们通常使用 
 #+RESULTS:
 [[file:../resource/image/2019/01/image193021.png]]
 
+** Canny 边界检测
+
+#+BEGIN_SRC python :preamble "# -*- coding: utf-8 -*-" :exports both :results file
+  import numpy as np
+  import matplotlib.pyplot as plt
+  import cv2 as cv
+  filename = '../resource/image/2019/01/image203420.png'
+  img = cv.imread('../resource/image/2019/01/lena_meyer.png', 0)
+
+  edges=cv.Canny(img, 100, 200)
+  plt.subplot(121), plt.imshow(img, cmap='gray')
+  plt.title('Original Image'), plt.xticks([]), plt.yticks([])
+  plt.subplot(122), plt.imshow(edges, cmap='gray')
+  plt.title('Edge Image'), plt.xticks([]), plt.yticks([])
+
+  plt.savefig(filename)
+  return filename
+#+END_SRC
+
+#+RESULTS:
+[[file:../resource/image/2019/01/image203420.png]]
+
 * 参考链接
 
 1. [[https://docs.opencv.org/4.0.0/pages.html][OpenCV Documetation]]
