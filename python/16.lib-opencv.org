@@ -374,6 +374,75 @@ opencv 的彩色的图片采用 **BGR** 的排列方式，和我们通常使用 
 #+RESULTS:
 [[file:../resource/image/2019/01/image150141.png]]
 
+** 图片处理
+*** 几何变换
+#+BEGIN_SRC python :preamble "# -*- coding: utf-8 -*-" :exports both :results file
+  import numpy as np
+  import matplotlib.pyplot as plt
+  import cv2 as cv
+
+  filename = '../resource/image/2019/01/image152231.png'
+  lenna = cv.cvtColor(cv.imread('../resource/image/2019/01/Lenna.png'), cv.COLOR_BGR2RGB)
+
+
+  def scale(img, scale_x, scale_y):
+    h, w = img.shape[:2]
+    return cv.resize(img, (int(h * scale_y), int(w * scale_x)), interpolation=cv.INTER_CUBIC)
+
+
+  def translation(img, trans_x, trans_y):
+    h, w = img.shape[:2]
+    M = np.float32([[1, 0, trans_x], [0, 1, trans_y]])
+    return cv.warpAffine(img, M, (h, w))
+
+
+  def rotate(img, angle):
+    h, w = img.shape[:2]
+    center = int(w / 2.0), int(h / 2.0)
+    M = cv.getRotationMatrix2D(center, angle, 1)
+    return cv.warpAffine(img, M, (w, h))
+
+
+  def affine(img, pts1, pts2):
+    h, w, d = img.shape
+    M = cv.getAffineTransform(pts1, pts2)
+    return cv.warpAffine(img, M, (w, h))
+
+
+  def perspective(img, pts1, pts2):
+    h, w, d = img.shape
+    M = cv.getPerspectiveTransform(pts1, pts2)
+    return cv.warpPerspective(img, M, (w, h))
+
+
+  lenna_scale = scale(lenna, 1.5, 2)
+  lenna_trans = translation(lenna, 50, 100)
+  lenna_rotate120 = rotate(lenna, 120)
+
+  pts1 = np.float32([[50, 50], [200, 50], [50, 200]])
+  pts2 = np.float32([[10, 100], [200, 50], [100, 250]])
+  # mapping three points from origin picture to dest picture, using affine transform
+  lenna_affine = affine(lenna, pts1, pts2)
+
+  pts3 = np.float32([[56, 65], [368, 52], [28, 387], [389, 390]])
+  pts4 = np.float32([[0, 0], [300, 0], [0, 300], [300, 300]])
+  # mapping four points, using perspective transform
+  lenna_perspective = perspective(lenna, pts3, pts4)
+
+  plt.subplot(231), plt.imshow(lenna), plt.title('lenna'), plt.xticks([]), plt.yticks([])
+  plt.subplot(232), plt.imshow(lenna_scale), plt.title('scale'), plt.xticks([]), plt.yticks([])
+  plt.subplot(233), plt.imshow(lenna_trans), plt.title('translation'), plt.xticks([]), plt.yticks([])
+  plt.subplot(234), plt.imshow(lenna_rotate120), plt.title('rotate 120$\degree$'), plt.xticks([]), plt.yticks([])
+  plt.subplot(235), plt.imshow(lenna_affine), plt.title('affine'), plt.xticks([]), plt.yticks([])
+  plt.subplot(236), plt.imshow(lenna_perspective), plt.title('perspective'), plt.xticks([]), plt.yticks([])
+
+  plt.savefig(filename)
+  return filename
+#+END_SRC
+
+#+RESULTS:
+[[file:../resource/image/2019/01/image152231.png]]
+
 * 参考链接
 
 1. [[https://docs.opencv.org/4.0.0/pages.html][OpenCV Documetation]]
