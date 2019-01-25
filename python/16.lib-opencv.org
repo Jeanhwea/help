@@ -264,7 +264,8 @@ opencv 的彩色的图片采用 **BGR** 的排列方式，和我们通常使用 
   rimg, gimg, bimg = img[:, :, 0], img[:, :, 1], img[:, :, 2]
 
   # nrow, ncol, index
-  plt.subplot(231), plt.imshow(subimg), plt.title('croped')
+  plt.subplot(231), plt.imshow(img), plt.title('original')
+  plt.subplot(232), plt.imshow(subimg), plt.title('croped')
   plt.subplot(234), plt.imshow(rimg), plt.title('red channel')
   plt.subplot(235), plt.imshow(gimg), plt.title('green channel')
   plt.subplot(236), plt.imshow(bimg), plt.title('blue channel')
