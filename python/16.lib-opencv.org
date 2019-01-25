@@ -444,6 +444,94 @@ opencv 的彩色的图片采用 **BGR** 的排列方式，和我们通常使用 
 #+RESULTS:
 [[file:../resource/image/2019/01/image152231.png]]
 
+*** 二值化(Thresholding)
+
+#+BEGIN_SRC python :preamble "# -*- coding: utf-8 -*-" :exports both :results file
+  import numpy as np
+  import matplotlib.pyplot as plt
+  import cv2 as cv
+  filename = '../resource/image/2019/01/image190450.png'
+  img = cv.imread('../resource/image/2019/01/lena_meyer.png', 0)
+
+  ret, thresh1 = cv.threshold(img, 127, 255, cv.THRESH_BINARY)
+  ret, thresh2 = cv.threshold(img, 127, 255, cv.THRESH_BINARY_INV)
+  ret, thresh3 = cv.threshold(img, 127, 255, cv.THRESH_TRUNC)
+  ret, thresh4 = cv.threshold(img, 127, 255, cv.THRESH_TOZERO)
+  ret, thresh5 = cv.threshold(img, 127, 255, cv.THRESH_TOZERO_INV)
+
+  titles = ['Original Image', 'BINARY', 'BINARY_INV', 'TRUNC', 'TOZERO', 'TOZERO_INV']
+  images = [img, thresh1, thresh2, thresh3, thresh4, thresh5]
+  for i in range(6):
+    plt.subplot(2, 3, i+1), plt.imshow(images[i], 'gray')
+    plt.title(titles[i])
+    plt.xticks([]), plt.yticks([])
+
+  plt.savefig(filename)
+  return filename
+#+END_SRC
+
+#+RESULTS:
+[[file:../resource/image/2019/01/image190450.png]]
+
+*** 自适应二值化
+
+#+BEGIN_SRC python :preamble "# -*- coding: utf-8 -*-" :exports both :results file
+  import numpy as np
+  import matplotlib.pyplot as plt
+  import cv2 as cv
+  filename = '../resource/image/2019/01/image191045.png'
+  img = cv.imread('../resource/image/2019/01/lena_meyer.png', 0)
+
+  img = cv.medianBlur(img, 5)
+  ret, th1 = cv.threshold(img, 127, 255, cv.THRESH_BINARY)
+  th2 = cv.adaptiveThreshold(img, 255, cv.ADAPTIVE_THRESH_MEAN_C, cv.THRESH_BINARY, 11, 2)
+  th3 = cv.adaptiveThreshold(img, 255, cv.ADAPTIVE_THRESH_GAUSSIAN_C, cv.THRESH_BINARY, 11, 2)
+
+  titles = [
+      'Original Image', 'Global Thresholding (v = 127)',
+      'Adaptive Mean Thresholding', 'Adaptive Gaussian Thresholding'
+  ]
+  images = [img, th1, th2, th3]
+  for i in range(4):
+    plt.subplot(2, 2, i+1), plt.imshow(images[i], 'gray')
+    plt.title(titles[i])
+    plt.xticks([]), plt.yticks([])
+  plt.savefig(filename)
+  return filename
+#+END_SRC
+
+#+RESULTS:
+[[file:../resource/image/2019/01/image191045.png]]
+
+*** Otsu 二值化
+#+BEGIN_SRC python :preamble "# -*- coding: utf-8 -*-" :exports both :results file
+  import numpy as np
+  import matplotlib.pyplot as plt
+  import cv2 as cv
+  filename = '../resource/image/2019/01/image193021.png'
+  img = cv.imread('../resource/image/2019/01/lenna.png',0)
+
+  # global thresholding
+  ret1,th1 = cv.threshold(img,127,255,cv.THRESH_BINARY)
+
+  # Otsu's thresholding
+  ret2,th2 = cv.threshold(img,0,255,cv.THRESH_BINARY+cv.THRESH_OTSU)
+
+  # Otsu's thresholding after Gaussian filtering
+  blur = cv.GaussianBlur(img,(5,5),0)
+  ret3,th3 = cv.threshold(blur,0,255,cv.THRESH_BINARY+cv.THRESH_OTSU)
+
+  images = [img, th1, th2, th3]
+  for i in range(4):
+    plt.subplot(2,2, i+1), plt.imshow(images[i], 'gray')
+    plt.xticks([]), plt.yticks([])
+  plt.savefig(filename)
+  return filename
+#+END_SRC
+
+#+RESULTS:
+[[file:../resource/image/2019/01/image193021.png]]
+
 * 参考链接
 
 1. [[https://docs.opencv.org/4.0.0/pages.html][OpenCV Documetation]]
