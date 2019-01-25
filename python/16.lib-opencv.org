@@ -172,6 +172,7 @@ opencv 的彩色的图片采用 **BGR** 的排列方式，和我们通常使用 
 #+BEGIN_SRC python :preamble "# -*- coding: utf-8 -*-" :exports both :results file
   import numpy as np
   import cv2 as cv
+  import matplotlib.pyplot as plt
   filename = '../resource/image/2019/01/image100920.png'
 
   # Create a black image
@@ -193,7 +194,9 @@ opencv 的彩色的图片采用 **BGR** 的排列方式，和我们通常使用 
   pts = pts.reshape((-1, 1, 2))
   cv.polylines(img, [pts], True, (0, 255, 255))
 
-  cv.imwrite(filename, img)
+  plt.imshow(img)
+  plt.savefig(filename)
+  # cv.imwrite(filename, img)
   return filename
 #+END_SRC
 
