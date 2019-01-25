@@ -23,17 +23,17 @@ Windows、Android 和 Mac OS 操作系统上。它轻量级而且高效——由
   pip install opencv-python
 #+END_SRC
 
-* 使用介绍
 
-** 导入 opencv
+* 导入 opencv
+
 #+BEGIN_SRC python :preamble "# -*- coding: utf-8 -*-" :exports both :session default :results output pp
 import cv2 as cv
 import numpy as np
 lenna = 'resource/image/2019/01/Lenna.png'
 #+END_SRC
 
-#+RESULTS:
 
+* 使用介绍
 ** 图片读写
 *** 读取图片
 
@@ -96,6 +96,123 @@ opencv 的彩色的图片采用 **BGR** 的排列方式，和我们通常使用 
 
 #+RESULTS:
 [[file:../resource/image/2019/01/image094813.png]]
+
+** 视频操作
+*** 读取摄像头数据
+
+#+BEGIN_SRC python :preamble "# -*- coding: utf-8 -*-" :exports both :session videoCapture :results output pp
+  import numpy as np
+  import cv2 as cv
+  cap = cv.VideoCapture(0)
+  while(True):
+    # Capture frame-by-frame
+    ret, frame = cap.read()
+    # get/set props
+    # frame_width = cap.get(cv.CAP_PROP_FRAME_WIDTH)
+    # frame_height = cap.get(cv.CAP_PROP_FRAME_HEIGHT)
+    # ret = cap.set(cv.CAP_PROP_FRAME_WIDTH, 320)
+    # ret = cap.set(cv.CAP_PROP_FRAME_HEIGHT, 240)
+    # Our operations on the frame come here
+    gray = cv.cvtColor(frame, cv.COLOR_BGR2GRAY)
+    # Display the resulting frame
+    cv.imshow('frame', gray)
+    if cv.waitKey(1) & 0xFF == ord('q'):
+      break
+  # When everything done, release the capture
+  cap.release()
+  cv.destroyAllWindows()
+#+END_SRC
+
+*** 播放视频文件
+
+#+BEGIN_SRC python :preamble "# -*- coding: utf-8 -*-" :exports both :session videoCapture :results output pp
+  import numpy as np
+  import cv2 as cv
+  cap = cv.VideoCapture('vtest.avi')
+  while(cap.isOpened()):
+    ret, frame = cap.read()
+    gray = cv.cvtColor(frame, cv.COLOR_BGR2GRAY)
+    cv.imshow('frame', gray)
+    if cv.waitKey(1) & 0xFF == ord('q'):
+      break
+  cap.release()
+  cv.destroyAllWindows()
+#+END_SRC
+
+*** 保存视频文件
+
+#+BEGIN_SRC python :preamble "# -*- coding: utf-8 -*-" :exports both :session videoCapture :results output pp
+  import numpy as np
+  import cv2 as cv
+  cap = cv.VideoCapture(0)
+  # Define the codec and create VideoWriter object
+  fourcc = cv.VideoWriter_fourcc(*'XVID')
+  out = cv.VideoWriter('output.avi', fourcc, 20.0, (640, 480))
+  while(cap.isOpened()):
+    ret, frame = cap.read()
+    if ret == True:
+      frame = cv.flip(frame, 0)
+    # write the flipped frame
+    out.write(frame)
+    cv.imshow('frame', frame)
+    if cv.waitKey(1) & 0xFF == ord('q'):
+      break
+    else:
+      break
+  # Release everything if job is finished
+  cap.release()
+  out.release()
+  cv.destroyAllWindows()
+#+END_SRC
+
+** 画图函数
+*** 画几何图形
+画几何图形，包括：线条、圆、矩形、椭圆等
+
+#+BEGIN_SRC python :preamble "# -*- coding: utf-8 -*-" :exports both :results file
+  import numpy as np
+  import cv2 as cv
+  filename = '../resource/image/2019/01/image100920.png'
+
+  # Create a black image
+  img = np.zeros((320, 512, 3), np.uint8)
+
+  # cv.line(img, pt1, pt2, color, thickness)
+  cv.line(img, (0, 0), (300, 100), (255, 0, 0), 5)
+
+  # cv.rectangle(img, pt1, pt2, color, thickness
+  cv.rectangle(img, (384, 0), (510, 128), (0, 255, 0), 3)
+
+  # cv.circle(img, center, radius, color, thickness)
+  cv.circle(img, (447, 63), 63, (0, 0, 255), -1)
+
+  # cv.ellipse(img, center, axes, angle, startAngle, endAngle, color, thickness)
+  cv.ellipse(img, (256, 256), (100, 50), 0, 0, 180, 255, -1)
+
+  pts = np.array([[10, 5], [20, 30], [70, 20], [50, 10]], np.int32)
+  pts = pts.reshape((-1, 1, 2))
+  cv.polylines(img, [pts], True, (0, 255, 255))
+
+  cv.imwrite(filename, img)
+  return filename
+#+END_SRC
+
+#+RESULTS:
+[[file:../resource/image/2019/01/image100920.png]]
+*** 写文字
+#+BEGIN_SRC python :preamble "# -*- coding: utf-8 -*-" :exports both :results file
+  import numpy as np
+  import cv2 as cv
+  filename = '../resource/image/2019/01/image102219.png'
+  img = np.zeros((320, 512, 3), np.uint8)
+  font = cv.FONT_HERSHEY_SIMPLEX
+  # cv.putText(img, text, org, font, fontScale, color, thickness, bottonLeftOrigin)
+  cv.putText(img, 'OpenCV', (10, 500), font, 4, (255, 255, 255), 2, cv.LINE_AA)
+  return filename
+#+END_SRC
+
+#+RESULTS:
+[[file:../resource/image/2019/01/image102219.png]]
 
 * 参考链接
 
