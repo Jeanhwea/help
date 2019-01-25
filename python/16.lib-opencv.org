@@ -328,15 +328,15 @@ opencv 的彩色的图片采用 **BGR** 的排列方式，和我们通常使用 
   import cv2 as cv
   filename = '../resource/image/2019/01/image142651.png'
   lenna = cv.cvtColor(cv.imread('../resource/image/2019/01/Lenna.png'), cv.COLOR_BGR2RGB)
-  mask = np.zeros(lenna.shape).astype('uint8')
+  circle = np.zeros(lenna.shape).astype('uint8')
   cx, cy = int(lenna.shape[0] / 2), int(lenna.shape[1] / 2)
-  mask = cv.circle(mask, (cx, cy), 250, (255, 255, 255), -1)
+  circle = cv.circle(circle, (cx, cy), 250, (255, 255, 255), -1)
 
-  # dst = 0.7*lenna + 0.3*mask + 0
-  dst = cv.addWeighted(lenna, 0.7, mask, 0.3, 0)
+  # dst = 0.7*lenna + 0.3*circle + 0
+  dst = cv.addWeighted(lenna, 0.7, circle, 0.3, 0)
 
   plt.subplot(221), plt.imshow(lenna), plt.title('lenna'), plt.xticks([]), plt.yticks([])
-  plt.subplot(223), plt.imshow(mask), plt.title('mask'), plt.xticks([]), plt.yticks([])
+  plt.subplot(223), plt.imshow(circle), plt.title('circle'), plt.xticks([]), plt.yticks([])
   plt.subplot(224), plt.imshow(dst), plt.title('dst'), plt.xticks([]), plt.yticks([])
 
   plt.savefig(filename)
@@ -345,6 +345,34 @@ opencv 的彩色的图片采用 **BGR** 的排列方式，和我们通常使用 
 
 #+RESULTS:
 [[file:../resource/image/2019/01/image142651.png]]
+
+*** 位操作
+
+#+BEGIN_SRC python :preamble "# -*- coding: utf-8 -*-" :exports both :results file
+  import numpy as np
+  import matplotlib.pyplot as plt
+  import cv2 as cv
+
+  filename = '../resource/image/2019/01/image150141.png'
+  lenna = cv.cvtColor(cv.imread('../resource/image/2019/01/Lenna.png'), cv.COLOR_BGR2RGB)
+  roi = np.zeros(lenna.shape).astype('uint8')
+  cx, cy = int(lenna.shape[0] / 2), int(lenna.shape[1] / 2)
+  roi = cv.circle(roi, (cx, cy), 250, (255, 255, 255), -1)
+
+  andimg = cv.bitwise_and(lenna, roi)
+  orimg = cv.bitwise_or(lenna, roi)
+
+  plt.subplot(221), plt.imshow(lenna), plt.title('lenna'), plt.xticks([]), plt.yticks([])
+  plt.subplot(222), plt.imshow(roi), plt.title('roi'), plt.xticks([]), plt.yticks([])
+  plt.subplot(223), plt.imshow(andimg), plt.title('and'), plt.xticks([]), plt.yticks([])
+  plt.subplot(224), plt.imshow(orimg), plt.title('or'), plt.xticks([]), plt.yticks([])
+
+  plt.savefig(filename)
+  return filename
+#+END_SRC
+
+#+RESULTS:
+[[file:../resource/image/2019/01/image150141.png]]
 
 * 参考链接
 
