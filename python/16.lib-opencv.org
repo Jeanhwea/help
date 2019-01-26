@@ -336,9 +336,9 @@ opencv 的彩色的图片采用 **BGR** 的排列方式，和我们通常使用 
   # dst = 0.7*lenna + 0.3*circle + 0
   dst = cv.addWeighted(lenna, 0.7, circle, 0.3, 0)
 
-  plt.subplot(221), plt.imshow(lenna), plt.title('lenna'), plt.xticks([]), plt.yticks([])
-  plt.subplot(223), plt.imshow(circle), plt.title('circle'), plt.xticks([]), plt.yticks([])
-  plt.subplot(224), plt.imshow(dst), plt.title('dst'), plt.xticks([]), plt.yticks([])
+  plt.subplot(131), plt.imshow(lenna), plt.title('lenna'), plt.xticks([]), plt.yticks([])
+  plt.subplot(132), plt.imshow(circle), plt.title('circle'), plt.xticks([]), plt.yticks([])
+  plt.subplot(133), plt.imshow(dst), plt.title('dst'), plt.xticks([]), plt.yticks([])
 
   plt.savefig(filename)
   return filename
