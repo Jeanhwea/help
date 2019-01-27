@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 import os
 
@@ -10,7 +10,7 @@ class IndexManager(object):
 
   def getmeta(self, fullpath):
     info = {'fullpath': fullpath}
-    with open(fullpath, 'r') as f:
+    with open(fullpath, 'r', encoding='utf-8') as f:
       for line in f:
         if line.startswith('#+TITLE:'):
           info['title'] = line.replace('#+TITLE:', '').strip()
@@ -28,25 +28,40 @@ class IndexManager(object):
     return infos
 
   def infos2text(self, infos):
-    return '\n'.join(map(
-        lambda x, i: '{i}. [[{path}][{title}]] {date}'.format(
-            i=i, path=x['fullpath'], title=x['title'], date=x['date']
-        ), infos
-    ))
+    titles = []
+    i = 1
+    for e in infos:
+      line = '{i}. [[{path}][{title}]] {date}'.format(
+          i=i, path=e['fullpath'], title=e['title'], date=e['date']
+      )
+      i += 1
+      titles.append(line)
+    return '\n'.join(titles)
 
-  def readheader(self):
+  def readheader(self, EOH='# END OF HEADER'):
     header = ''
-    with open(self._readme, 'r') as f:
+    with open(self._readme, 'r', encoding='utf-8') as f:
       for line in f:
         header += line
-        if line.startswith('*'):
+        if line.startswith(EOH):
           break
-        header += '\n'
+    return header
 
-  def writereadme(self, infos):
+  def writereadme(self):
     article_infos = self.getinfos('article')
     python_infos = self.getinfos('python')
 
     content = self.readheader()
+    content += '\n* Index'
+    content += '\n** Articles\n'
+    content += self.infos2text(article_infos)
+    content += '\n** Python\n'
+    content += self.infos2text(python_infos)
+
     with open(self._readme, 'w', encoding='utf-8') as f:
       f.write(content)
+
+
+if __name__ == '__main__':
+  im = IndexManager()
+  im.writereadme()

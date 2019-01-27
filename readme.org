@@ -8,8 +8,10 @@
 
 [[file:resource/image/2018/11/header.png]]
 
-* 文章目录
+# END OF HEADER
 
+* Index
+** Articles
 1. [[article/01.rename-many-files.org][批量规范化重命名大量的文件]] <2018-10-05 Fri>
 2. [[article/02.git-command-in-detail.org][Git 命令详解]] <2018-10-08 Mon>
 3. [[article/03.download-all-site-via-wget.org][离线下载整个站点]] <2018-10-08 Mon>
@@ -39,3 +41,20 @@
 27. [[article/27.docker-cheatsheet.org][Docker 介绍]] <2018-11-27 Tue>
 28. [[article/28.install-postgresql.org][安装 postgresql 数据库]] <2018-12-10 Mon>
 29. [[article/29.convolution-operator.org][Convolution Operator]] <2019-01-18 Fri>
+** Python
+1. [[python/01.basic.org][基本技巧]] <2018-10-23 Tue>
+2. [[python/02.input.org][Python 读取用户输入]] <2018-10-23 Tue>
+3. [[python/03.list.org][列表]] <2018-10-23 Tue>
+4. [[python/04.string.org][字符串]] <2018-10-23 Tue>
+5. [[python/05.dict.org][字典]] <2018-10-23 Tue>
+6. [[python/06.ctrlflow.org][控制流]] <2018-10-23 Tue>
+7. [[python/07.function.org][函数]] <2018-10-23 Tue>
+8. [[python/08.class.org][类]] <2018-10-23 Tue>
+9. [[python/09.module.org][模块]] <2018-10-23 Tue>
+10. [[python/10.time-and-datetime.org][时间和日期相关处理函数]] <2018-10-24 Wed>
+11. [[python/11.excel-and-csv.org][Excel 或者 csv 文件]] <2018-10-24 Wed>
+12. [[python/12.lib-pandas.org][pandas: 数据处理包]] <2018-10-12 Fri>
+13. [[python/13.lib-numpy.org][numpy: 数据处理包]] <2018-10-26 Fri>
+14. [[python/14.lib-matplotlib.org][matplotlib: 绘图包]] <2018-10-26 Fri>
+15. [[python/15.logging.org][日志]] <2018-10-30 Tue>
+16. [[python/16.lib-opencv.org][OpenCV 的介绍]] <2019-01-25 Fri>
