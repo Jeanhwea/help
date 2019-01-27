@@ -1,52 +1,52 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 import os
-import sys
-import time
-
-dir = 'article'
-
-def getinfo(dir):
-  orgfiles = []
-  for root, dirs, files in os.walk(dir):
-    for file in files:
-      if file.endswith('.org'):
-        filepath = os.path.join(root, file)
-        title = ''
-        date = ''
-        with open(filepath, 'r', encoding='utf-8') as f:
-          for line in f:
-            if line.startswith('#+TITLE:'):
-              title = line.replace('#+TITLE:', '').strip()
-            if line.startswith('#+DATE:'):
-              date = line.replace('#+DATE:', '').strip()
-        orgfiles.append((filepath.replace('\\', '/'), title, date))
-  return orgfiles
 
 
-def writereadme(infos):
-  readme = 'readme.org'
-  content = ''
+class IndexManager(object):
 
-  # read original header
-  with open(readme, 'r', encoding='utf-8') as f:
-    for line in f:
-      content += line
-      if line.startswith('*'):
-        break
-  content += '\n'
+  def __init__(self):
+    self._readme = 'readme.org'
 
-  # write index
-  i = 1
-  for path, title, date in infos:
-    content += '{i}. [[{path}][{title}]] {date}\n'.format(
-      i=i, path=path, title=title, date=date
-    )
-    i += 1
+  def getmeta(self, fullpath):
+    info = {'fullpath': fullpath}
+    with open(fullpath, 'r') as f:
+      for line in f:
+        if line.startswith('#+TITLE:'):
+          info['title'] = line.replace('#+TITLE:', '').strip()
+        if line.startswith('#+DATE:'):
+          info['date'] = line.replace('#+DATE:', '').strip()
+    return info
 
-  # apply to file
-  with open(readme, 'w', encoding='utf-8') as f:
-    f.write(content)
+  def getinfos(self, dir):
+    infos = []
+    for root, dirs, files in os.walk(dir):
+      for file in files:
+        if file.endswith('.org'):
+          fullpath = os.path.join(root, file)
+          infos.append(self.getmeta(fullpath))
+    return infos
 
-infos = getinfo(dir)
-writereadme(infos)
+  def infos2text(self, infos):
+    return '\n'.join(map(
+        lambda x, i: '{i}. [[{path}][{title}]] {date}'.format(
+            i=i, path=x['fullpath'], title=x['title'], date=x['date']
+        ), infos
+    ))
+
+  def readheader(self):
+    header = ''
+    with open(self._readme, 'r') as f:
+      for line in f:
+        header += line
+        if line.startswith('*'):
+          break
+        header += '\n'
+
+  def writereadme(self, infos):
+    article_infos = self.getinfos('article')
+    python_infos = self.getinfos('python')
+
+    content = self.readheader()
+    with open(self._readme, 'w', encoding='utf-8') as f:
+      f.write(content)
