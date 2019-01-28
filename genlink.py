@@ -48,15 +48,12 @@ class IndexManager(object):
     return header
 
   def writereadme(self):
-    article_infos = self.getinfos('article')
-    python_infos = self.getinfos('python')
-
     content = self.readheader()
     content += '\n* Index'
     content += '\n** Articles\n'
-    content += self.infos2text(article_infos)
+    content += self.infos2text(self.getinfos('article'))
     content += '\n** Python\n'
-    content += self.infos2text(python_infos)
+    content += self.infos2text(self.getinfos('python'))
 
     with open(self._readme, 'w', encoding='utf-8') as f:
       f.write(content)
