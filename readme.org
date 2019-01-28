@@ -12,15 +12,15 @@
 
 * Index
 ** Articles
-1. [[article/01.rename-many-files.org][批量规范化重命名大量的文件]] <2018-10-05 Fri>
-2. [[article/02.git-command-in-detail.org][Git 命令详解]] <2018-10-08 Mon>
-3. [[article/03.download-all-site-via-wget.org][离线下载整个站点]] <2018-10-08 Mon>
-4. [[article/04.setup-ROR-enviroment.org][安装ROR开发环境]] <2018-10-09 Tue>
-5. [[article/05.setup-pip-envs.org][配置pip的相关环境变量]] <2018-10-08 Mon>
-6. [[article/06.setup-and-use-maven.org][配置和使用 maven 工具]] <2018-10-08 Mon>
-7. [[article/07.setup-npm-and-yarn.org][配置 npm 和 yarn]] <2018-10-08 Mon>
-8. [[article/08.generate-ssh-key.org][生成RSA加密的SSH公钥和私钥]] <2018-10-08 Mon>
-9. [[article/09.chrome-options.org][chrome浏览器相关设置]] <2018-10-08 Mon>
+01. [[article/01.rename-many-files.org][批量规范化重命名大量的文件]] <2018-10-05 Fri>
+02. [[article/02.git-command-in-detail.org][Git 命令详解]] <2018-10-08 Mon>
+03. [[article/03.download-all-site-via-wget.org][离线下载整个站点]] <2018-10-08 Mon>
+04. [[article/04.setup-ROR-enviroment.org][安装ROR开发环境]] <2018-10-09 Tue>
+05. [[article/05.setup-pip-envs.org][配置pip的相关环境变量]] <2018-10-08 Mon>
+06. [[article/06.setup-and-use-maven.org][配置和使用 maven 工具]] <2018-10-08 Mon>
+07. [[article/07.setup-npm-and-yarn.org][配置 npm 和 yarn]] <2018-10-08 Mon>
+08. [[article/08.generate-ssh-key.org][生成RSA加密的SSH公钥和私钥]] <2018-10-08 Mon>
+09. [[article/09.chrome-options.org][chrome浏览器相关设置]] <2018-10-08 Mon>
 10. [[article/10.start-angular-project.org][编写Angular项目]] <2018-10-08 Mon>
 11. [[article/11.firefox-default-zoom-pixel.org][Firefox 的默认缩放大小]] <2018-10-08 Mon>
 12. [[article/12.emacs-org-mode-note.org][Emacs org-mode 的相关笔记]] <2018-10-08 Mon>
@@ -42,15 +42,15 @@
 28. [[article/28.install-postgresql.org][安装 postgresql 数据库]] <2018-12-10 Mon>
 29. [[article/29.convolution-operator.org][Convolution Operator]] <2019-01-18 Fri>
 ** Python
-1. [[python/01.basic.org][基本技巧]] <2018-10-23 Tue>
-2. [[python/02.input.org][Python 读取用户输入]] <2018-10-23 Tue>
-3. [[python/03.list.org][列表]] <2018-10-23 Tue>
-4. [[python/04.string.org][字符串]] <2018-10-23 Tue>
-5. [[python/05.dict.org][字典]] <2018-10-23 Tue>
-6. [[python/06.ctrlflow.org][控制流]] <2018-10-23 Tue>
-7. [[python/07.function.org][函数]] <2018-10-23 Tue>
-8. [[python/08.class.org][类]] <2018-10-23 Tue>
-9. [[python/09.module.org][模块]] <2018-10-23 Tue>
+01. [[python/01.basic.org][基本技巧]] <2018-10-23 Tue>
+02. [[python/02.input.org][Python 读取用户输入]] <2018-10-23 Tue>
+03. [[python/03.list.org][列表]] <2018-10-23 Tue>
+04. [[python/04.string.org][字符串]] <2018-10-23 Tue>
+05. [[python/05.dict.org][字典]] <2018-10-23 Tue>
+06. [[python/06.ctrlflow.org][控制流]] <2018-10-23 Tue>
+07. [[python/07.function.org][函数]] <2018-10-23 Tue>
+08. [[python/08.class.org][类]] <2018-10-23 Tue>
+09. [[python/09.module.org][模块]] <2018-10-23 Tue>
 10. [[python/10.time-and-datetime.org][时间和日期相关处理函数]] <2018-10-24 Wed>
 11. [[python/11.excel-and-csv.org][Excel 或者 csv 文件]] <2018-10-24 Wed>
 12. [[python/12.lib-pandas.org][pandas: 数据处理包]] <2018-10-12 Fri>

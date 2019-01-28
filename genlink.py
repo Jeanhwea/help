@@ -31,7 +31,7 @@ class IndexManager(object):
     titles = []
     i = 1
     for e in infos:
-      line = '{i}. [[{path}][{title}]] {date}'.format(
+      line = '{i:02d}. [[{path}][{title}]] {date}'.format(
           i=i, path=e['fullpath'], title=e['title'], date=e['date']
       )
       i += 1
