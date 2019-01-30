@@ -445,6 +445,7 @@ opencv 的彩色的图片采用 **BGR** 的排列方式，和我们通常使用 
 [[file:../resource/image/2019/01/image152231.png]]
 
 *** 二值化(Thresholding)
+**** 普通二值化
 
 #+BEGIN_SRC python :preamble "# -*- coding: utf-8 -*-" :exports both :results file
   import numpy as np
@@ -473,7 +474,7 @@ opencv 的彩色的图片采用 **BGR** 的排列方式，和我们通常使用 
 #+RESULTS:
 [[file:../resource/image/2019/01/image190450.png]]
 
-*** 自适应二值化
+**** 自适应二值化
 
 #+BEGIN_SRC python :preamble "# -*- coding: utf-8 -*-" :exports both :results file
   import numpy as np
@@ -503,7 +504,7 @@ opencv 的彩色的图片采用 **BGR** 的排列方式，和我们通常使用 
 #+RESULTS:
 [[file:../resource/image/2019/01/image191045.png]]
 
-*** Otsu 二值化
+**** Otsu 二值化
 #+BEGIN_SRC python :preamble "# -*- coding: utf-8 -*-" :exports both :results file
   import numpy as np
   import matplotlib.pyplot as plt
@@ -532,7 +533,32 @@ opencv 的彩色的图片采用 **BGR** 的排列方式，和我们通常使用 
 #+RESULTS:
 [[file:../resource/image/2019/01/image193021.png]]
 
-** Canny 边界检测
+*** 平滑(Smoothing Images)
+**** 卷积
+#+BEGIN_SRC python :preamble "# -*- coding: utf-8 -*-" :exports both :results file
+  import numpy as np
+  import matplotlib.pyplot as plt
+  import cv2 as cv
+  filename = '../resource/image/2019/01/image190747.png'
+
+  img = cv.imread('../resource/image/2019/01/lena_meyer.png')
+  img = cv.cvtColor(img, cv.COLOR_BGR2RGB)
+  kernel = np.ones((5, 5), np.float32)/25
+  dst = cv.filter2D(img, -1, kernel)
+
+  plt.subplot(121),plt.imshow(img),plt.title('Original')
+  plt.xticks([]), plt.yticks([])
+  plt.subplot(122),plt.imshow(dst),plt.title('Averaging')
+  plt.xticks([]), plt.yticks([])
+  plt.savefig(filename)
+
+  return filename
+#+END_SRC
+
+#+RESULTS:
+[[file:../resource/image/2019/01/image190747.png]]
+
+*** Canny 边界检测
 
 #+BEGIN_SRC python :preamble "# -*- coding: utf-8 -*-" :exports both :results file
   import numpy as np
