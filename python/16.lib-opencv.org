@@ -580,6 +580,7 @@ opencv 的彩色的图片采用 **BGR** 的排列方式，和我们通常使用 
 #+RESULTS:
 [[file:../resource/image/2019/01/image203420.png]]
 
+
 * 参考链接
 
 1. [[https://docs.opencv.org/4.0.0/pages.html][OpenCV Documetation]]
