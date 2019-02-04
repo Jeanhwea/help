@@ -10,9 +10,9 @@
 pandas 一个是 BSD 许可证下开源的 Python 包，它提供非常方便使用的数据结构和数据分
 析工具。注意有以下几个优点：
 
-1. 使用 Series 表示一维数据， DataFrame 表示二维数据
+1. 使用 Series 表示一维数据，DataFrame 表示二维数据
 2. 支持对数据的多维度索引
-3. 可以导入和导出 csv ， excel 等其他格式的文件数据
+3. 可以导入和导出 csv，excel 等其他格式的文件数据
 4. 一些基本的统计功能（均值、方差、标准差等）
 
 ** 安装
@@ -51,7 +51,7 @@ pandas 一个是 BSD 许可证下开源的 Python 包，它提供非常方便使
   df.columns
   df.values
   df.describe()
-  df.T) # transpos
+  df.T # transpose
   df.sort_index(axis=1, ascending=False)
   df.sort_values(by='B')
 #+END_SRC
@@ -151,11 +151,11 @@ pandas 一个是 BSD 许可证下开源的 Python 包，它提供非常方便使
   6  foo    one  1.799058  0.784080
   7  foo  three  1.727525  1.112355
               C         D
-  A                      
+  A
   bar -0.857585 -0.021572
   foo  2.253557  3.187746
                     C         D
-  A   B                        
+  A   B
   bar one   -1.076721 -0.175009
       three  0.000211 -0.100240
       two    0.218925  0.253677
@@ -217,4 +217,3 @@ pandas 一个是 BSD 许可证下开源的 Python 包，它提供非常方便使
 
 1. [[http://pandas.pydata.org/pandas-docs/stable/10min.html][10 Minutes to pandas]]
 2. [[http://pandas.pydata.org/pandas-docs/stable/tutorials.html][pandas tutorial in detail]]
-
